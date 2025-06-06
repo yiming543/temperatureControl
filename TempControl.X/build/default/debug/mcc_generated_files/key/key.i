@@ -19,20 +19,23 @@
 
 
 
-extern unsigned long milliseconds;
-extern unsigned char SW1_STATUS;
+extern unsigned long milliSeconds;
+extern unsigned char SW1_Status;
+extern unsigned char SW2_Status;
+extern unsigned char SW3_Status;
 
-extern void key_debounce(void);
-unsigned long get_time_ms(void);
+extern void keyDebounce(void);
+extern unsigned long getTime_ms(void);
+
 
 
 
 
 
 enum KeyState {
-    KEY_STATE_RELEASE,
-    KEY_STATE_SHORT_PRESS,
-    KEY_STATE_LONG_PRESS
+  KEY_STATE_RELEASE,
+  KEY_STATE_SHORT_PRESS,
+  KEY_STATE_LONG_PRESS
 };
 # 9 "mcc_generated_files/key/key.c" 2
 # 1 "mcc_generated_files/key/../mcc.h" 1
@@ -5017,9 +5020,9 @@ extern __bank0 __bit __timeout;
 # 1 "mcc_generated_files/key/../device_config.h" 1
 # 51 "mcc_generated_files/key/../mcc.h" 2
 # 1 "mcc_generated_files/key/../pin_manager.h" 1
-# 239 "mcc_generated_files/key/../pin_manager.h"
+# 253 "mcc_generated_files/key/../pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 251 "mcc_generated_files/key/../pin_manager.h"
+# 265 "mcc_generated_files/key/../pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 52 "mcc_generated_files/key/../mcc.h" 2
 
@@ -5204,23 +5207,24 @@ typedef struct
 typedef enum
 {
     channel_AN0 = 0x0,
+    channel_AN2 = 0x2,
     channel_Temp = 0x1D,
     channel_DAC = 0x1E,
     channel_FVR = 0x1F
 } adc_channel_t;
-# 136 "mcc_generated_files/key/../adc.h"
+# 137 "mcc_generated_files/key/../adc.h"
 void ADC_Initialize(void);
-# 166 "mcc_generated_files/key/../adc.h"
+# 167 "mcc_generated_files/key/../adc.h"
 void ADC_SelectChannel(adc_channel_t channel);
-# 193 "mcc_generated_files/key/../adc.h"
+# 194 "mcc_generated_files/key/../adc.h"
 void ADC_StartConversion(void);
-# 225 "mcc_generated_files/key/../adc.h"
+# 226 "mcc_generated_files/key/../adc.h"
 _Bool ADC_IsConversionDone(void);
-# 258 "mcc_generated_files/key/../adc.h"
+# 259 "mcc_generated_files/key/../adc.h"
 adc_result_t ADC_GetConversionResult(void);
-# 288 "mcc_generated_files/key/../adc.h"
+# 289 "mcc_generated_files/key/../adc.h"
 adc_result_t ADC_GetConversion(adc_channel_t channel);
-# 316 "mcc_generated_files/key/../adc.h"
+# 317 "mcc_generated_files/key/../adc.h"
 void ADC_TemperatureAcquisitionDelay(void);
 # 57 "mcc_generated_files/key/../mcc.h" 2
 # 1 "mcc_generated_files/key/../tmr0.h" 1
@@ -5279,51 +5283,140 @@ void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 
 extern void disp_sub(char disp_temp, unsigned char disp_char);
 # 60 "mcc_generated_files/key/../mcc.h" 2
-# 76 "mcc_generated_files/key/../mcc.h"
+# 75 "mcc_generated_files/key/../mcc.h"
 void SYSTEM_Initialize(void);
-# 89 "mcc_generated_files/key/../mcc.h"
+# 88 "mcc_generated_files/key/../mcc.h"
 void OSCILLATOR_Initialize(void);
-# 101 "mcc_generated_files/key/../mcc.h"
+# 100 "mcc_generated_files/key/../mcc.h"
 void WDT_Initialize(void);
 # 10 "mcc_generated_files/key/key.c" 2
 
-extern unsigned char flag_Key_release;
+extern unsigned char fKeyRelease_SW1;
+extern unsigned char fKeyRelease_SW2;
+extern unsigned char fKeyRelease_SW3;
 
-unsigned long get_time_ms(void) {
-  return milliseconds;
+unsigned long getTime_ms(void) {
+  return milliSeconds;
 }
 
-unsigned char SW1_STATUS = KEY_STATE_RELEASE;
+unsigned char SW1_Status = KEY_STATE_RELEASE;
+unsigned char SW2_Status = KEY_STATE_RELEASE;
+unsigned char SW3_Status = KEY_STATE_RELEASE;
 
-void key_debounce(void) {
-  static long previous_time;
-  static unsigned char sw1_previous_state = 1;
-  unsigned char sw1_current_state;
-  ;
-  unsigned long current_time = get_time_ms();
+void keyDebounce(void) {
+  static unsigned long SW1_PreviousTime;
+  unsigned char SW1_CurrentState;
+  static unsigned char SW1_PreviousState = 1;
 
-  if (PORTBbits.RB1 == 0) {
-    sw1_current_state = 0;
-    if (sw1_previous_state != sw1_current_state) {
-      previous_time = current_time;
-      sw1_previous_state = sw1_current_state;
+  static unsigned long SW2_PreviousTime;
+  unsigned char SW2_CurrentState;
+  static unsigned char SW2_PreviousState = 1;
+
+  static unsigned long SW3_PreviousTime;
+  unsigned char SW3_CurrentState;
+  static unsigned char SW3_PreviousState = 1;
+
+  unsigned long CurrentTime = getTime_ms();
+
+
+  SW1_CurrentState = PORTBbits.RB1;
+  SW2_CurrentState = PORTBbits.RB2;
+  SW3_CurrentState = PORTBbits.RB3;
+
+
+
+
+  if (SW1_CurrentState == 0) {
+
+    if (SW1_PreviousState != SW1_CurrentState) {
+
+      SW1_PreviousTime = CurrentTime;
+      SW1_PreviousState = SW1_CurrentState;
     } else {
-      if (current_time - previous_time > 1000) {
-        SW1_STATUS = KEY_STATE_LONG_PRESS;
-      } else if (current_time - previous_time > 50) {
-        SW1_STATUS = KEY_STATE_SHORT_PRESS;
+
+      if (CurrentTime - SW1_PreviousTime > 1000) {
+        SW1_Status = KEY_STATE_LONG_PRESS;
+      } else if (CurrentTime - SW1_PreviousTime > 50) {
+        SW1_Status = KEY_STATE_SHORT_PRESS;
       }
     }
   } else {
-    sw1_current_state = 1;
-    if (sw1_previous_state != sw1_current_state) {
-      previous_time = current_time;
-      sw1_previous_state = sw1_current_state;
+
+    SW1_CurrentState = 1;
+    if (SW1_PreviousState != SW1_CurrentState) {
+
+      SW1_PreviousTime = CurrentTime;
+      SW1_PreviousState = SW1_CurrentState;
     } else {
-      if (current_time - previous_time > 50) {
-        SW1_STATUS = KEY_STATE_RELEASE;
-        flag_Key_release = 1;
+      if (CurrentTime - SW1_PreviousTime > 50) {
+        SW1_Status = KEY_STATE_RELEASE;
+        fKeyRelease_SW1 = 1;
       }
     }
   }
+
+
+  if (SW2_CurrentState == 0) {
+
+    if (SW2_PreviousState != SW2_CurrentState) {
+
+      SW2_PreviousTime = CurrentTime;
+      SW2_PreviousState = SW2_CurrentState;
+    } else {
+
+      if (CurrentTime - SW2_PreviousTime > 1000) {
+        SW2_Status = KEY_STATE_LONG_PRESS;
+      } else if (CurrentTime - SW2_PreviousTime > 50) {
+        SW2_Status = KEY_STATE_SHORT_PRESS;
+      }
+    }
+  } else {
+
+    SW2_CurrentState = 1;
+    if (SW2_PreviousState != SW2_CurrentState) {
+
+      SW2_PreviousTime = CurrentTime;
+      SW2_PreviousState = SW2_CurrentState;
+    } else {
+      if (CurrentTime - SW2_PreviousTime > 50) {
+        SW2_Status = KEY_STATE_RELEASE;
+        fKeyRelease_SW2 = 1;
+      }
+    }
+  }
+
+
+  if (SW3_CurrentState == 0) {
+
+    if (SW3_PreviousState != SW3_CurrentState) {
+
+      SW3_PreviousTime = CurrentTime;
+      SW3_PreviousState = SW3_CurrentState;
+    } else {
+
+      if (CurrentTime - SW3_PreviousTime > 1000) {
+        SW3_Status = KEY_STATE_LONG_PRESS;
+      } else if (CurrentTime - SW3_PreviousTime > 50) {
+        SW3_Status = KEY_STATE_SHORT_PRESS;
+      }
+    }
+  } else {
+
+    SW3_CurrentState = 1;
+    if (SW3_PreviousState != SW3_CurrentState) {
+
+      SW3_PreviousTime = CurrentTime;
+      SW3_PreviousState = SW3_CurrentState;
+    } else {
+      if (CurrentTime - SW3_PreviousTime > 50) {
+        SW3_Status = KEY_STATE_RELEASE;
+        fKeyRelease_SW3 = 1;
+      }
+    }
+  }
+
+
+
+
+
 }

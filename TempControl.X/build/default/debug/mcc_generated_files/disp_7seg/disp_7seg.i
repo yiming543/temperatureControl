@@ -4989,9 +4989,9 @@ extern __bank0 __bit __timeout;
 # 1 "mcc_generated_files/disp_7seg/../device_config.h" 1
 # 51 "mcc_generated_files/disp_7seg/../mcc.h" 2
 # 1 "mcc_generated_files/disp_7seg/../pin_manager.h" 1
-# 239 "mcc_generated_files/disp_7seg/../pin_manager.h"
+# 253 "mcc_generated_files/disp_7seg/../pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 251 "mcc_generated_files/disp_7seg/../pin_manager.h"
+# 265 "mcc_generated_files/disp_7seg/../pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 52 "mcc_generated_files/disp_7seg/../mcc.h" 2
 
@@ -5176,23 +5176,24 @@ typedef struct
 typedef enum
 {
     channel_AN0 = 0x0,
+    channel_AN2 = 0x2,
     channel_Temp = 0x1D,
     channel_DAC = 0x1E,
     channel_FVR = 0x1F
 } adc_channel_t;
-# 136 "mcc_generated_files/disp_7seg/../adc.h"
+# 137 "mcc_generated_files/disp_7seg/../adc.h"
 void ADC_Initialize(void);
-# 166 "mcc_generated_files/disp_7seg/../adc.h"
+# 167 "mcc_generated_files/disp_7seg/../adc.h"
 void ADC_SelectChannel(adc_channel_t channel);
-# 193 "mcc_generated_files/disp_7seg/../adc.h"
+# 194 "mcc_generated_files/disp_7seg/../adc.h"
 void ADC_StartConversion(void);
-# 225 "mcc_generated_files/disp_7seg/../adc.h"
+# 226 "mcc_generated_files/disp_7seg/../adc.h"
 _Bool ADC_IsConversionDone(void);
-# 258 "mcc_generated_files/disp_7seg/../adc.h"
+# 259 "mcc_generated_files/disp_7seg/../adc.h"
 adc_result_t ADC_GetConversionResult(void);
-# 288 "mcc_generated_files/disp_7seg/../adc.h"
+# 289 "mcc_generated_files/disp_7seg/../adc.h"
 adc_result_t ADC_GetConversion(adc_channel_t channel);
-# 316 "mcc_generated_files/disp_7seg/../adc.h"
+# 317 "mcc_generated_files/disp_7seg/../adc.h"
 void ADC_TemperatureAcquisitionDelay(void);
 # 57 "mcc_generated_files/disp_7seg/../mcc.h" 2
 # 1 "mcc_generated_files/disp_7seg/../tmr0.h" 1
@@ -5256,27 +5257,30 @@ extern void disp_sub(char disp_temp, unsigned char disp_char);
 
 
 
-extern unsigned long milliseconds;
-extern unsigned char SW1_STATUS;
+extern unsigned long milliSeconds;
+extern unsigned char SW1_Status;
+extern unsigned char SW2_Status;
+extern unsigned char SW3_Status;
 
-extern void key_debounce(void);
-unsigned long get_time_ms(void);
+extern void keyDebounce(void);
+extern unsigned long getTime_ms(void);
+
 
 
 
 
 
 enum KeyState {
-    KEY_STATE_RELEASE,
-    KEY_STATE_SHORT_PRESS,
-    KEY_STATE_LONG_PRESS
+  KEY_STATE_RELEASE,
+  KEY_STATE_SHORT_PRESS,
+  KEY_STATE_LONG_PRESS
 };
 # 61 "mcc_generated_files/disp_7seg/../mcc.h" 2
-# 76 "mcc_generated_files/disp_7seg/../mcc.h"
+# 75 "mcc_generated_files/disp_7seg/../mcc.h"
 void SYSTEM_Initialize(void);
-# 89 "mcc_generated_files/disp_7seg/../mcc.h"
+# 88 "mcc_generated_files/disp_7seg/../mcc.h"
 void OSCILLATOR_Initialize(void);
-# 101 "mcc_generated_files/disp_7seg/../mcc.h"
+# 100 "mcc_generated_files/disp_7seg/../mcc.h"
 void WDT_Initialize(void);
 # 2 "mcc_generated_files/disp_7seg/disp_7seg.c" 2
 

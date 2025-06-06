@@ -3,25 +3,36 @@
 [d edition pro ]
 [d chip 16F1936 ]
 [d frameptr 6 ]
-"17 C:\yiming\work\TempControl.X\mcc_generated_files/key/key.c
-[e E6 KeyState `uc
+"19 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/key/key.c
+[e E8 KeyState `uc
 KEY_STATE_RELEASE 0
 KEY_STATE_SHORT_PRESS 1
 KEY_STATE_LONG_PRESS 2
 ]
-"85 C:\yiming\work\TempControl.X\mcc_generated_files/adc.c
+"85 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/adc.c
 [e E2795 . `uc
 channel_AN0 0
+channel_AN2 2
 channel_Temp 29
 channel_DAC 30
 channel_FVR 31
 ]
-"105 C:\yiming\work\TempControl.X\main.c
-[e E3180 KeyState `uc
+"106 C:\yiming\github\temperatureControl\TempControl.X\main.c
+[e E3128 . `uc
+channel_AN0 0
+channel_AN2 2
+channel_Temp 29
+channel_DAC 30
+channel_FVR 31
+]
+"118
+[e E8 KeyState `uc
 KEY_STATE_RELEASE 0
 KEY_STATE_SHORT_PRESS 1
 KEY_STATE_LONG_PRESS 2
 ]
+"5 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
 "5 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
 "5 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\lwdiv.c
@@ -36,13 +47,19 @@ KEY_STATE_LONG_PRESS 2
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"72 C:\yiming\work\TempControl.X\main.c
+"79 C:\yiming\github\temperatureControl\TempControl.X\main.c
 [v _main main `(i  1 e 2 0 ]
-"117
+"165
 [v _TMR0_timerHandler TMR0_timerHandler `(v  1 e 1 0 ]
-"67 C:\yiming\work\TempControl.X\mcc_generated_files/adc.c
+"183
+[v _chkeckPressKeyNumber chkeckPressKeyNumber `(v  1 e 1 0 ]
+"204
+[v _CalTemperture CalTemperture `(uc  1 e 1 0 ]
+"67 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
-"10 C:\yiming\work\TempControl.X\mcc_generated_files/disp_7seg/disp_7seg.c
+"112
+[v _ADC_GetConversion ADC_GetConversion `(us  1 e 2 0 ]
+"10 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/disp_7seg/disp_7seg.c
 [v _disp_sub disp_sub `(v  1 e 1 0 ]
 "26
 [v _disp_7seg disp_7seg `(v  1 e 1 0 ]
@@ -52,7 +69,7 @@ KEY_STATE_LONG_PRESS 2
 [v _SSLED SSLED `(v  1 e 1 0 ]
 "331
 [v _SSD SSD `(v  1 e 1 0 ]
-"66 C:\yiming\work\TempControl.X\mcc_generated_files/eusart.c
+"66 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
 "144
 [v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
@@ -66,27 +83,27 @@ KEY_STATE_LONG_PRESS 2
 [v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
 "165
 [v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
-"52 C:\yiming\work\TempControl.X\mcc_generated_files/interrupt_manager.c
+"52 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
-"13 C:\yiming\work\TempControl.X\mcc_generated_files/key/key.c
-[v _get_time_ms get_time_ms `(ul  1 e 4 0 ]
-"19
-[v _key_debounce key_debounce `(v  1 e 1 0 ]
-"50 C:\yiming\work\TempControl.X\mcc_generated_files/mcc.c
+"15 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/key/key.c
+[v _getTime_ms getTime_ms `(ul  1 e 4 0 ]
+"23
+[v _keyDebounce keyDebounce `(v  1 e 1 0 ]
+"50 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "61
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "71
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
-"55 C:\yiming\work\TempControl.X\mcc_generated_files/pin_manager.c
+"55 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"64 C:\yiming\work\TempControl.X\mcc_generated_files/tmr0.c
+"64 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 "108
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
 "125
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
-[s S221 . 1 `uc 1 IOCIF 1 0 :1:0 
+[s S231 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 IOCIE 1 0 :1:3 
@@ -96,13 +113,13 @@ KEY_STATE_LONG_PRESS 2
 `uc 1 GIE 1 0 :1:7 
 ]
 "372 C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h
-[s S230 . 1 `uc 1 . 1 0 :2:0 
+[s S240 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 T0IE 1 0 :1:5 
 ]
-[u S235 . 1 `S221 1 . 1 0 `S230 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES235  1 e 1 @11 ]
+[u S245 . 1 `S231 1 . 1 0 `S240 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES245  1 e 1 @11 ]
 [s S183 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
@@ -115,7 +132,7 @@ KEY_STATE_LONG_PRESS 2
 "506
 [u S192 . 1 `S183 1 . 1 0 ]
 [v _PORTBbits PORTBbits `VES192  1 e 1 @13 ]
-[s S514 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S525 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -125,8 +142,8 @@ KEY_STATE_LONG_PRESS 2
 `uc 1 TMR1GIF 1 0 :1:7 
 ]
 "651
-[u S523 . 1 `S514 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES523  1 e 1 @17 ]
+[u S534 . 1 `S525 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES534  1 e 1 @17 ]
 "799
 [v _TMR0 TMR0 `VEuc  1 e 1 @21 ]
 "1220
@@ -163,7 +180,7 @@ KEY_STATE_LONG_PRESS 2
 [v _TRISE TRISE `VEuc  1 e 1 @144 ]
 "1592
 [v _OPTION_REG OPTION_REG `VEuc  1 e 1 @149 ]
-[s S425 . 1 `uc 1 PS0 1 0 :1:0 
+[s S436 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 `uc 1 PSA 1 0 :1:3 
@@ -173,13 +190,13 @@ KEY_STATE_LONG_PRESS 2
 `uc 1 nWPUEN 1 0 :1:7 
 ]
 "1615
-[s S434 . 1 `uc 1 PS 1 0 :3:0 
+[s S445 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
 ]
-[u S439 . 1 `S425 1 . 1 0 `S434 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES439  1 e 1 @149 ]
+[u S450 . 1 `S436 1 . 1 0 `S445 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES450  1 e 1 @149 ]
 "1726
 [v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
 "1785
@@ -192,12 +209,12 @@ KEY_STATE_LONG_PRESS 2
 [v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
 "2024
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
-[s S356 . 1 `uc 1 ADON 1 0 :1:0 
+[s S367 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :5:2 
 ]
 "2053
-[s S360 . 1 `uc 1 . 1 0 :1:0 
+[s S371 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADGO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -205,14 +222,14 @@ KEY_STATE_LONG_PRESS 2
 `uc 1 CHS3 1 0 :1:5 
 `uc 1 CHS4 1 0 :1:6 
 ]
-[s S368 . 1 `uc 1 . 1 0 :1:0 
+[s S379 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[s S371 . 1 `uc 1 . 1 0 :1:0 
+[s S382 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[u S374 . 1 `S356 1 . 1 0 `S360 1 . 1 0 `S368 1 . 1 0 `S371 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES374  1 e 1 @157 ]
+[u S385 . 1 `S367 1 . 1 0 `S371 1 . 1 0 `S379 1 . 1 0 `S382 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES385  1 e 1 @157 ]
 "2113
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
 "2185
@@ -265,7 +282,7 @@ KEY_STATE_LONG_PRESS 2
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @412 ]
 "3518
 [v _RCSTA RCSTA `VEuc  1 e 1 @413 ]
-[s S556 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S567 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -275,11 +292,11 @@ KEY_STATE_LONG_PRESS 2
 `uc 1 SPEN 1 0 :1:7 
 ]
 "3535
-[u S565 . 1 `S556 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES565  1 e 1 @413 ]
+[u S576 . 1 `S567 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES576  1 e 1 @413 ]
 "3580
 [v _TXSTA TXSTA `VEuc  1 e 1 @414 ]
-[s S535 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S546 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -289,68 +306,102 @@ KEY_STATE_LONG_PRESS 2
 `uc 1 CSRC 1 0 :1:7 
 ]
 "3597
-[u S544 . 1 `S535 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES544  1 e 1 @414 ]
+[u S555 . 1 `S546 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES555  1 e 1 @414 ]
 "3642
 [v _BAUDCON BAUDCON `VEuc  1 e 1 @415 ]
 "3694
 [v _WPUB WPUB `VEuc  1 e 1 @525 ]
 "3764
 [v _WPUE WPUE `VEuc  1 e 1 @528 ]
-"52 C:\yiming\work\TempControl.X\main.c
-[v _milliseconds milliseconds `ul  1 e 4 0 ]
-"55
-[v _T250ms T250ms `ui  1 e 2 0 ]
+"55 C:\yiming\github\temperatureControl\TempControl.X\main.c
+[v _milliSeconds milliSeconds `ul  1 e 4 0 ]
 "56
-[v _T500ms T500ms `ui  1 e 2 0 ]
+[v _t250ms t250ms `ui  1 e 2 0 ]
 "57
-[v _T1000ms T1000ms `ui  1 e 2 0 ]
+[v _t500ms t500ms `ui  1 e 2 0 ]
 "58
-[v _temp_cnt temp_cnt `uc  1 e 1 0 ]
-"59
-[v _flag_Key_release flag_Key_release `uc  1 e 1 0 ]
-[s S468 . 1 `uc 1 perr 1 0 :1:0 
+[v _t1000ms t1000ms `ui  1 e 2 0 ]
+"60
+[v _tempCnt tempCnt `uc  1 e 1 0 ]
+"61
+[v _fKeyRelease_SW1 fKeyRelease_SW1 `uc  1 e 1 0 ]
+"62
+[v _fKeyRelease_SW2 fKeyRelease_SW2 `uc  1 e 1 0 ]
+"63
+[v _fKeyRelease_SW3 fKeyRelease_SW3 `uc  1 e 1 0 ]
+"65
+[v _SW2_LongPressTime SW2_LongPressTime `ul  1 e 4 0 ]
+"66
+[v _SW3_LongPressTime SW3_LongPressTime `ul  1 e 4 0 ]
+"67
+[v _longPressCurrentTime longPressCurrentTime `ul  1 e 4 0 ]
+"69
+[v _fTooManyKeyPress fTooManyKeyPress `uc  1 e 1 0 ]
+"70
+[v _adc_result adc_result `us  1 e 2 0 ]
+"71
+[v _temperture temperture `uc  1 e 1 0 ]
+[s S479 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
 `uc 1 reserved 1 0 :5:3 
 ]
-"52 C:\yiming\work\TempControl.X\mcc_generated_files/eusart.c
-[u S473 . 1 `S468 1 . 1 0 `uc 1 status 1 0 ]
-[v _eusartRxLastError eusartRxLastError `VES473  1 e 1 0 ]
+"52 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/eusart.c
+[u S484 . 1 `S479 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusartRxLastError eusartRxLastError `VES484  1 e 1 0 ]
 "58
 [v _EUSART_FramingErrorHandler EUSART_FramingErrorHandler `*.37(v  1 e 2 0 ]
 "59
 [v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
 "60
 [v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
-"17 C:\yiming\work\TempControl.X\mcc_generated_files/key/key.c
-[v _SW1_STATUS SW1_STATUS `uc  1 e 1 0 ]
-"58 C:\yiming\work\TempControl.X\mcc_generated_files/tmr0.c
+"19 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/key/key.c
+[v _SW1_Status SW1_Status `uc  1 e 1 0 ]
+"20
+[v _SW2_Status SW2_Status `uc  1 e 1 0 ]
+"21
+[v _SW3_Status SW3_Status `uc  1 e 1 0 ]
+"58 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/tmr0.c
 [v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
 "59
 [v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
-"72 C:\yiming\work\TempControl.X\main.c
+"79 C:\yiming\github\temperatureControl\TempControl.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"115
+"163
 } 0
-"19 C:\yiming\work\TempControl.X\mcc_generated_files/key/key.c
-[v _key_debounce key_debounce `(v  1 e 1 0 ]
+"23 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/key/key.c
+[v _keyDebounce keyDebounce `(v  1 e 1 0 ]
 {
+"36
+[v keyDebounce@CurrentTime CurrentTime `ul  1 a 4 3 ]
+"33
+[v keyDebounce@SW3_CurrentState SW3_CurrentState `uc  1 a 1 2 ]
+"29
+[v keyDebounce@SW2_CurrentState SW2_CurrentState `uc  1 a 1 1 ]
+"25
+[v keyDebounce@SW1_CurrentState SW1_CurrentState `uc  1 a 1 0 ]
 "24
-[v key_debounce@current_time current_time `ul  1 a 4 8 ]
-"20
-[v key_debounce@previous_time previous_time `l  1 s 4 previous_time ]
-"21
-[v key_debounce@sw1_previous_state sw1_previous_state `uc  1 s 1 sw1_previous_state ]
-"50
+[v keyDebounce@SW1_PreviousTime SW1_PreviousTime `ul  1 s 4 SW1_PreviousTime ]
+"26
+[v keyDebounce@SW1_PreviousState SW1_PreviousState `uc  1 s 1 SW1_PreviousState ]
+"28
+[v keyDebounce@SW2_PreviousTime SW2_PreviousTime `ul  1 s 4 SW2_PreviousTime ]
+"30
+[v keyDebounce@SW2_PreviousState SW2_PreviousState `uc  1 s 1 SW2_PreviousState ]
+"32
+[v keyDebounce@SW3_PreviousTime SW3_PreviousTime `ul  1 s 4 SW3_PreviousTime ]
+"34
+[v keyDebounce@SW3_PreviousState SW3_PreviousState `uc  1 s 1 SW3_PreviousState ]
+"139
 } 0
-"13
-[v _get_time_ms get_time_ms `(ul  1 e 4 0 ]
-{
 "15
+[v _getTime_ms getTime_ms `(ul  1 e 4 0 ]
+{
+"17
 } 0
-"10 C:\yiming\work\TempControl.X\mcc_generated_files/disp_7seg/disp_7seg.c
+"10 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/disp_7seg/disp_7seg.c
 [v _disp_sub disp_sub `(v  1 e 1 0 ]
 {
 [v disp_sub@disp_temp disp_temp `uc  1 p 1 wreg ]
@@ -436,7 +487,14 @@ KEY_STATE_LONG_PRESS 2
 [v ___awmod@dividend dividend `i  1 p 2 2 ]
 "34
 } 0
-"50 C:\yiming\work\TempControl.X\mcc_generated_files/mcc.c
+"183 C:\yiming\github\temperatureControl\TempControl.X\main.c
+[v _chkeckPressKeyNumber chkeckPressKeyNumber `(v  1 e 1 0 ]
+{
+"184
+[v chkeckPressKeyNumber@keyCnt keyCnt `uc  1 a 1 0 ]
+"202
+} 0
+"50 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "59
@@ -446,7 +504,7 @@ KEY_STATE_LONG_PRESS 2
 {
 "75
 } 0
-"64 C:\yiming\work\TempControl.X\mcc_generated_files/tmr0.c
+"64 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 {
 "85
@@ -457,17 +515,17 @@ KEY_STATE_LONG_PRESS 2
 [v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "127
 } 0
-"55 C:\yiming\work\TempControl.X\mcc_generated_files/pin_manager.c
+"55 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "97
 } 0
-"61 C:\yiming\work\TempControl.X\mcc_generated_files/mcc.c
+"61 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "69
 } 0
-"66 C:\yiming\work\TempControl.X\mcc_generated_files/eusart.c
+"66 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
 {
 "92
@@ -490,23 +548,56 @@ KEY_STATE_LONG_PRESS 2
 [v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
 "167
 } 0
-"67 C:\yiming\work\TempControl.X\mcc_generated_files/adc.c
+"67 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
 {
 "83
 } 0
-"52 C:\yiming\work\TempControl.X\mcc_generated_files/interrupt_manager.c
+"204 C:\yiming\github\temperatureControl\TempControl.X\main.c
+[v _CalTemperture CalTemperture `(uc  1 e 1 0 ]
+{
+"205
+[v CalTemperture@temp temp `i  1 a 2 2 ]
+"206
+[v CalTemperture@NTC NTC `i  1 a 2 0 ]
+"204
+[v CalTemperture@NTC_Value NTC_Value `us  1 p 2 8 ]
+"220
+} 0
+"5 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"41
+} 0
+"112 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/adc.c
+[v _ADC_GetConversion ADC_GetConversion `(us  1 e 2 0 ]
+{
+[v ADC_GetConversion@channel channel `E2795  1 p 1 wreg ]
+[v ADC_GetConversion@channel channel `E2795  1 p 1 wreg ]
+"115
+[v ADC_GetConversion@channel channel `E2795  1 p 1 3 ]
+"133
+} 0
+"52 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
 "63
 } 0
-"108 C:\yiming\work\TempControl.X\mcc_generated_files/tmr0.c
+"108 C:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files/tmr0.c
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
 {
 "122
 } 0
-"117 C:\yiming\work\TempControl.X\main.c
+"165 C:\yiming\github\temperatureControl\TempControl.X\main.c
 [v _TMR0_timerHandler TMR0_timerHandler `(v  1 e 1 0 ]
 {
-"133
+"181
 } 0

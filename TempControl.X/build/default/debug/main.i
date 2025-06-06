@@ -7,7 +7,31 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 49 "main.c"
+# 47 "main.c"
+# 1 "./mcc_generated_files/key/key.h" 1
+
+
+
+
+extern unsigned long milliSeconds;
+extern unsigned char SW1_Status;
+extern unsigned char SW2_Status;
+extern unsigned char SW3_Status;
+
+extern void keyDebounce(void);
+extern unsigned long getTime_ms(void);
+
+
+
+
+
+
+enum KeyState {
+  KEY_STATE_RELEASE,
+  KEY_STATE_SHORT_PRESS,
+  KEY_STATE_LONG_PRESS
+};
+# 48 "main.c" 2
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 1 3
@@ -4990,9 +5014,9 @@ extern __bank0 __bit __timeout;
 # 1 "./mcc_generated_files/device_config.h" 1
 # 51 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 239 "./mcc_generated_files/pin_manager.h"
+# 253 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 251 "./mcc_generated_files/pin_manager.h"
+# 265 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 52 "./mcc_generated_files/mcc.h" 2
 
@@ -5177,23 +5201,24 @@ typedef struct
 typedef enum
 {
     channel_AN0 = 0x0,
+    channel_AN2 = 0x2,
     channel_Temp = 0x1D,
     channel_DAC = 0x1E,
     channel_FVR = 0x1F
 } adc_channel_t;
-# 136 "./mcc_generated_files/adc.h"
+# 137 "./mcc_generated_files/adc.h"
 void ADC_Initialize(void);
-# 166 "./mcc_generated_files/adc.h"
+# 167 "./mcc_generated_files/adc.h"
 void ADC_SelectChannel(adc_channel_t channel);
-# 193 "./mcc_generated_files/adc.h"
+# 194 "./mcc_generated_files/adc.h"
 void ADC_StartConversion(void);
-# 225 "./mcc_generated_files/adc.h"
+# 226 "./mcc_generated_files/adc.h"
 _Bool ADC_IsConversionDone(void);
-# 258 "./mcc_generated_files/adc.h"
+# 259 "./mcc_generated_files/adc.h"
 adc_result_t ADC_GetConversionResult(void);
-# 288 "./mcc_generated_files/adc.h"
+# 289 "./mcc_generated_files/adc.h"
 adc_result_t ADC_GetConversion(adc_channel_t channel);
-# 316 "./mcc_generated_files/adc.h"
+# 317 "./mcc_generated_files/adc.h"
 void ADC_TemperatureAcquisitionDelay(void);
 # 57 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/tmr0.h" 1
@@ -5252,96 +5277,186 @@ void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 
 extern void disp_sub(char disp_temp, unsigned char disp_char);
 # 60 "./mcc_generated_files/mcc.h" 2
-# 1 "./mcc_generated_files/key\\key.h" 1
-
-
-
-
-extern unsigned long milliseconds;
-extern unsigned char SW1_STATUS;
-
-extern void key_debounce(void);
-unsigned long get_time_ms(void);
-
-
-
-
-
-enum KeyState {
-    KEY_STATE_RELEASE,
-    KEY_STATE_SHORT_PRESS,
-    KEY_STATE_LONG_PRESS
-};
-# 61 "./mcc_generated_files/mcc.h" 2
-# 76 "./mcc_generated_files/mcc.h"
+# 75 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 89 "./mcc_generated_files/mcc.h"
+# 88 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 101 "./mcc_generated_files/mcc.h"
+# 100 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
-# 50 "main.c" 2
- void TMR0_timerHandler(void);
+# 49 "main.c" 2
 
-unsigned long milliseconds =0;
-unsigned long current_time =0;
-unsigned long last_time =0;
-unsigned int T250ms =0;
-unsigned int T500ms =0;
-unsigned int T1000ms =0;
-unsigned char temp_cnt =0;
-unsigned char flag_Key_release=1;
-# 72 "main.c"
-int main(void)
-{
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/limits.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/limits.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/limits.h" 1 3
+# 11 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/limits.h" 2 3
+# 51 "main.c" 2
+void TMR0_timerHandler(void);
+void chkeckPressKeyNumber(void);
+unsigned char CalTemperture(adc_result_t NTC_Value);
 
-    SYSTEM_Initialize();
-    TMR0_SetInterruptHandler(TMR0_timerHandler);
+unsigned long milliSeconds = 0;
+unsigned int t250ms = 0;
+unsigned int t500ms = 0;
+unsigned int t1000ms = 0;
 
+unsigned char tempCnt = 0;
+unsigned char fKeyRelease_SW1 = 1;
+unsigned char fKeyRelease_SW2 = 1;
+unsigned char fKeyRelease_SW3 = 1;
 
+unsigned long SW2_LongPressTime = 0x7fffffffL;
+unsigned long SW3_LongPressTime = 0x7fffffffL;
+unsigned long longPressCurrentTime;
 
-
-
-    (INTCONbits.GIE = 1);
-
-
-    (INTCONbits.PEIE = 1);
-
-
-
-
+unsigned char fTooManyKeyPress = 0;
+adc_result_t adc_result;
+unsigned char temperture;
 
 
 
-    while (1)
-    {
-# 104 "main.c"
-        key_debounce();
-        if((SW1_STATUS==KEY_STATE_SHORT_PRESS)&&(flag_Key_release==1))
-        {
-            temp_cnt++;
-            flag_Key_release = 0 ;
+
+
+
+
+int main(void) {
+
+  SYSTEM_Initialize();
+  TMR0_SetInterruptHandler(TMR0_timerHandler);
+
+
+  (INTCONbits.GIE = 1);
+
+  (INTCONbits.PEIE = 1);
+
+
+
+
+
+  (INTCONbits.GIE = 1);
+
+
+  (INTCONbits.PEIE = 1);
+
+
+
+
+
+
+
+  while (1) {
+
+    adc_result = ADC_GetConversion(channel_AN0);
+    temperture = CalTemperture(adc_result);
+
+
+    keyDebounce();
+    longPressCurrentTime = getTime_ms();
+    chkeckPressKeyNumber();
+
+
+    if (fTooManyKeyPress == 0) {
+
+
+      if ((SW1_Status == KEY_STATE_SHORT_PRESS) &&
+          (fKeyRelease_SW1 == 1)) {
+        tempCnt++;
+        fKeyRelease_SW1 = 0;
+      }
+
+
+      if ((SW2_Status == KEY_STATE_SHORT_PRESS) &&
+          (fKeyRelease_SW2 == 1)) {
+        tempCnt++;
+        fKeyRelease_SW2 = 0;
+      }
+
+
+      if (SW2_Status == KEY_STATE_LONG_PRESS) {
+        if (longPressCurrentTime - SW2_LongPressTime > 100) {
+          if (tempCnt < 99) {
+            tempCnt++;
+          }
+          SW2_LongPressTime = longPressCurrentTime;
         }
-        disp_sub(temp_cnt,11);
+      }
 
+      if ((SW3_Status == KEY_STATE_SHORT_PRESS) &&
+          (fKeyRelease_SW3 == 1)) {
+        tempCnt--;
+        fKeyRelease_SW3 = 0;
+      }
+
+
+      if (SW3_Status == KEY_STATE_LONG_PRESS) {
+        if (longPressCurrentTime - SW3_LongPressTime > 100) {
+          if (tempCnt > 0) {
+            tempCnt--;
+          }
+          SW3_LongPressTime = longPressCurrentTime;
+        }
+      }
     }
 
-    return 0;
+
+    disp_sub(temperture, 11);
+  }
+
+  return 0;
 }
 
-void TMR0_timerHandler(void){
+void TMR0_timerHandler(void) {
 
 
-    milliseconds++;
-    T500ms++;
-    T250ms++;
-    T1000ms++;
-    if(T250ms > 250){
-        T250ms =0;
+  milliSeconds++;
+  t500ms++;
+  t250ms++;
+  t1000ms++;
+  if (t250ms > 250) {
+    t250ms = 0;
 
-    }
+  }
 
-    if(T500ms > 500){
-        T500ms =0;
+  if (t500ms > 500) {
+    t500ms = 0;
 
-    }
+  }
+}
+
+void chkeckPressKeyNumber(void) {
+  unsigned char keyCnt = 0;
+  if ((SW1_Status == KEY_STATE_SHORT_PRESS) ||
+      (SW1_Status == KEY_STATE_LONG_PRESS)) {
+    keyCnt++;
+  }
+  if ((SW2_Status == KEY_STATE_SHORT_PRESS) ||
+      (SW2_Status == KEY_STATE_LONG_PRESS)) {
+    keyCnt++;
+  }
+  if ((SW3_Status == KEY_STATE_SHORT_PRESS) ||
+      (SW3_Status == KEY_STATE_LONG_PRESS)) {
+    keyCnt++;
+  }
+  if (keyCnt > 1) {
+    fTooManyKeyPress = 1;
+  } else {
+    fTooManyKeyPress = 0;
+  }
+}
+
+unsigned char CalTemperture(adc_result_t NTC_Value) {
+  int temp;
+  int NTC = NTC_Value & 0x3FF;
+
+  temp= 511-NTC;
+  temp= 250+temp;
+  temp = temp/10;
+
+
+  if (temp > 99)
+    temp = 99;
+
+  if (temp < 0)
+    temp = 0;
+
+  return (temp & 0xff);
 }

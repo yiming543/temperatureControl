@@ -1,11 +1,11 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "5 mcc_generated_files/key/key.h
-[; ;mcc_generated_files/key/key.h: 5: extern unsigned long milliseconds;
-[v _milliseconds `ul ~T0 @X0 0 e ]
-"17 mcc_generated_files/key/key.c
-[; ;mcc_generated_files/key/key.c: 17: unsigned char SW1_STATUS = KEY_STATE_RELEASE;
-[c E6 0 1 2 .. ]
-[n E6 KeyState KEY_STATE_RELEASE KEY_STATE_SHORT_PRESS KEY_STATE_LONG_PRESS  ]
+[; ;mcc_generated_files/key/key.h: 5: extern unsigned long milliSeconds;
+[v _milliSeconds `ul ~T0 @X0 0 e ]
+"19 mcc_generated_files/key/key.c
+[; ;mcc_generated_files/key/key.c: 19: unsigned char SW1_Status = KEY_STATE_RELEASE;
+[c E8 0 1 2 .. ]
+[n E8 KeyState KEY_STATE_RELEASE KEY_STATE_SHORT_PRESS KEY_STATE_LONG_PRESS  ]
 "495 C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h
 [; ;C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h: 495:     struct {
 [s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -18,8 +18,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h: 506: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x00D)));
 [v _PORTBbits `VS35 ~T0 @X0 0 e@13 ]
 "11 mcc_generated_files/key/key.c
-[; ;mcc_generated_files/key/key.c: 11: extern unsigned char flag_Key_release;
-[v _flag_Key_release `uc ~T0 @X0 0 e ]
+[; ;mcc_generated_files/key/key.c: 11: extern unsigned char fKeyRelease_SW1;
+[v _fKeyRelease_SW1 `uc ~T0 @X0 0 e ]
+"12
+[; ;mcc_generated_files/key/key.c: 12: extern unsigned char fKeyRelease_SW2;
+[v _fKeyRelease_SW2 `uc ~T0 @X0 0 e ]
+"13
+[; ;mcc_generated_files/key/key.c: 13: extern unsigned char fKeyRelease_SW3;
+[v _fKeyRelease_SW3 `uc ~T0 @X0 0 e ]
 "52 C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h
 [; ;C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h: 52: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -515,145 +521,373 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7359
 [; ;C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h: 7359: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"13 mcc_generated_files/key/key.c
-[; ;mcc_generated_files/key/key.c: 13: unsigned long get_time_ms(void) {
-[v _get_time_ms `(ul ~T0 @X0 1 ef ]
+"15 mcc_generated_files/key/key.c
+[; ;mcc_generated_files/key/key.c: 15: unsigned long getTime_ms(void) {
+[v _getTime_ms `(ul ~T0 @X0 1 ef ]
 {
-[e :U _get_time_ms ]
+[e :U _getTime_ms ]
 [f ]
-"14
-[; ;mcc_generated_files/key/key.c: 14:   return milliseconds;
-[e ) _milliseconds ]
+"16
+[; ;mcc_generated_files/key/key.c: 16:   return milliSeconds;
+[e ) _milliSeconds ]
 [e $UE 373  ]
-"15
-[; ;mcc_generated_files/key/key.c: 15: }
+"17
+[; ;mcc_generated_files/key/key.c: 17: }
 [e :UE 373 ]
 }
-"17
-[; ;mcc_generated_files/key/key.c: 17: unsigned char SW1_STATUS = KEY_STATE_RELEASE;
-[v _SW1_STATUS `uc ~T0 @X0 1 e ]
-[i _SW1_STATUS
--> . `E6 0 `uc
-]
 "19
-[; ;mcc_generated_files/key/key.c: 19: void key_debounce(void) {
-[v _key_debounce `(v ~T0 @X0 1 ef ]
-{
-[e :U _key_debounce ]
-[f ]
+[; ;mcc_generated_files/key/key.c: 19: unsigned char SW1_Status = KEY_STATE_RELEASE;
+[v _SW1_Status `uc ~T0 @X0 1 e ]
+[i _SW1_Status
+-> . `E8 0 `uc
+]
 "20
-[; ;mcc_generated_files/key/key.c: 20:   static long previous_time;
-[v F3191 `l ~T0 @X0 1 s previous_time ]
+[; ;mcc_generated_files/key/key.c: 20: unsigned char SW2_Status = KEY_STATE_RELEASE;
+[v _SW2_Status `uc ~T0 @X0 1 e ]
+[i _SW2_Status
+-> . `E8 0 `uc
+]
 "21
-[; ;mcc_generated_files/key/key.c: 21:   static unsigned char sw1_previous_state = 1;
-[v F3192 `uc ~T0 @X0 1 s sw1_previous_state ]
-[i F3192
+[; ;mcc_generated_files/key/key.c: 21: unsigned char SW3_Status = KEY_STATE_RELEASE;
+[v _SW3_Status `uc ~T0 @X0 1 e ]
+[i _SW3_Status
+-> . `E8 0 `uc
+]
+"23
+[; ;mcc_generated_files/key/key.c: 23: void keyDebounce(void) {
+[v _keyDebounce `(v ~T0 @X0 1 ef ]
+{
+[e :U _keyDebounce ]
+[f ]
+"24
+[; ;mcc_generated_files/key/key.c: 24:   static unsigned long SW1_PreviousTime;
+[v F3198 `ul ~T0 @X0 1 s SW1_PreviousTime ]
+"25
+[; ;mcc_generated_files/key/key.c: 25:   unsigned char SW1_CurrentState;
+[v _SW1_CurrentState `uc ~T0 @X0 1 a ]
+"26
+[; ;mcc_generated_files/key/key.c: 26:   static unsigned char SW1_PreviousState = 1;
+[v F3200 `uc ~T0 @X0 1 s SW1_PreviousState ]
+[i F3200
 -> -> 1 `i `uc
 ]
-"22
-[; ;mcc_generated_files/key/key.c: 22:   unsigned char sw1_current_state;
-[v _sw1_current_state `uc ~T0 @X0 1 a ]
-"24
-[; ;mcc_generated_files/key/key.c: 24:   unsigned long current_time = get_time_ms();
-[v _current_time `ul ~T0 @X0 1 a ]
-[e = _current_time ( _get_time_ms ..  ]
-"26
-[; ;mcc_generated_files/key/key.c: 26:   if (PORTBbits.RB1 == 0) {
-[e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 375  ]
-{
-"27
-[; ;mcc_generated_files/key/key.c: 27:     sw1_current_state = 0;
-[e = _sw1_current_state -> -> 0 `i `uc ]
 "28
-[; ;mcc_generated_files/key/key.c: 28:     if (sw1_previous_state != sw1_current_state) {
-[e $ ! != -> F3192 `i -> _sw1_current_state `i 376  ]
-{
+[; ;mcc_generated_files/key/key.c: 28:   static unsigned long SW2_PreviousTime;
+[v F3201 `ul ~T0 @X0 1 s SW2_PreviousTime ]
 "29
-[; ;mcc_generated_files/key/key.c: 29:       previous_time = current_time;
-[e = F3191 -> _current_time `l ]
+[; ;mcc_generated_files/key/key.c: 29:   unsigned char SW2_CurrentState;
+[v _SW2_CurrentState `uc ~T0 @X0 1 a ]
 "30
-[; ;mcc_generated_files/key/key.c: 30:       sw1_previous_state = sw1_current_state;
-[e = F3192 _sw1_current_state ]
-"31
-[; ;mcc_generated_files/key/key.c: 31:     } else {
+[; ;mcc_generated_files/key/key.c: 30:   static unsigned char SW2_PreviousState = 1;
+[v F3203 `uc ~T0 @X0 1 s SW2_PreviousState ]
+[i F3203
+-> -> 1 `i `uc
+]
+"32
+[; ;mcc_generated_files/key/key.c: 32:   static unsigned long SW3_PreviousTime;
+[v F3204 `ul ~T0 @X0 1 s SW3_PreviousTime ]
+"33
+[; ;mcc_generated_files/key/key.c: 33:   unsigned char SW3_CurrentState;
+[v _SW3_CurrentState `uc ~T0 @X0 1 a ]
+"34
+[; ;mcc_generated_files/key/key.c: 34:   static unsigned char SW3_PreviousState = 1;
+[v F3206 `uc ~T0 @X0 1 s SW3_PreviousState ]
+[i F3206
+-> -> 1 `i `uc
+]
+"36
+[; ;mcc_generated_files/key/key.c: 36:   unsigned long CurrentTime = getTime_ms();
+[v _CurrentTime `ul ~T0 @X0 1 a ]
+[e = _CurrentTime ( _getTime_ms ..  ]
+"39
+[; ;mcc_generated_files/key/key.c: 39:   SW1_CurrentState = PORTBbits.RB1;
+[e = _SW1_CurrentState . . _PORTBbits 0 1 ]
+"40
+[; ;mcc_generated_files/key/key.c: 40:   SW2_CurrentState = PORTBbits.RB2;
+[e = _SW2_CurrentState . . _PORTBbits 0 2 ]
+"41
+[; ;mcc_generated_files/key/key.c: 41:   SW3_CurrentState = PORTBbits.RB3;
+[e = _SW3_CurrentState . . _PORTBbits 0 3 ]
+"46
+[; ;mcc_generated_files/key/key.c: 46:   if (SW1_CurrentState == 0) {
+[e $ ! == -> _SW1_CurrentState `i -> 0 `i 375  ]
+{
+"48
+[; ;mcc_generated_files/key/key.c: 48:     if (SW1_PreviousState != SW1_CurrentState) {
+[e $ ! != -> F3200 `i -> _SW1_CurrentState `i 376  ]
+{
+"50
+[; ;mcc_generated_files/key/key.c: 50:       SW1_PreviousTime = CurrentTime;
+[e = F3198 _CurrentTime ]
+"51
+[; ;mcc_generated_files/key/key.c: 51:       SW1_PreviousState = SW1_CurrentState;
+[e = F3200 _SW1_CurrentState ]
+"52
+[; ;mcc_generated_files/key/key.c: 52:     } else {
 }
 [e $U 377  ]
 [e :U 376 ]
 {
-"32
-[; ;mcc_generated_files/key/key.c: 32:       if (current_time - previous_time > 1000) {
-[e $ ! > - _current_time -> F3191 `ul -> -> -> 1000 `i `l `ul 378  ]
+"54
+[; ;mcc_generated_files/key/key.c: 54:       if (CurrentTime - SW1_PreviousTime > 1000) {
+[e $ ! > - _CurrentTime F3198 -> -> -> 1000 `i `l `ul 378  ]
 {
-"33
-[; ;mcc_generated_files/key/key.c: 33:         SW1_STATUS = KEY_STATE_LONG_PRESS;
-[e = _SW1_STATUS -> . `E6 2 `uc ]
-"34
-[; ;mcc_generated_files/key/key.c: 34:       } else if (current_time - previous_time > 50) {
+"55
+[; ;mcc_generated_files/key/key.c: 55:         SW1_Status = KEY_STATE_LONG_PRESS;
+[e = _SW1_Status -> . `E8 2 `uc ]
+"56
+[; ;mcc_generated_files/key/key.c: 56:       } else if (CurrentTime - SW1_PreviousTime > 50) {
 }
 [e $U 379  ]
 [e :U 378 ]
-[e $ ! > - _current_time -> F3191 `ul -> -> -> 50 `i `l `ul 380  ]
+[e $ ! > - _CurrentTime F3198 -> -> -> 50 `i `l `ul 380  ]
 {
-"35
-[; ;mcc_generated_files/key/key.c: 35:         SW1_STATUS = KEY_STATE_SHORT_PRESS;
-[e = _SW1_STATUS -> . `E6 1 `uc ]
-"36
-[; ;mcc_generated_files/key/key.c: 36:       }
+"57
+[; ;mcc_generated_files/key/key.c: 57:         SW1_Status = KEY_STATE_SHORT_PRESS;
+[e = _SW1_Status -> . `E8 1 `uc ]
+"58
+[; ;mcc_generated_files/key/key.c: 58:       }
 }
 [e :U 380 ]
 [e :U 379 ]
-"37
-[; ;mcc_generated_files/key/key.c: 37:     }
+"59
+[; ;mcc_generated_files/key/key.c: 59:     }
 }
 [e :U 377 ]
-"38
-[; ;mcc_generated_files/key/key.c: 38:   } else {
+"60
+[; ;mcc_generated_files/key/key.c: 60:   } else {
 }
 [e $U 381  ]
 [e :U 375 ]
 {
-"39
-[; ;mcc_generated_files/key/key.c: 39:     sw1_current_state = 1;
-[e = _sw1_current_state -> -> 1 `i `uc ]
-"40
-[; ;mcc_generated_files/key/key.c: 40:     if (sw1_previous_state != sw1_current_state) {
-[e $ ! != -> F3192 `i -> _sw1_current_state `i 382  ]
+"62
+[; ;mcc_generated_files/key/key.c: 62:     SW1_CurrentState = 1;
+[e = _SW1_CurrentState -> -> 1 `i `uc ]
+"63
+[; ;mcc_generated_files/key/key.c: 63:     if (SW1_PreviousState != SW1_CurrentState) {
+[e $ ! != -> F3200 `i -> _SW1_CurrentState `i 382  ]
 {
-"41
-[; ;mcc_generated_files/key/key.c: 41:       previous_time = current_time;
-[e = F3191 -> _current_time `l ]
-"42
-[; ;mcc_generated_files/key/key.c: 42:       sw1_previous_state = sw1_current_state;
-[e = F3192 _sw1_current_state ]
-"43
-[; ;mcc_generated_files/key/key.c: 43:     } else {
+"65
+[; ;mcc_generated_files/key/key.c: 65:       SW1_PreviousTime = CurrentTime;
+[e = F3198 _CurrentTime ]
+"66
+[; ;mcc_generated_files/key/key.c: 66:       SW1_PreviousState = SW1_CurrentState;
+[e = F3200 _SW1_CurrentState ]
+"67
+[; ;mcc_generated_files/key/key.c: 67:     } else {
 }
 [e $U 383  ]
 [e :U 382 ]
 {
-"44
-[; ;mcc_generated_files/key/key.c: 44:       if (current_time - previous_time > 50) {
-[e $ ! > - _current_time -> F3191 `ul -> -> -> 50 `i `l `ul 384  ]
+"68
+[; ;mcc_generated_files/key/key.c: 68:       if (CurrentTime - SW1_PreviousTime > 50) {
+[e $ ! > - _CurrentTime F3198 -> -> -> 50 `i `l `ul 384  ]
 {
-"45
-[; ;mcc_generated_files/key/key.c: 45:         SW1_STATUS = KEY_STATE_RELEASE;
-[e = _SW1_STATUS -> . `E6 0 `uc ]
-"46
-[; ;mcc_generated_files/key/key.c: 46:         flag_Key_release = 1;
-[e = _flag_Key_release -> -> 1 `i `uc ]
-"47
-[; ;mcc_generated_files/key/key.c: 47:       }
+"69
+[; ;mcc_generated_files/key/key.c: 69:         SW1_Status = KEY_STATE_RELEASE;
+[e = _SW1_Status -> . `E8 0 `uc ]
+"70
+[; ;mcc_generated_files/key/key.c: 70:         fKeyRelease_SW1 = 1;
+[e = _fKeyRelease_SW1 -> -> 1 `i `uc ]
+"71
+[; ;mcc_generated_files/key/key.c: 71:       }
 }
 [e :U 384 ]
-"48
-[; ;mcc_generated_files/key/key.c: 48:     }
+"72
+[; ;mcc_generated_files/key/key.c: 72:     }
 }
 [e :U 383 ]
-"49
-[; ;mcc_generated_files/key/key.c: 49:   }
+"73
+[; ;mcc_generated_files/key/key.c: 73:   }
 }
 [e :U 381 ]
-"50
-[; ;mcc_generated_files/key/key.c: 50: }
+"76
+[; ;mcc_generated_files/key/key.c: 76:   if (SW2_CurrentState == 0) {
+[e $ ! == -> _SW2_CurrentState `i -> 0 `i 385  ]
+{
+"78
+[; ;mcc_generated_files/key/key.c: 78:     if (SW2_PreviousState != SW2_CurrentState) {
+[e $ ! != -> F3203 `i -> _SW2_CurrentState `i 386  ]
+{
+"80
+[; ;mcc_generated_files/key/key.c: 80:       SW2_PreviousTime = CurrentTime;
+[e = F3201 _CurrentTime ]
+"81
+[; ;mcc_generated_files/key/key.c: 81:       SW2_PreviousState = SW2_CurrentState;
+[e = F3203 _SW2_CurrentState ]
+"82
+[; ;mcc_generated_files/key/key.c: 82:     } else {
+}
+[e $U 387  ]
+[e :U 386 ]
+{
+"84
+[; ;mcc_generated_files/key/key.c: 84:       if (CurrentTime - SW2_PreviousTime > 1000) {
+[e $ ! > - _CurrentTime F3201 -> -> -> 1000 `i `l `ul 388  ]
+{
+"85
+[; ;mcc_generated_files/key/key.c: 85:         SW2_Status = KEY_STATE_LONG_PRESS;
+[e = _SW2_Status -> . `E8 2 `uc ]
+"86
+[; ;mcc_generated_files/key/key.c: 86:       } else if (CurrentTime - SW2_PreviousTime > 50) {
+}
+[e $U 389  ]
+[e :U 388 ]
+[e $ ! > - _CurrentTime F3201 -> -> -> 50 `i `l `ul 390  ]
+{
+"87
+[; ;mcc_generated_files/key/key.c: 87:         SW2_Status = KEY_STATE_SHORT_PRESS;
+[e = _SW2_Status -> . `E8 1 `uc ]
+"88
+[; ;mcc_generated_files/key/key.c: 88:       }
+}
+[e :U 390 ]
+[e :U 389 ]
+"89
+[; ;mcc_generated_files/key/key.c: 89:     }
+}
+[e :U 387 ]
+"90
+[; ;mcc_generated_files/key/key.c: 90:   } else {
+}
+[e $U 391  ]
+[e :U 385 ]
+{
+"92
+[; ;mcc_generated_files/key/key.c: 92:     SW2_CurrentState = 1;
+[e = _SW2_CurrentState -> -> 1 `i `uc ]
+"93
+[; ;mcc_generated_files/key/key.c: 93:     if (SW2_PreviousState != SW2_CurrentState) {
+[e $ ! != -> F3203 `i -> _SW2_CurrentState `i 392  ]
+{
+"95
+[; ;mcc_generated_files/key/key.c: 95:       SW2_PreviousTime = CurrentTime;
+[e = F3201 _CurrentTime ]
+"96
+[; ;mcc_generated_files/key/key.c: 96:       SW2_PreviousState = SW2_CurrentState;
+[e = F3203 _SW2_CurrentState ]
+"97
+[; ;mcc_generated_files/key/key.c: 97:     } else {
+}
+[e $U 393  ]
+[e :U 392 ]
+{
+"98
+[; ;mcc_generated_files/key/key.c: 98:       if (CurrentTime - SW2_PreviousTime > 50) {
+[e $ ! > - _CurrentTime F3201 -> -> -> 50 `i `l `ul 394  ]
+{
+"99
+[; ;mcc_generated_files/key/key.c: 99:         SW2_Status = KEY_STATE_RELEASE;
+[e = _SW2_Status -> . `E8 0 `uc ]
+"100
+[; ;mcc_generated_files/key/key.c: 100:         fKeyRelease_SW2 = 1;
+[e = _fKeyRelease_SW2 -> -> 1 `i `uc ]
+"101
+[; ;mcc_generated_files/key/key.c: 101:       }
+}
+[e :U 394 ]
+"102
+[; ;mcc_generated_files/key/key.c: 102:     }
+}
+[e :U 393 ]
+"103
+[; ;mcc_generated_files/key/key.c: 103:   }
+}
+[e :U 391 ]
+"106
+[; ;mcc_generated_files/key/key.c: 106:   if (SW3_CurrentState == 0) {
+[e $ ! == -> _SW3_CurrentState `i -> 0 `i 395  ]
+{
+"108
+[; ;mcc_generated_files/key/key.c: 108:     if (SW3_PreviousState != SW3_CurrentState) {
+[e $ ! != -> F3206 `i -> _SW3_CurrentState `i 396  ]
+{
+"110
+[; ;mcc_generated_files/key/key.c: 110:       SW3_PreviousTime = CurrentTime;
+[e = F3204 _CurrentTime ]
+"111
+[; ;mcc_generated_files/key/key.c: 111:       SW3_PreviousState = SW3_CurrentState;
+[e = F3206 _SW3_CurrentState ]
+"112
+[; ;mcc_generated_files/key/key.c: 112:     } else {
+}
+[e $U 397  ]
+[e :U 396 ]
+{
+"114
+[; ;mcc_generated_files/key/key.c: 114:       if (CurrentTime - SW3_PreviousTime > 1000) {
+[e $ ! > - _CurrentTime F3204 -> -> -> 1000 `i `l `ul 398  ]
+{
+"115
+[; ;mcc_generated_files/key/key.c: 115:         SW3_Status = KEY_STATE_LONG_PRESS;
+[e = _SW3_Status -> . `E8 2 `uc ]
+"116
+[; ;mcc_generated_files/key/key.c: 116:       } else if (CurrentTime - SW3_PreviousTime > 50) {
+}
+[e $U 399  ]
+[e :U 398 ]
+[e $ ! > - _CurrentTime F3204 -> -> -> 50 `i `l `ul 400  ]
+{
+"117
+[; ;mcc_generated_files/key/key.c: 117:         SW3_Status = KEY_STATE_SHORT_PRESS;
+[e = _SW3_Status -> . `E8 1 `uc ]
+"118
+[; ;mcc_generated_files/key/key.c: 118:       }
+}
+[e :U 400 ]
+[e :U 399 ]
+"119
+[; ;mcc_generated_files/key/key.c: 119:     }
+}
+[e :U 397 ]
+"120
+[; ;mcc_generated_files/key/key.c: 120:   } else {
+}
+[e $U 401  ]
+[e :U 395 ]
+{
+"122
+[; ;mcc_generated_files/key/key.c: 122:     SW3_CurrentState = 1;
+[e = _SW3_CurrentState -> -> 1 `i `uc ]
+"123
+[; ;mcc_generated_files/key/key.c: 123:     if (SW3_PreviousState != SW3_CurrentState) {
+[e $ ! != -> F3206 `i -> _SW3_CurrentState `i 402  ]
+{
+"125
+[; ;mcc_generated_files/key/key.c: 125:       SW3_PreviousTime = CurrentTime;
+[e = F3204 _CurrentTime ]
+"126
+[; ;mcc_generated_files/key/key.c: 126:       SW3_PreviousState = SW3_CurrentState;
+[e = F3206 _SW3_CurrentState ]
+"127
+[; ;mcc_generated_files/key/key.c: 127:     } else {
+}
+[e $U 403  ]
+[e :U 402 ]
+{
+"128
+[; ;mcc_generated_files/key/key.c: 128:       if (CurrentTime - SW3_PreviousTime > 50) {
+[e $ ! > - _CurrentTime F3204 -> -> -> 50 `i `l `ul 404  ]
+{
+"129
+[; ;mcc_generated_files/key/key.c: 129:         SW3_Status = KEY_STATE_RELEASE;
+[e = _SW3_Status -> . `E8 0 `uc ]
+"130
+[; ;mcc_generated_files/key/key.c: 130:         fKeyRelease_SW3 = 1;
+[e = _fKeyRelease_SW3 -> -> 1 `i `uc ]
+"131
+[; ;mcc_generated_files/key/key.c: 131:       }
+}
+[e :U 404 ]
+"132
+[; ;mcc_generated_files/key/key.c: 132:     }
+}
+[e :U 403 ]
+"133
+[; ;mcc_generated_files/key/key.c: 133:   }
+}
+[e :U 401 ]
+"139
+[; ;mcc_generated_files/key/key.c: 139: }
 [e :UE 374 ]
 }

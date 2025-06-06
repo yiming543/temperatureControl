@@ -72,7 +72,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="AN2"/>
-         <value>disabled</value>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="AN3"/>
@@ -132,7 +132,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="dependentModuleKey"/>
-         <value>0</value>
+         <value>3</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ADC" name="enableInterrupt"/>
@@ -288,7 +288,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="ADC" registerAlias="ADCON1"/>
-         <value>0</value>
+         <value>128</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="ADC" registerAlias="ADRESH"/>
@@ -316,7 +316,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ADC" registerAlias="ADCON1" settingAlias="ADFM"/>
-         <value>left</value>
+         <value>right</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="ADC" registerAlias="ADCON1" settingAlias="ADNREF"/>
@@ -956,7 +956,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="Custom Name RA2"/>
-         <value/>
+         <value>channel_AN2</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="Custom Name RA3"/>
@@ -3462,11 +3462,11 @@
       </entry>
       <entry>
          <file>mcc_generated_files\adc.c</file>
-         <hash>b6a18c0c8f8e3f4a66a507cfc9d007deb577f4bb1960172fb95c654d76f2bec8</hash>
+         <hash>cb98c01331bf97cb4ddab2690f294374c4cc4add49f4781c2a354a161b3755a6</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\adc.h</file>
-         <hash>1c364cfbeb020eddbbf8c2c3952c88dbabf5b23701ccac6ce39e6a501505b57f</hash>
+         <hash>1bc62e4369c30fe8f0ca23271140e3c229e1075b5f028313a1f1cf2a0e282c48</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\device_config.c</file>
@@ -3506,7 +3506,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.h</file>
-         <hash>4d2c7aa7c1e60972f3a791b0fe68c884a68b0908464b4552574614aea36047d4</hash>
+         <hash>4885fd09fe6a76a38745a11c655b9852c015a49d24700de487c9221e7965f7a6</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\tmr0.c</file>

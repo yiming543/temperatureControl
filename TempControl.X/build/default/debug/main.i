@@ -7,25 +7,144 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 47 "main.c"
+# 46 "main.c"
+# 1 "./TempControl.h" 1
+
+
+
+enum eDISPLAY_MODE
+{
+ DISPLAY_MODE_TEMPERATURE=0,
+ DISPLAY_MODE_TEMPERATURE_SET1,
+ DISPLAY_MODE_TEMPERATURE_SET2,
+};
+# 47 "main.c" 2
 # 1 "./mcc_generated_files/key/key.h" 1
 
 
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/musl_xc8.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
+# 26 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
+# 133 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef unsigned short uintptr_t;
+# 148 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef short intptr_t;
+# 164 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+
+
+
+
+typedef __int24 int24_t;
+
+
+
+
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 194 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+
+
+
+
+typedef __uint24 uint24_t;
+
+
+
+
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 235 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 27 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+typedef int24_t int_fast24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+typedef uint24_t uint_fast24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 148 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/stdint.h" 1 3
+typedef int16_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint16_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 149 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
+# 5 "./mcc_generated_files/key/key.h" 2
+
 
 extern unsigned long milliSeconds;
-extern unsigned char SW1_Status;
-extern unsigned char SW2_Status;
-extern unsigned char SW3_Status;
+extern uint8_t SW1_Status;
+extern uint8_t SW2_Status;
+extern uint8_t SW3_Status;
 
-extern void keyDebounce(void);
+extern uint8_t tempCnt;
+extern uint8_t tempCnt1;
+
+extern void getKeyStatus(void);
 extern unsigned long getTime_ms(void);
 
-
-
-
-
-
+void keyDebounce(void);
+void chkeckPressKeyNumber(void);
+# 30 "./mcc_generated_files/key/key.h"
 enum KeyState {
   KEY_STATE_RELEASE,
   KEY_STATE_SHORT_PRESS,
@@ -46,16 +165,7 @@ extern double __fpnormalize(double);
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 1 3
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/musl_xc8.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 2 3
-
-
-
-
-
+# 10 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/features.h" 1 3
 # 11 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 2 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 3
@@ -64,10 +174,6 @@ extern double __fpnormalize(double);
 typedef long int wchar_t;
 # 128 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
 typedef unsigned size_t;
-# 174 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 210 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef __uint24 uint24_t;
 # 22 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 2 3
 
 int atoi (const char *);
@@ -155,91 +261,7 @@ extern void __builtin_software_breakpoint(void);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 1 3
-# 26 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
-# 133 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef unsigned short uintptr_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef short intptr_t;
-# 164 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef signed char int8_t;
 
-
-
-
-typedef short int16_t;
-# 179 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 194 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 215 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 235 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 27 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-typedef int24_t int_fast24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-typedef uint24_t uint_fast24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/stdint.h" 1 3
-typedef int16_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint16_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 149 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/builtins.h" 2 3
 
 
 #pragma intrinsic(__nop)
@@ -5014,9 +5036,9 @@ extern __bank0 __bit __timeout;
 # 1 "./mcc_generated_files/device_config.h" 1
 # 51 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 253 "./mcc_generated_files/pin_manager.h"
+# 261 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 265 "./mcc_generated_files/pin_manager.h"
+# 273 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 52 "./mcc_generated_files/mcc.h" 2
 
@@ -5238,7 +5260,7 @@ void TMR0_ISR(void);
 void TMR0_DefaultInterruptHandler(void);
 # 58 "./mcc_generated_files/mcc.h" 2
 # 1 "./mcc_generated_files/eusart.h" 1
-# 75 "./mcc_generated_files/eusart.h"
+# 76 "./mcc_generated_files/eusart.h"
 typedef union {
     struct {
         unsigned perr : 1;
@@ -5248,28 +5270,28 @@ typedef union {
     };
     uint8_t status;
 }eusart_status_t;
-# 110 "./mcc_generated_files/eusart.h"
+# 111 "./mcc_generated_files/eusart.h"
 void EUSART_Initialize(void);
-# 158 "./mcc_generated_files/eusart.h"
+# 159 "./mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_ready(void);
-# 206 "./mcc_generated_files/eusart.h"
+# 207 "./mcc_generated_files/eusart.h"
 _Bool EUSART_is_rx_ready(void);
-# 253 "./mcc_generated_files/eusart.h"
+# 254 "./mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_done(void);
-# 301 "./mcc_generated_files/eusart.h"
+# 302 "./mcc_generated_files/eusart.h"
 eusart_status_t EUSART_get_last_status(void);
-# 321 "./mcc_generated_files/eusart.h"
+# 322 "./mcc_generated_files/eusart.h"
 uint8_t EUSART_Read(void);
-# 341 "./mcc_generated_files/eusart.h"
+# 342 "./mcc_generated_files/eusart.h"
 void EUSART_Write(uint8_t txData);
-# 361 "./mcc_generated_files/eusart.h"
+# 362 "./mcc_generated_files/eusart.h"
 void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 379 "./mcc_generated_files/eusart.h"
+# 380 "./mcc_generated_files/eusart.h"
 void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 397 "./mcc_generated_files/eusart.h"
+# 398 "./mcc_generated_files/eusart.h"
 void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 # 59 "./mcc_generated_files/mcc.h" 2
-# 1 "./mcc_generated_files/disp_7seg\\disp_7seg.h" 1
+# 1 "./mcc_generated_files/disp_7seg/disp_7seg.h" 1
 
 
 
@@ -5277,48 +5299,94 @@ void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 
 extern void disp_sub(char disp_temp, unsigned char disp_char);
 # 60 "./mcc_generated_files/mcc.h" 2
-# 75 "./mcc_generated_files/mcc.h"
+
+# 1 "./mcc_generated_files/temperature/temperature.h" 1
+
+
+
+
+# 1 "./mcc_generated_files/mcc.h" 1
+# 6 "./mcc_generated_files/temperature/temperature.h" 2
+
+extern void getTemperature(void);
+uint8_t CalTemperture(adc_result_t NTC_Value);
+
+extern adc_result_t adc_result;
+extern uint8_t temperature;
+# 62 "./mcc_generated_files/mcc.h" 2
+# 76 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 88 "./mcc_generated_files/mcc.h"
+# 89 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 100 "./mcc_generated_files/mcc.h"
+# 101 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
 # 49 "main.c" 2
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/limits.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/limits.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/limits.h" 1 3
-# 11 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/limits.h" 2 3
-# 51 "main.c" 2
+
+
 void TMR0_timerHandler(void);
-void chkeckPressKeyNumber(void);
-unsigned char CalTemperture(adc_result_t NTC_Value);
 
-unsigned long milliSeconds = 0;
-unsigned int t250ms = 0;
-unsigned int t500ms = 0;
-unsigned int t1000ms = 0;
+uint32_t milliSeconds = 0;
+uint16_t t250ms = 0;
+uint16_t t500ms = 0;
+uint16_t t1000ms = 0;
+uint8_t f1S = 0;
 
-unsigned char tempCnt = 0;
-unsigned char fKeyRelease_SW1 = 1;
-unsigned char fKeyRelease_SW2 = 1;
-unsigned char fKeyRelease_SW3 = 1;
-
-unsigned long SW2_LongPressTime = 0x7fffffffL;
-unsigned long SW3_LongPressTime = 0x7fffffffL;
-unsigned long longPressCurrentTime;
-
-unsigned char fTooManyKeyPress = 0;
-adc_result_t adc_result;
-unsigned char temperture;
+uint8_t tempCnt = 0;
+uint8_t tempCnt1 = 0;
 
 
 
+uint8_t temperature_SET1 = 30;
+uint8_t temperature_SET2 = 25;
+
+uint8_t displayMode = 0;
+
+void TMR0_timerHandler(void) {
+
+
+  milliSeconds++;
+  t500ms++;
+  t250ms++;
+  t1000ms++;
+  if (t250ms > 250) {
+    t250ms = 0;
+
+  }
+
+  if (t500ms > 500) {
+    t500ms = 0;
+
+  }
+
+  if (t1000ms > 1000) {
+    t1000ms = 0;
+    f1S = 1;
+  }
+}
+
+
+void checkTemperature_SET1(void) {
+  if (temperature > (temperature_SET1+1)) {
+    do { LATCbits.LATC5 = 0; } while(0);
+  } else if(temperature < (temperature_SET1-1)) {
+    do { LATCbits.LATC5 = 1; } while(0);
+  }
+}
+
+void checkTemperature_SET2(void) {
+  if (temperature < temperature_SET2) {
+    do { LATCbits.LATC4 = 0; } while(0);
+  } else {
+    do { LATCbits.LATC4 = 1; } while(0);
+  }
+}
 
 
 
 
-int main(void) {
+
+void main(void) {
 
   SYSTEM_Initialize();
   TMR0_SetInterruptHandler(TMR0_timerHandler);
@@ -5345,118 +5413,23 @@ int main(void) {
 
   while (1) {
 
-    adc_result = ADC_GetConversion(channel_AN0);
-    temperture = CalTemperture(adc_result);
+    getTemperature();
 
 
-    keyDebounce();
-    longPressCurrentTime = getTime_ms();
-    chkeckPressKeyNumber();
+    getKeyStatus();
 
 
-    if (fTooManyKeyPress == 0) {
-
-
-      if ((SW1_Status == KEY_STATE_SHORT_PRESS) &&
-          (fKeyRelease_SW1 == 1)) {
-        tempCnt++;
-        fKeyRelease_SW1 = 0;
-      }
-
-
-      if ((SW2_Status == KEY_STATE_SHORT_PRESS) &&
-          (fKeyRelease_SW2 == 1)) {
-        tempCnt++;
-        fKeyRelease_SW2 = 0;
-      }
-
-
-      if (SW2_Status == KEY_STATE_LONG_PRESS) {
-        if (longPressCurrentTime - SW2_LongPressTime > 100) {
-          if (tempCnt < 99) {
-            tempCnt++;
-          }
-          SW2_LongPressTime = longPressCurrentTime;
-        }
-      }
-
-      if ((SW3_Status == KEY_STATE_SHORT_PRESS) &&
-          (fKeyRelease_SW3 == 1)) {
-        tempCnt--;
-        fKeyRelease_SW3 = 0;
-      }
-
-
-      if (SW3_Status == KEY_STATE_LONG_PRESS) {
-        if (longPressCurrentTime - SW3_LongPressTime > 100) {
-          if (tempCnt > 0) {
-            tempCnt--;
-          }
-          SW3_LongPressTime = longPressCurrentTime;
-        }
-      }
+    if (displayMode == DISPLAY_MODE_TEMPERATURE) {
+      disp_sub(temperature, 11);
+    } else if (displayMode == DISPLAY_MODE_TEMPERATURE_SET1) {
+      disp_sub(temperature_SET1, 12);
+    } else if (displayMode == DISPLAY_MODE_TEMPERATURE_SET2) {
+      disp_sub(temperature_SET2, 13);
     }
 
 
-    disp_sub(temperture, 11);
+    checkTemperature_SET1();
+    checkTemperature_SET2();
+# 167 "main.c"
   }
-
-  return 0;
-}
-
-void TMR0_timerHandler(void) {
-
-
-  milliSeconds++;
-  t500ms++;
-  t250ms++;
-  t1000ms++;
-  if (t250ms > 250) {
-    t250ms = 0;
-
-  }
-
-  if (t500ms > 500) {
-    t500ms = 0;
-
-  }
-}
-
-void chkeckPressKeyNumber(void) {
-  unsigned char keyCnt = 0;
-  if ((SW1_Status == KEY_STATE_SHORT_PRESS) ||
-      (SW1_Status == KEY_STATE_LONG_PRESS)) {
-    keyCnt++;
-  }
-  if ((SW2_Status == KEY_STATE_SHORT_PRESS) ||
-      (SW2_Status == KEY_STATE_LONG_PRESS)) {
-    keyCnt++;
-  }
-  if ((SW3_Status == KEY_STATE_SHORT_PRESS) ||
-      (SW3_Status == KEY_STATE_LONG_PRESS)) {
-    keyCnt++;
-  }
-  if (keyCnt > 1) {
-    fTooManyKeyPress = 1;
-  } else {
-    fTooManyKeyPress = 0;
-  }
-}
-
-unsigned char CalTemperture(adc_result_t NTC_Value) {
-  int temp;
-  int NTC = NTC_Value & 0x3FF;
-
-  temp= 511-NTC;
-  temp= 250+temp;
-  temp = temp/10;
-
-
-  if (temp > 99)
-    temp = 99;
-
-  if (temp < 0)
-    temp = 0;
-
-  return (temp & 0xff);
 }

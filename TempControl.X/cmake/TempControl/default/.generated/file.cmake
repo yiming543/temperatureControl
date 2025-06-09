@@ -14,15 +14,8 @@ set(TempControl_default_default_XC8_FILE_TYPE_compile
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../mcc_generated_files/tmr0.c")
 set_source_files_properties(${TempControl_default_default_XC8_FILE_TYPE_compile} PROPERTIES LANGUAGE C)
 set(TempControl_default_default_XC8_FILE_TYPE_link)
+set(TempControl_default_image_name "default.elf")
 
-# The (internal) path to the resulting build image.
-set(TempControl_default_internal_image_name "${CMAKE_CURRENT_SOURCE_DIR}/../../../_build/TempControl/default/default.elf")
-
-# The name of the resulting image, including namespace for configuration.
-set(TempControl_default_image_name "TempControl_default_default.elf")
-
-# The name of the image, excluding the namespace for configuration.
-set(TempControl_default_original_image_name "default.elf")
 
 # The output directory of the final image.
 set(TempControl_default_output_dir "${CMAKE_CURRENT_SOURCE_DIR}/../../../out/TempControl")

@@ -7,6 +7,7 @@ function(TempControl_default_default_XC8_assemble_rule target)
         "-c"
         "${MP_EXTRA_AS_PRE}"
         "-mcpu=16F1936"
+        "${DEBUGGER_NAME}"
         "-mdfp=${PACK_REPO_PATH}/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8"
         "-fno-short-double"
         "-fno-short-float"
@@ -33,6 +34,8 @@ function(TempControl_default_default_XC8_assemble_rule target)
     target_compile_options(${target} PRIVATE "${options}")
     target_compile_definitions(${target}
         PRIVATE "__16F1936__"
+        PRIVATE "__DEBUG=1"
+        PRIVATE "__MPLAB_DEBUGGER_SIMULATOR=1"
         PRIVATE "XPRJ_default=default")
     target_include_directories(${target} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/../../..")
 endfunction()
@@ -69,6 +72,8 @@ function(TempControl_default_default_XC8_assemblePreprocess_rule target)
     target_compile_options(${target} PRIVATE "${options}")
     target_compile_definitions(${target}
         PRIVATE "__16F1936__"
+        PRIVATE "__DEBUG=1"
+        PRIVATE "__MPLAB_DEBUGGER_SIMULATOR=1"
         PRIVATE "XPRJ_default=default")
     target_include_directories(${target} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/../../..")
 endfunction()
@@ -77,6 +82,7 @@ function(TempControl_default_default_XC8_compile_rule target)
         "-c"
         "${MP_EXTRA_CC_PRE}"
         "-mcpu=16F1936"
+        "${DEBUGGER_NAME}"
         "-mdfp=${PACK_REPO_PATH}/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8"
         "-fno-short-double"
         "-fno-short-float"
@@ -103,6 +109,8 @@ function(TempControl_default_default_XC8_compile_rule target)
     target_compile_options(${target} PRIVATE "${options}")
     target_compile_definitions(${target}
         PRIVATE "__16F1936__"
+        PRIVATE "__DEBUG=1"
+        PRIVATE "__MPLAB_DEBUGGER_SIMULATOR=1"
         PRIVATE "XPRJ_default=default")
     target_include_directories(${target} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/../../..")
 endfunction()
@@ -111,6 +119,7 @@ function(TempControl_default_link_rule target)
         "-Wl,-Map=mem.map"
         "${MP_EXTRA_LD_PRE}"
         "-mcpu=16F1936"
+        "${DEBUGGER_NAME}"
         "-Wl,--defsym=__MPLAB_BUILD=1"
         "-mdfp=${PACK_REPO_PATH}/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8"
         "-fno-short-double"
@@ -137,6 +146,8 @@ function(TempControl_default_link_rule target)
         "-Wl,--memorysummary,memoryfile.xml")
     list(REMOVE_ITEM options "")
     target_link_options(${target} PRIVATE "${options}")
-    target_compile_definitions(${target} PRIVATE "XPRJ_default=default")
+    target_compile_definitions(${target}
+        PRIVATE "__DEBUG=1"
+        PRIVATE "XPRJ_default=default")
     target_include_directories(${target} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/../../..")
 endfunction()

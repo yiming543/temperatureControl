@@ -8,4 +8,7 @@ mcc_generated_files/disp_7seg/../adc.h  \
 mcc_generated_files/disp_7seg/../tmr0.h  \
 mcc_generated_files/disp_7seg/../eusart.h  \
 mcc_generated_files/disp_7seg/../disp_7seg/disp_7seg.h  \
-mcc_generated_files/disp_7seg/../key/key.h 
+mcc_generated_files/disp_7seg/../key/key.h  \
+mcc_generated_files/disp_7seg/../key/../../TempControl.h  \
+mcc_generated_files/disp_7seg/../temperature/temperature.h  \
+mcc_generated_files/disp_7seg/../temperature/../mcc.h 

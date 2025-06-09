@@ -1,21 +1,21 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"253 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 253: void PIN_MANAGER_Initialize (void);
+"261 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 261: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"88 mcc_generated_files/mcc.h
-[; ;mcc_generated_files/mcc.h: 88: void OSCILLATOR_Initialize(void);
+"89 mcc_generated_files/mcc.h
+[; ;mcc_generated_files/mcc.h: 89: void OSCILLATOR_Initialize(void);
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"100
-[; ;mcc_generated_files/mcc.h: 100: void WDT_Initialize(void);
+"101
+[; ;mcc_generated_files/mcc.h: 101: void WDT_Initialize(void);
 [v _WDT_Initialize `(v ~T0 @X0 0 ef ]
-"137 mcc_generated_files/adc.h
-[; ;mcc_generated_files/adc.h: 137: void ADC_Initialize(void);
-[v _ADC_Initialize `(v ~T0 @X0 0 ef ]
 "98 mcc_generated_files/tmr0.h
 [; ;mcc_generated_files/tmr0.h: 98: void TMR0_Initialize(void);
 [v _TMR0_Initialize `(v ~T0 @X0 0 ef ]
-"110 mcc_generated_files/eusart.h
-[; ;mcc_generated_files/eusart.h: 110: void EUSART_Initialize(void);
+"137 mcc_generated_files/adc.h
+[; ;mcc_generated_files/adc.h: 137: void ADC_Initialize(void);
+[v _ADC_Initialize `(v ~T0 @X0 0 ef ]
+"111 mcc_generated_files/eusart.h
+[; ;mcc_generated_files/eusart.h: 111: void EUSART_Initialize(void);
 [v _EUSART_Initialize `(v ~T0 @X0 0 ef ]
 "1843 C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h
 [; ;C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h: 1843: extern volatile unsigned char OSCCON __attribute__((address(0x099)));
@@ -542,11 +542,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/mcc.c: 55:     WDT_Initialize();
 [e ( _WDT_Initialize ..  ]
 "56
-[; ;mcc_generated_files/mcc.c: 56:     ADC_Initialize();
-[e ( _ADC_Initialize ..  ]
-"57
-[; ;mcc_generated_files/mcc.c: 57:     TMR0_Initialize();
+[; ;mcc_generated_files/mcc.c: 56:     TMR0_Initialize();
 [e ( _TMR0_Initialize ..  ]
+"57
+[; ;mcc_generated_files/mcc.c: 57:     ADC_Initialize();
+[e ( _ADC_Initialize ..  ]
 "58
 [; ;mcc_generated_files/mcc.c: 58:     EUSART_Initialize();
 [e ( _EUSART_Initialize ..  ]

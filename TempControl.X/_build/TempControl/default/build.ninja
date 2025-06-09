@@ -45,7 +45,7 @@ cmake_ninja_workdir = C$:\yiming\github\temperatureControl\TempControl.X\_build\
 build cmake_object_order_depends_target_TempControl_default_default_XC8_compile: phony || .
 
 build CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\main.c.p1: C_COMPILER__TempControl_default_default_XC8_compile_unscanned_ C$:\yiming\github\temperatureControl\TempControl.X\main.c || cmake_object_order_depends_target_TempControl_default_default_XC8_compile
-  DEFINES = -DXPRJ_default=default -D__16F1936__
+  DEFINES = -DXPRJ_default=default -D__16F1936__ -D__DEBUG=1 -D__MPLAB_DEBUGGER_SIMULATOR=1
   DEP_FILE = CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\main.c.p1.d
   FLAGS = -c -mcpu=16F1936 -mdfp=C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8 -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -moscval=0x3400 -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto
   INCLUDES = -IC:\yiming\github\temperatureControl\TempControl.X\cmake\TempControl\default\..\..\..
@@ -55,7 +55,7 @@ build CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\te
   TARGET_PDB = ""
 
 build CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\adc.c.p1: C_COMPILER__TempControl_default_default_XC8_compile_unscanned_ C$:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\adc.c || cmake_object_order_depends_target_TempControl_default_default_XC8_compile
-  DEFINES = -DXPRJ_default=default -D__16F1936__
+  DEFINES = -DXPRJ_default=default -D__16F1936__ -D__DEBUG=1 -D__MPLAB_DEBUGGER_SIMULATOR=1
   DEP_FILE = CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\adc.c.p1.d
   FLAGS = -c -mcpu=16F1936 -mdfp=C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8 -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -moscval=0x3400 -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto
   INCLUDES = -IC:\yiming\github\temperatureControl\TempControl.X\cmake\TempControl\default\..\..\..
@@ -65,7 +65,7 @@ build CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\te
   TARGET_PDB = ""
 
 build CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\device_config.c.p1: C_COMPILER__TempControl_default_default_XC8_compile_unscanned_ C$:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\device_config.c || cmake_object_order_depends_target_TempControl_default_default_XC8_compile
-  DEFINES = -DXPRJ_default=default -D__16F1936__
+  DEFINES = -DXPRJ_default=default -D__16F1936__ -D__DEBUG=1 -D__MPLAB_DEBUGGER_SIMULATOR=1
   DEP_FILE = CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\device_config.c.p1.d
   FLAGS = -c -mcpu=16F1936 -mdfp=C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8 -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -moscval=0x3400 -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto
   INCLUDES = -IC:\yiming\github\temperatureControl\TempControl.X\cmake\TempControl\default\..\..\..
@@ -75,7 +75,7 @@ build CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\te
   TARGET_PDB = ""
 
 build CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\eusart.c.p1: C_COMPILER__TempControl_default_default_XC8_compile_unscanned_ C$:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\eusart.c || cmake_object_order_depends_target_TempControl_default_default_XC8_compile
-  DEFINES = -DXPRJ_default=default -D__16F1936__
+  DEFINES = -DXPRJ_default=default -D__16F1936__ -D__DEBUG=1 -D__MPLAB_DEBUGGER_SIMULATOR=1
   DEP_FILE = CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\eusart.c.p1.d
   FLAGS = -c -mcpu=16F1936 -mdfp=C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8 -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -moscval=0x3400 -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto
   INCLUDES = -IC:\yiming\github\temperatureControl\TempControl.X\cmake\TempControl\default\..\..\..
@@ -85,7 +85,7 @@ build CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\te
   TARGET_PDB = ""
 
 build CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\interrupt_manager.c.p1: C_COMPILER__TempControl_default_default_XC8_compile_unscanned_ C$:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\interrupt_manager.c || cmake_object_order_depends_target_TempControl_default_default_XC8_compile
-  DEFINES = -DXPRJ_default=default -D__16F1936__
+  DEFINES = -DXPRJ_default=default -D__16F1936__ -D__DEBUG=1 -D__MPLAB_DEBUGGER_SIMULATOR=1
   DEP_FILE = CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\interrupt_manager.c.p1.d
   FLAGS = -c -mcpu=16F1936 -mdfp=C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8 -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -moscval=0x3400 -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto
   INCLUDES = -IC:\yiming\github\temperatureControl\TempControl.X\cmake\TempControl\default\..\..\..
@@ -95,7 +95,7 @@ build CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\te
   TARGET_PDB = ""
 
 build CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\mcc.c.p1: C_COMPILER__TempControl_default_default_XC8_compile_unscanned_ C$:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\mcc.c || cmake_object_order_depends_target_TempControl_default_default_XC8_compile
-  DEFINES = -DXPRJ_default=default -D__16F1936__
+  DEFINES = -DXPRJ_default=default -D__16F1936__ -D__DEBUG=1 -D__MPLAB_DEBUGGER_SIMULATOR=1
   DEP_FILE = CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\mcc.c.p1.d
   FLAGS = -c -mcpu=16F1936 -mdfp=C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8 -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -moscval=0x3400 -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto
   INCLUDES = -IC:\yiming\github\temperatureControl\TempControl.X\cmake\TempControl\default\..\..\..
@@ -105,7 +105,7 @@ build CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\te
   TARGET_PDB = ""
 
 build CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\pin_manager.c.p1: C_COMPILER__TempControl_default_default_XC8_compile_unscanned_ C$:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\pin_manager.c || cmake_object_order_depends_target_TempControl_default_default_XC8_compile
-  DEFINES = -DXPRJ_default=default -D__16F1936__
+  DEFINES = -DXPRJ_default=default -D__16F1936__ -D__DEBUG=1 -D__MPLAB_DEBUGGER_SIMULATOR=1
   DEP_FILE = CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\pin_manager.c.p1.d
   FLAGS = -c -mcpu=16F1936 -mdfp=C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8 -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -moscval=0x3400 -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto
   INCLUDES = -IC:\yiming\github\temperatureControl\TempControl.X\cmake\TempControl\default\..\..\..
@@ -115,7 +115,7 @@ build CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\te
   TARGET_PDB = ""
 
 build CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\tmr0.c.p1: C_COMPILER__TempControl_default_default_XC8_compile_unscanned_ C$:\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\tmr0.c || cmake_object_order_depends_target_TempControl_default_default_XC8_compile
-  DEFINES = -DXPRJ_default=default -D__16F1936__
+  DEFINES = -DXPRJ_default=default -D__16F1936__ -D__DEBUG=1 -D__MPLAB_DEBUGGER_SIMULATOR=1
   DEP_FILE = CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\tmr0.c.p1.d
   FLAGS = -c -mcpu=16F1936 -mdfp=C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8 -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -moscval=0x3400 -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto
   INCLUDES = -IC:\yiming\github\temperatureControl\TempControl.X\cmake\TempControl\default\..\..\..
@@ -132,31 +132,30 @@ build CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\te
 build TempControl_default_default_XC8_compile: phony CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\main.c.p1 CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\adc.c.p1 CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\device_config.c.p1 CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\eusart.c.p1 CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\interrupt_manager.c.p1 CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\mcc.c.p1 CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\pin_manager.c.p1 CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\tmr0.c.p1
 
 # =============================================================================
-# Object build statements for EXECUTABLE target TempControl_default_default.elf
+# Object build statements for EXECUTABLE target default.elf
 
 
 #############################################
-# Order-only phony target for TempControl_default_default.elf
+# Order-only phony target for default.elf
 
-build cmake_object_order_depends_target_TempControl_default_default.elf: phony || cmake_object_order_depends_target_TempControl_default_default_XC8_compile
+build cmake_object_order_depends_target_default.elf: phony || cmake_object_order_depends_target_TempControl_default_default_XC8_compile
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target TempControl_default_default.elf
+# Link build statements for EXECUTABLE target default.elf
 
 
 #############################################
-# Link the executable TempControl_default_default.elf
+# Link the executable C:\yiming\github\temperatureControl\TempControl.X\out\TempControl\default.elf
 
-build TempControl_default_default.elf C$:\yiming\github\temperatureControl\TempControl.X\out\TempControl\default.elf: C_EXECUTABLE_LINKER__TempControl_default_default.2eelf_ CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\main.c.p1 CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\adc.c.p1 CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\device_config.c.p1 CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\eusart.c.p1 CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\interrupt_manager.c.p1 CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\mcc.c.p1 CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\pin_manager.c.p1 CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\tmr0.c.p1 || TempControl_default_default_XC8_compile
+build C$:\yiming\github\temperatureControl\TempControl.X\out\TempControl\default.elf: C_EXECUTABLE_LINKER__default.2eelf_ CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\main.c.p1 CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\adc.c.p1 CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\device_config.c.p1 CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\eusart.c.p1 CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\interrupt_manager.c.p1 CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\mcc.c.p1 CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\pin_manager.c.p1 CMakeFiles\TempControl_default_default_XC8_compile.dir\C_\yiming\github\temperatureControl\TempControl.X\mcc_generated_files\tmr0.c.p1 || TempControl_default_default_XC8_compile
   LINK_FLAGS = -Wl,-Map=mem.map -mcpu=16F1936 -Wl,--defsym=__MPLAB_BUILD=1 -mdfp=C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8 -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -moscval=0x3400 -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -Wl,--memorysummary,memoryfile.xml
-  OBJECT_DIR = CMakeFiles\TempControl_default_default.elf.dir
-  POST_BUILD = cmd.exe /C "cd /D C:\yiming\github\temperatureControl\TempControl.X\_build\TempControl\default && C:\Users\nbuser\.mplab\app-finder\apps\cmake\v4.0.2\cmake-4.0.2-windows-x86_64\bin\cmake.exe -E make_directory C:/yiming/github/temperatureControl/TempControl.X/cmake/TempControl/default/../../../out/TempControl && C:\Users\nbuser\.mplab\app-finder\apps\cmake\v4.0.2\cmake-4.0.2-windows-x86_64\bin\cmake.exe -E copy TempControl_default_default.elf C:/yiming/github/temperatureControl/TempControl.X/cmake/TempControl/default/../../../out/TempControl/default.elf"
+  OBJECT_DIR = CMakeFiles\default.elf.dir
+  POST_BUILD = cd .
   PRE_LINK = cd .
-  RESTAT = 1
-  TARGET_COMPILE_PDB = CMakeFiles\TempControl_default_default.elf.dir\
-  TARGET_FILE = TempControl_default_default.elf
-  TARGET_PDB = TempControl_default_default.elf.pdb
+  TARGET_COMPILE_PDB = CMakeFiles\default.elf.dir\
+  TARGET_FILE = C:\yiming\github\temperatureControl\TempControl.X\out\TempControl\default.elf
+  TARGET_PDB = C:\yiming\github\temperatureControl\TempControl.X\out\TempControl\default.elf.pdb
 
 
 #############################################
@@ -185,6 +184,8 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build default.elf: phony C$:\yiming\github\temperatureControl\TempControl.X\out\TempControl\default.elf
+
 # =============================================================================
 # Folder targets.
 
@@ -193,7 +194,7 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 #############################################
 # Folder: C:/yiming/github/temperatureControl/TempControl.X/_build/TempControl/default
 
-build all: phony TempControl_default_default_XC8_compile TempControl_default_default.elf
+build all: phony TempControl_default_default_XC8_compile C$:\yiming\github\temperatureControl\TempControl.X\out\TempControl\default.elf
 
 # =============================================================================
 # Built-in targets

@@ -68,8 +68,8 @@ void ADC_Initialize(void)
 {
     // set the ADC to the options selected in the User Interface
     
-    // ADFM right; ADNREF VSS; ADPREF VDD; ADCS FOSC/2; 
-    ADCON1 = 0x80;
+    // ADFM right; ADNREF VSS; ADPREF VDD; ADCS Frc; 
+    ADCON1 = 0xF0;
     
     // ADRESL 0; 
     ADRESL = 0x00;
@@ -85,7 +85,7 @@ void ADC_Initialize(void)
 void ADC_SelectChannel(adc_channel_t channel)
 {
     // select the A/D channel
-    ADCON0bits.CHS = channel;    
+    ADCON0bits.CHS = (unsigned char)channel;    
     // Turn on the ADC module
     ADCON0bits.ADON = 1;  
 }
@@ -112,7 +112,7 @@ adc_result_t ADC_GetConversionResult(void)
 adc_result_t ADC_GetConversion(adc_channel_t channel)
 {
     // select the A/D channel
-    ADCON0bits.CHS = channel;    
+    ADCON0bits.CHS = (unsigned char)channel;    
     
     // Turn on the ADC module
     ADCON0bits.ADON = 1;

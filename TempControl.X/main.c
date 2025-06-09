@@ -41,42 +41,80 @@
     SOFTWARE.
 */
 
+//20250609 V0.3
+//第1版功能完成,待測試.
+
 // todo disp_7seg if else modify to switch case 20250605
 // todo disp_7seg temp over 100 disp dot 20250605
-
+#include "TempControl.h"
 #include "mcc_generated_files/key/key.h"
 #include "mcc_generated_files/mcc.h"
 #include "mcc_generated_files/pin_manager.h"
-#include <limits.h>
+#include <stdint.h>
+
 void TMR0_timerHandler(void);
-void chkeckPressKeyNumber(void);
-unsigned char CalTemperture(adc_result_t NTC_Value);
 
-unsigned long milliSeconds = 0;
-unsigned int t250ms = 0;
-unsigned int t500ms = 0;
-unsigned int t1000ms = 0;
+uint32_t milliSeconds = 0;
+uint16_t t250ms = 0;
+uint16_t t500ms = 0;
+uint16_t t1000ms = 0;
+uint8_t f1S = 0;
 
-unsigned char tempCnt = 0;
-unsigned char fKeyRelease_SW1 = KEY_RELEASE; // 1:release 0:press
-unsigned char fKeyRelease_SW2 = KEY_RELEASE; // 1:release 0:press
-unsigned char fKeyRelease_SW3 = KEY_RELEASE; // 1:release 0:press
-// unsigned long SW1_LongPressTime = LONG_MAX;
-unsigned long SW2_LongPressTime = LONG_MAX;
-unsigned long SW3_LongPressTime = LONG_MAX;
-unsigned long longPressCurrentTime;
+uint8_t tempCnt = 0;
+uint8_t tempCnt1 = 0;
 
-unsigned char fTooManyKeyPress = 0;
-adc_result_t adc_result;
-unsigned char temperture;
+// adc_result_t adc_result;
+// uint8_t temperature;
+uint8_t temperature_SET1 = 31; //高於這個溫度,Relay1動作
+uint8_t temperature_SET2 = 29; //低於這個溫度,Relay2動作
 
-#define TEMP_MAX 99 // 99度C
-#define TEMP_MIN 0  // 0度C
+uint8_t displayMode = 0;
+
+void TMR0_timerHandler(void) {
+  // add your TMR0 interrupt custom code
+  // or set custom function using TMR0_SetInterruptHandler()
+  milliSeconds++;
+  t500ms++;
+  t250ms++;
+  t1000ms++;
+  if (t250ms > 250) {
+    t250ms = 0;
+    // Relay1_Toggle();
+  }
+
+  if (t500ms > 500) {
+    t500ms = 0;
+    // Relay2_Toggle();
+  }
+
+  if (t1000ms > 1000) {
+    t1000ms = 0;
+    f1S = 1;
+  }
+}
+
+
+void checkTemperature_SET1(void) {
+  if (temperature >= (temperature_SET1+DELTA_TEMPERATURE)) {
+    Relay1_SetHigh();
+  } else if(temperature <= (temperature_SET1-DELTA_TEMPERATURE)) {
+    Relay1_SetLow();
+  }
+} 
+
+void checkTemperature_SET2(void) {
+  if (temperature <= (temperature_SET2-DELTA_TEMPERATURE)) {
+    Relay2_SetHigh();
+  } else if (temperature >= (temperature_SET2+DELTA_TEMPERATURE)){
+    Relay2_SetLow();
+  }
+}
+
 
 /*
                          Main application
  */
-int main(void) {
+void main(void) {
   // initialize the device
   SYSTEM_Initialize();
   TMR0_SetInterruptHandler(TMR0_timerHandler);
@@ -102,122 +140,37 @@ int main(void) {
   // INTERRUPT_PeripheralInterruptDisable();
 
   while (1) {
-    // 讀取NTC溫度
-    adc_result = ADC_GetConversion(channel_AN0);
-    temperture = CalTemperture(adc_result);
+    //讀取溫度
+    getTemperature();
 
-    // 彈跳處理
-    keyDebounce();
-    longPressCurrentTime = getTime_ms();
-    chkeckPressKeyNumber();
+    //讀取按鍵
+    getKeyStatus();
 
-    // 同時按2個按鍵,不動作
-    if (fTooManyKeyPress == 0) {
-
-      // SW1 Short Press
-      if ((SW1_Status == KEY_STATE_SHORT_PRESS) &&
-          (fKeyRelease_SW1 == KEY_RELEASE)) {
-        tempCnt++;
-        fKeyRelease_SW1 = 0;
-      }
-
-      // SW2 Short Press
-      if ((SW2_Status == KEY_STATE_SHORT_PRESS) &&
-          (fKeyRelease_SW2 == KEY_RELEASE)) {
-        tempCnt++;
-        fKeyRelease_SW2 = 0;
-      }
-
-      // SW2 Long Press
-      if (SW2_Status == KEY_STATE_LONG_PRESS) {
-        if (longPressCurrentTime - SW2_LongPressTime > LONG_PRESS_QUICK_TIME) {
-          if (tempCnt < TEMP_MAX) {
-            tempCnt++;
-          }
-          SW2_LongPressTime = longPressCurrentTime;
-        }
-      }
-
-      if ((SW3_Status == KEY_STATE_SHORT_PRESS) &&
-          (fKeyRelease_SW3 == KEY_RELEASE)) {
-        tempCnt--;
-        fKeyRelease_SW3 = 0;
-      }
-
-      // SW3 Long Press
-      if (SW3_Status == KEY_STATE_LONG_PRESS) {
-        if (longPressCurrentTime - SW3_LongPressTime > LONG_PRESS_QUICK_TIME) {
-          if (tempCnt > TEMP_MIN) {
-            tempCnt--;
-          }
-          SW3_LongPressTime = longPressCurrentTime;
-        }
-      }
+    // 顥示溫度 或 設定溫度
+    if (displayMode == DISPLAY_MODE_TEMPERATURE) {
+      disp_sub(temperature, DISP_TEMP);
+    } else if (displayMode == DISPLAY_MODE_TEMPERATURE_SET1) {
+      disp_sub(temperature_SET1, DISP_SET1);
+    } else if (displayMode == DISPLAY_MODE_TEMPERATURE_SET2) {
+      disp_sub(temperature_SET2, DISP_SET2);
     }
 
-    // 顯示溫度
-    disp_sub(temperture, DISP_TEMP);
-  }
+    //檢查溫度是否超出範圍
+    checkTemperature_SET1();
+    checkTemperature_SET2();  
 
-  return 0;
-}
 
-void TMR0_timerHandler(void) {
-  // add your TMR0 interrupt custom code
-  // or set custom function using TMR0_SetInterruptHandler()
-  milliSeconds++;
-  t500ms++;
-  t250ms++;
-  t1000ms++;
-  if (t250ms > 250) {
-    t250ms = 0;
-    // Relay1_Toggle();
-  }
+    // if (f1S == 1) {
+    //   f1S = 0;
+    //   // tempCnt1++;
 
-  if (t500ms > 500) {
-    t500ms = 0;
-    // Relay2_Toggle();
+    //   printf("ADC=0x0%X\n", adc_result);
+    //   printf("temperature=%d\n\n", temperature);
+    // }
   }
 }
 
-void chkeckPressKeyNumber(void) {
-  unsigned char keyCnt = 0;
-  if ((SW1_Status == KEY_STATE_SHORT_PRESS) ||
-      (SW1_Status == KEY_STATE_LONG_PRESS)) {
-    keyCnt++;
-  }
-  if ((SW2_Status == KEY_STATE_SHORT_PRESS) ||
-      (SW2_Status == KEY_STATE_LONG_PRESS)) {
-    keyCnt++;
-  }
-  if ((SW3_Status == KEY_STATE_SHORT_PRESS) ||
-      (SW3_Status == KEY_STATE_LONG_PRESS)) {
-    keyCnt++;
-  }
-  if (keyCnt > 1) {
-    fTooManyKeyPress = 1;
-  } else {
-    fTooManyKeyPress = 0;
-  }
-}
 
-unsigned char CalTemperture(adc_result_t NTC_Value) {
-  int temp;
-  int NTC = NTC_Value & 0x3FF;
-
-  temp= 511-NTC;
-  temp= 250+temp;
-  temp = temp/10;
-//  temp = (250 - (511 - NTC)) / 10;
-
-  if (temp > 99)
-    temp = 99;
-
-  if (temp < 0)
-    temp = 0;
-
-  return (temp & 0xff);
-}
 
 /**
  End of File

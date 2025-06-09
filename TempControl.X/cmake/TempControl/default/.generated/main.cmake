@@ -1,3 +1,4 @@
+# cmake files support debug production
 include("${CMAKE_CURRENT_LIST_DIR}/rule.cmake")
 include("${CMAKE_CURRENT_LIST_DIR}/file.cmake")
 
@@ -24,7 +25,9 @@ add_library(TempControl_default_default_XC8_compile OBJECT ${TempControl_default
     list(APPEND TempControl_default_library_list "$<TARGET_OBJECTS:TempControl_default_default_XC8_compile>")
 endif()
 
+
 add_executable(${TempControl_default_image_name} ${TempControl_default_library_list})
+set_target_properties(${TempControl_default_image_name} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${TempControl_default_output_dir})
 
 target_link_libraries(${TempControl_default_image_name} PRIVATE ${TempControl_default_default_XC8_FILE_TYPE_link})
 
@@ -32,8 +35,5 @@ target_link_libraries(${TempControl_default_image_name} PRIVATE ${TempControl_de
 TempControl_default_link_rule(${TempControl_default_image_name})
 
 
-# Post build target to copy built file to the output directory.
-add_custom_command(TARGET ${TempControl_default_image_name} POST_BUILD
-                    COMMAND ${CMAKE_COMMAND} -E make_directory ${TempControl_default_output_dir}
-                    COMMAND ${CMAKE_COMMAND} -E copy ${TempControl_default_image_name} ${TempControl_default_output_dir}/${TempControl_default_original_image_name}
-                    BYPRODUCTS ${TempControl_default_output_dir}/${TempControl_default_original_image_name})
+
+

@@ -1,6 +1,6 @@
 {
     "importedFrom": "./",
-    "version": "1.4",
+    "version": "1.5",
     "configurations": [
         {
             "name": "default",
@@ -18,7 +18,9 @@
                 }
             ],
             "fileSet": "Project files",
-            "toolchain": "default-XC8"
+            "toolchain": "default-XC8",
+            "preBuildSteps": [],
+            "postBuildSteps": []
         }
     ],
     "propertyGroups": [
@@ -151,7 +153,11 @@
                 "Makefile",
                 "mcc_generated_files/*",
                 "*.c",
-                "*.mc3"
+                "*.mc3",
+                "mcc_generated_files/drivers/uart.c",
+                "mcc_generated_files/drivers/uart.h",
+                "mcc_generated_files/temperature/temperature.h",
+                "main.h"
             ],
             "encoding": "UTF-8"
         }

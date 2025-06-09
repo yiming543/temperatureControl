@@ -4990,9 +4990,9 @@ extern __bank0 __bit __timeout;
 # 1 "mcc_generated_files/device_config.h" 1
 # 51 "mcc_generated_files/mcc.h" 2
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 253 "mcc_generated_files/pin_manager.h"
+# 261 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 265 "mcc_generated_files/pin_manager.h"
+# 273 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 52 "mcc_generated_files/mcc.h" 2
 
@@ -5214,7 +5214,7 @@ void TMR0_ISR(void);
 void TMR0_DefaultInterruptHandler(void);
 # 58 "mcc_generated_files/mcc.h" 2
 # 1 "mcc_generated_files/eusart.h" 1
-# 75 "mcc_generated_files/eusart.h"
+# 76 "mcc_generated_files/eusart.h"
 typedef union {
     struct {
         unsigned perr : 1;
@@ -5224,28 +5224,28 @@ typedef union {
     };
     uint8_t status;
 }eusart_status_t;
-# 110 "mcc_generated_files/eusart.h"
+# 111 "mcc_generated_files/eusart.h"
 void EUSART_Initialize(void);
-# 158 "mcc_generated_files/eusart.h"
+# 159 "mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_ready(void);
-# 206 "mcc_generated_files/eusart.h"
+# 207 "mcc_generated_files/eusart.h"
 _Bool EUSART_is_rx_ready(void);
-# 253 "mcc_generated_files/eusart.h"
+# 254 "mcc_generated_files/eusart.h"
 _Bool EUSART_is_tx_done(void);
-# 301 "mcc_generated_files/eusart.h"
+# 302 "mcc_generated_files/eusart.h"
 eusart_status_t EUSART_get_last_status(void);
-# 321 "mcc_generated_files/eusart.h"
+# 322 "mcc_generated_files/eusart.h"
 uint8_t EUSART_Read(void);
-# 341 "mcc_generated_files/eusart.h"
+# 342 "mcc_generated_files/eusart.h"
 void EUSART_Write(uint8_t txData);
-# 361 "mcc_generated_files/eusart.h"
+# 362 "mcc_generated_files/eusart.h"
 void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 379 "mcc_generated_files/eusart.h"
+# 380 "mcc_generated_files/eusart.h"
 void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 397 "mcc_generated_files/eusart.h"
+# 398 "mcc_generated_files/eusart.h"
 void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 # 59 "mcc_generated_files/mcc.h" 2
-# 1 "mcc_generated_files/disp_7seg\\disp_7seg.h" 1
+# 1 "mcc_generated_files/disp_7seg/disp_7seg.h" 1
 
 
 
@@ -5253,35 +5253,62 @@ void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 
 extern void disp_sub(char disp_temp, unsigned char disp_char);
 # 60 "mcc_generated_files/mcc.h" 2
-# 1 "mcc_generated_files/key\\key.h" 1
+# 1 "mcc_generated_files/key/key.h" 1
 
 
 
+
+# 1 "mcc_generated_files/key/../../TempControl.h" 1
+
+
+
+enum eDISPLAY_MODE
+{
+ DISPLAY_MODE_TEMPERATURE=0,
+ DISPLAY_MODE_TEMPERATURE_SET1,
+ DISPLAY_MODE_TEMPERATURE_SET2,
+};
+# 6 "mcc_generated_files/key/key.h" 2
 
 extern unsigned long milliSeconds;
-extern unsigned char SW1_Status;
-extern unsigned char SW2_Status;
-extern unsigned char SW3_Status;
+extern uint8_t SW1_Status;
+extern uint8_t SW2_Status;
+extern uint8_t SW3_Status;
 
-extern void keyDebounce(void);
+extern uint8_t tempCnt;
+extern uint8_t tempCnt1;
+
+extern void getKeyStatus(void);
 extern unsigned long getTime_ms(void);
 
-
-
-
-
-
+void keyDebounce(void);
+void chkeckPressKeyNumber(void);
+# 30 "mcc_generated_files/key/key.h"
 enum KeyState {
   KEY_STATE_RELEASE,
   KEY_STATE_SHORT_PRESS,
   KEY_STATE_LONG_PRESS
 };
 # 61 "mcc_generated_files/mcc.h" 2
-# 75 "mcc_generated_files/mcc.h"
+# 1 "mcc_generated_files/temperature/temperature.h" 1
+
+
+
+
+# 1 "mcc_generated_files/mcc.h" 1
+# 6 "mcc_generated_files/temperature/temperature.h" 2
+
+extern void getTemperature(void);
+uint8_t CalTemperture(adc_result_t NTC_Value);
+
+extern adc_result_t adc_result;
+extern uint8_t temperature;
+# 62 "mcc_generated_files/mcc.h" 2
+# 76 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 88 "mcc_generated_files/mcc.h"
+# 89 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 100 "mcc_generated_files/mcc.h"
+# 101 "mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
 # 48 "mcc_generated_files/mcc.c" 2
 
@@ -5292,8 +5319,8 @@ void SYSTEM_Initialize(void)
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     WDT_Initialize();
-    ADC_Initialize();
     TMR0_Initialize();
+    ADC_Initialize();
     EUSART_Initialize();
 }
 

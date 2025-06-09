@@ -5044,7 +5044,7 @@ void ADC_Initialize(void)
 
 
 
-    ADCON1 = 0x80;
+    ADCON1 = 0xF0;
 
 
     ADRESL = 0x00;
@@ -5060,7 +5060,7 @@ void ADC_Initialize(void)
 void ADC_SelectChannel(adc_channel_t channel)
 {
 
-    ADCON0bits.CHS = channel;
+    ADCON0bits.CHS = (unsigned char)channel;
 
     ADCON0bits.ADON = 1;
 }
@@ -5087,7 +5087,7 @@ adc_result_t ADC_GetConversionResult(void)
 adc_result_t ADC_GetConversion(adc_channel_t channel)
 {
 
-    ADCON0bits.CHS = channel;
+    ADCON0bits.CHS = (unsigned char)channel;
 
 
     ADCON0bits.ADON = 1;

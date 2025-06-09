@@ -9,8 +9,7 @@
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
-                <sourceRootElem>mcc_generated_files/disp_7seg</sourceRootElem>
-                <sourceRootElem>mcc_generated_files/key</sourceRootElem>
+                <sourceRootElem>.</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

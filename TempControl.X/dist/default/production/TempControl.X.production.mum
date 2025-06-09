@@ -1,7 +1,7 @@
 
 16F1936 Memory Summary:
-    Program space        used   9FCh (  2556) of  2000h words   ( 31.2%)
-    Data space           used    56h (    86) of   200h bytes   ( 16.8%)
+    Program space        used   B33h (  2867) of  2000h words   ( 35.0%)
+    Data space           used    63h (    99) of   200h bytes   ( 19.3%)
     EEPROM space         used     0h (     0) of   100h bytes   (  0.0%)
     Configuration bits   used     2h (     2) of     2h words   (100.0%)
     ID Location space    used     0h (     0) of     4h bytes   (  0.0%)

@@ -1,15 +1,26 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"11 ./mcc_generated_files/temperature/temperature.h
+[; ;./mcc_generated_files/temperature/temperature.h: 11: extern uint8_t temperature;
+[v _temperature `uc ~T0 @X0 0 e ]
+"2315 C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h
+[; ;C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h: 2315:     struct {
+[s S119 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S119 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"2314
+[; ;C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h: 2314: typedef union {
+[u S118 `S119 1 ]
+[n S118 . . ]
+"2326
+[; ;C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h: 2326: extern volatile LATCbits_t LATCbits __attribute__((address(0x10E)));
+[v _LATCbits `VS118 ~T0 @X0 0 e@270 ]
 [p mainexit ]
-"75 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 75: void SYSTEM_Initialize(void);
+"76 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 76: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-[v F3151 `(v ~T0 @X0 0 tf ]
+[v F3159 `(v ~T0 @X0 0 tf ]
 "238 ./mcc_generated_files/tmr0.h
 [; ;./mcc_generated_files/tmr0.h: 238:  void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _TMR0_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F3151 ]
-"51 main.c
-[; ;main.c: 51: void TMR0_timerHandler(void);
-[v _TMR0_timerHandler `(v ~T0 @X0 0 ef ]
+[v _TMR0_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F3159 ]
 "355 C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h
 [; ;C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h: 355:     struct {
 [s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -25,40 +36,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "372
 [; ;C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h: 372: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"106 main.c
-[; ;main.c: 106:     adc_result = ADC_GetConversion(channel_AN0);
-[c E3128 0 2 29 30 31 .. ]
-[n E3128 . channel_AN0 channel_AN2 channel_Temp channel_DAC channel_FVR  ]
-"289 ./mcc_generated_files/adc.h
-[; ;./mcc_generated_files/adc.h: 289: adc_result_t ADC_GetConversion(adc_channel_t channel);
-[v _ADC_GetConversion `(us ~T0 @X0 0 ef1`E3128 ]
-"53 main.c
-[; ;main.c: 53: unsigned char CalTemperture(adc_result_t NTC_Value);
-[v _CalTemperture `(uc ~T0 @X0 0 ef1`us ]
-"10 ./mcc_generated_files/key/key.h
-[; ;./mcc_generated_files/key/key.h: 10: extern void keyDebounce(void);
-[v _keyDebounce `(v ~T0 @X0 0 ef ]
-"11
-[; ;./mcc_generated_files/key/key.h: 11: extern unsigned long getTime_ms(void);
-[v _getTime_ms `(ul ~T0 @X0 0 ef ]
-"52 main.c
-[; ;main.c: 52: void chkeckPressKeyNumber(void);
-[v _chkeckPressKeyNumber `(v ~T0 @X0 0 ef ]
-"6 ./mcc_generated_files/key/key.h
-[; ;./mcc_generated_files/key/key.h: 6: extern unsigned char SW1_Status;
-[v _SW1_Status `uc ~T0 @X0 0 e ]
-"118 main.c
-[; ;main.c: 118:       if ((SW1_Status == KEY_STATE_SHORT_PRESS) &&
-[c E8 0 1 2 .. ]
-[n E8 KeyState KEY_STATE_RELEASE KEY_STATE_SHORT_PRESS KEY_STATE_LONG_PRESS  ]
-"7 ./mcc_generated_files/key/key.h
-[; ;./mcc_generated_files/key/key.h: 7: extern unsigned char SW2_Status;
-[v _SW2_Status `uc ~T0 @X0 0 e ]
-"8
-[; ;./mcc_generated_files/key/key.h: 8: extern unsigned char SW3_Status;
-[v _SW3_Status `uc ~T0 @X0 0 e ]
-"6 ./mcc_generated_files/disp_7seg\disp_7seg.h
-[; ;./mcc_generated_files/disp_7seg\disp_7seg.h: 6: extern void disp_sub(char disp_temp, unsigned char disp_char);
+"7 ./mcc_generated_files/temperature/temperature.h
+[; ;./mcc_generated_files/temperature/temperature.h: 7: extern void getTemperature(void);
+[v _getTemperature `(v ~T0 @X0 0 ef ]
+"15 ./mcc_generated_files/key/key.h
+[; ;./mcc_generated_files/key/key.h: 15: extern void getKeyStatus(void);
+[v _getKeyStatus `(v ~T0 @X0 0 ef ]
+"147 main.c
+[; ;main.c: 147:     if (displayMode == DISPLAY_MODE_TEMPERATURE) {
+[c E2 0 1 2 .. ]
+[n E2 eDISPLAY_MODE DISPLAY_MODE_TEMPERATURE DISPLAY_MODE_TEMPERATURE_SET1 DISPLAY_MODE_TEMPERATURE_SET2  ]
+"6 ./mcc_generated_files/disp_7seg/disp_7seg.h
+[; ;./mcc_generated_files/disp_7seg/disp_7seg.h: 6: extern void disp_sub(char disp_temp, unsigned char disp_char);
 [v _disp_sub `(v ~T0 @X0 0 ef2`uc`uc ]
 "52 C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h
 [; ;C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h: 52: __asm("INDF0 equ 00h");
@@ -555,417 +544,283 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7359
 [; ;C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h: 7359: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"55 main.c
-[; ;main.c: 55: unsigned long milliSeconds = 0;
+"54 main.c
+[; ;main.c: 54: uint32_t milliSeconds = 0;
 [v _milliSeconds `ul ~T0 @X0 1 e ]
 [i _milliSeconds
 -> -> -> 0 `i `l `ul
 ]
-"56
-[; ;main.c: 56: unsigned int t250ms = 0;
-[v _t250ms `ui ~T0 @X0 1 e ]
+"55
+[; ;main.c: 55: uint16_t t250ms = 0;
+[v _t250ms `us ~T0 @X0 1 e ]
 [i _t250ms
--> -> 0 `i `ui
+-> -> 0 `i `us
+]
+"56
+[; ;main.c: 56: uint16_t t500ms = 0;
+[v _t500ms `us ~T0 @X0 1 e ]
+[i _t500ms
+-> -> 0 `i `us
 ]
 "57
-[; ;main.c: 57: unsigned int t500ms = 0;
-[v _t500ms `ui ~T0 @X0 1 e ]
-[i _t500ms
--> -> 0 `i `ui
+[; ;main.c: 57: uint16_t t1000ms = 0;
+[v _t1000ms `us ~T0 @X0 1 e ]
+[i _t1000ms
+-> -> 0 `i `us
 ]
 "58
-[; ;main.c: 58: unsigned int t1000ms = 0;
-[v _t1000ms `ui ~T0 @X0 1 e ]
-[i _t1000ms
--> -> 0 `i `ui
+[; ;main.c: 58: uint8_t f1S = 0;
+[v _f1S `uc ~T0 @X0 1 e ]
+[i _f1S
+-> -> 0 `i `uc
 ]
 "60
-[; ;main.c: 60: unsigned char tempCnt = 0;
+[; ;main.c: 60: uint8_t tempCnt = 0;
 [v _tempCnt `uc ~T0 @X0 1 e ]
 [i _tempCnt
 -> -> 0 `i `uc
 ]
 "61
-[; ;main.c: 61: unsigned char fKeyRelease_SW1 = 1;
-[v _fKeyRelease_SW1 `uc ~T0 @X0 1 e ]
-[i _fKeyRelease_SW1
--> -> 1 `i `uc
-]
-"62
-[; ;main.c: 62: unsigned char fKeyRelease_SW2 = 1;
-[v _fKeyRelease_SW2 `uc ~T0 @X0 1 e ]
-[i _fKeyRelease_SW2
--> -> 1 `i `uc
-]
-"63
-[; ;main.c: 63: unsigned char fKeyRelease_SW3 = 1;
-[v _fKeyRelease_SW3 `uc ~T0 @X0 1 e ]
-[i _fKeyRelease_SW3
--> -> 1 `i `uc
+[; ;main.c: 61: uint8_t tempCnt1 = 0;
+[v _tempCnt1 `uc ~T0 @X0 1 e ]
+[i _tempCnt1
+-> -> 0 `i `uc
 ]
 "65
-[; ;main.c: 65: unsigned long SW2_LongPressTime = 0x7fffffffL;
-[v _SW2_LongPressTime `ul ~T0 @X0 1 e ]
-[i _SW2_LongPressTime
--> -> 2147483647 `l `ul
+[; ;main.c: 65: uint8_t temperature_SET1 = 30;
+[v _temperature_SET1 `uc ~T0 @X0 1 e ]
+[i _temperature_SET1
+-> -> 30 `i `uc
 ]
 "66
-[; ;main.c: 66: unsigned long SW3_LongPressTime = 0x7fffffffL;
-[v _SW3_LongPressTime `ul ~T0 @X0 1 e ]
-[i _SW3_LongPressTime
--> -> 2147483647 `l `ul
+[; ;main.c: 66: uint8_t temperature_SET2 = 25;
+[v _temperature_SET2 `uc ~T0 @X0 1 e ]
+[i _temperature_SET2
+-> -> 25 `i `uc
 ]
-"67
-[; ;main.c: 67: unsigned long longPressCurrentTime;
-[v _longPressCurrentTime `ul ~T0 @X0 1 e ]
-"69
-[; ;main.c: 69: unsigned char fTooManyKeyPress = 0;
-[v _fTooManyKeyPress `uc ~T0 @X0 1 e ]
-[i _fTooManyKeyPress
+"68
+[; ;main.c: 68: uint8_t displayMode = 0;
+[v _displayMode `uc ~T0 @X0 1 e ]
+[i _displayMode
 -> -> 0 `i `uc
 ]
 "70
-[; ;main.c: 70: adc_result_t adc_result;
-[v _adc_result `us ~T0 @X0 1 e ]
-"71
-[; ;main.c: 71: unsigned char temperture;
-[v _temperture `uc ~T0 @X0 1 e ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"79
-[; ;main.c: 79: int main(void) {
-[v _main `(i ~T0 @X0 1 ef ]
-{
-[e :U _main ]
-[f ]
-"81
-[; ;main.c: 81:   SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-"82
-[; ;main.c: 82:   TMR0_SetInterruptHandler(TMR0_timerHandler);
-[e ( _TMR0_SetInterruptHandler (1 &U _TMR0_timerHandler ]
-"85
-[; ;main.c: 85:   (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"87
-[; ;main.c: 87:   (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"93
-[; ;main.c: 93:   (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"96
-[; ;main.c: 96:   (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"104
-[; ;main.c: 104:   while (1) {
-[e :U 375 ]
-{
-"106
-[; ;main.c: 106:     adc_result = ADC_GetConversion(channel_AN0);
-[e = _adc_result ( _ADC_GetConversion (1 . `E3128 0 ]
-"107
-[; ;main.c: 107:     temperture = CalTemperture(adc_result);
-[e = _temperture ( _CalTemperture (1 _adc_result ]
-"110
-[; ;main.c: 110:     keyDebounce();
-[e ( _keyDebounce ..  ]
-"111
-[; ;main.c: 111:     longPressCurrentTime = getTime_ms();
-[e = _longPressCurrentTime ( _getTime_ms ..  ]
-"112
-[; ;main.c: 112:     chkeckPressKeyNumber();
-[e ( _chkeckPressKeyNumber ..  ]
-"115
-[; ;main.c: 115:     if (fTooManyKeyPress == 0) {
-[e $ ! == -> _fTooManyKeyPress `i -> 0 `i 377  ]
-{
-"118
-[; ;main.c: 118:       if ((SW1_Status == KEY_STATE_SHORT_PRESS) &&
-[e $ ! && == -> _SW1_Status `i -> . `E8 1 `i == -> _fKeyRelease_SW1 `i -> 1 `i 378  ]
-"119
-[; ;main.c: 119:           (fKeyRelease_SW1 == 1)) {
-{
-"120
-[; ;main.c: 120:         tempCnt++;
-[e ++ _tempCnt -> -> 1 `i `uc ]
-"121
-[; ;main.c: 121:         fKeyRelease_SW1 = 0;
-[e = _fKeyRelease_SW1 -> -> 0 `i `uc ]
-"122
-[; ;main.c: 122:       }
-}
-[e :U 378 ]
-"125
-[; ;main.c: 125:       if ((SW2_Status == KEY_STATE_SHORT_PRESS) &&
-[e $ ! && == -> _SW2_Status `i -> . `E8 1 `i == -> _fKeyRelease_SW2 `i -> 1 `i 379  ]
-"126
-[; ;main.c: 126:           (fKeyRelease_SW2 == 1)) {
-{
-"127
-[; ;main.c: 127:         tempCnt++;
-[e ++ _tempCnt -> -> 1 `i `uc ]
-"128
-[; ;main.c: 128:         fKeyRelease_SW2 = 0;
-[e = _fKeyRelease_SW2 -> -> 0 `i `uc ]
-"129
-[; ;main.c: 129:       }
-}
-[e :U 379 ]
-"132
-[; ;main.c: 132:       if (SW2_Status == KEY_STATE_LONG_PRESS) {
-[e $ ! == -> _SW2_Status `i -> . `E8 2 `i 380  ]
-{
-"133
-[; ;main.c: 133:         if (longPressCurrentTime - SW2_LongPressTime > 100) {
-[e $ ! > - _longPressCurrentTime _SW2_LongPressTime -> -> -> 100 `i `l `ul 381  ]
-{
-"134
-[; ;main.c: 134:           if (tempCnt < 99) {
-[e $ ! < -> _tempCnt `i -> 99 `i 382  ]
-{
-"135
-[; ;main.c: 135:             tempCnt++;
-[e ++ _tempCnt -> -> 1 `i `uc ]
-"136
-[; ;main.c: 136:           }
-}
-[e :U 382 ]
-"137
-[; ;main.c: 137:           SW2_LongPressTime = longPressCurrentTime;
-[e = _SW2_LongPressTime _longPressCurrentTime ]
-"138
-[; ;main.c: 138:         }
-}
-[e :U 381 ]
-"139
-[; ;main.c: 139:       }
-}
-[e :U 380 ]
-"141
-[; ;main.c: 141:       if ((SW3_Status == KEY_STATE_SHORT_PRESS) &&
-[e $ ! && == -> _SW3_Status `i -> . `E8 1 `i == -> _fKeyRelease_SW3 `i -> 1 `i 383  ]
-"142
-[; ;main.c: 142:           (fKeyRelease_SW3 == 1)) {
-{
-"143
-[; ;main.c: 143:         tempCnt--;
-[e -- _tempCnt -> -> 1 `i `uc ]
-"144
-[; ;main.c: 144:         fKeyRelease_SW3 = 0;
-[e = _fKeyRelease_SW3 -> -> 0 `i `uc ]
-"145
-[; ;main.c: 145:       }
-}
-[e :U 383 ]
-"148
-[; ;main.c: 148:       if (SW3_Status == KEY_STATE_LONG_PRESS) {
-[e $ ! == -> _SW3_Status `i -> . `E8 2 `i 384  ]
-{
-"149
-[; ;main.c: 149:         if (longPressCurrentTime - SW3_LongPressTime > 100) {
-[e $ ! > - _longPressCurrentTime _SW3_LongPressTime -> -> -> 100 `i `l `ul 385  ]
-{
-"150
-[; ;main.c: 150:           if (tempCnt > 0) {
-[e $ ! > -> _tempCnt `i -> 0 `i 386  ]
-{
-"151
-[; ;main.c: 151:             tempCnt--;
-[e -- _tempCnt -> -> 1 `i `uc ]
-"152
-[; ;main.c: 152:           }
-}
-[e :U 386 ]
-"153
-[; ;main.c: 153:           SW3_LongPressTime = longPressCurrentTime;
-[e = _SW3_LongPressTime _longPressCurrentTime ]
-"154
-[; ;main.c: 154:         }
-}
-[e :U 385 ]
-"155
-[; ;main.c: 155:       }
-}
-[e :U 384 ]
-"156
-[; ;main.c: 156:     }
-}
-[e :U 377 ]
-"159
-[; ;main.c: 159:     disp_sub(temperture, 11);
-[e ( _disp_sub (2 , -> _temperture `uc -> -> 11 `i `uc ]
-"160
-[; ;main.c: 160:   }
-}
-[e :U 374 ]
-[e $U 375  ]
-[e :U 376 ]
-"162
-[; ;main.c: 162:   return 0;
-[e ) -> 0 `i ]
-[e $UE 373  ]
-"163
-[; ;main.c: 163: }
-[e :UE 373 ]
-}
-"165
-[; ;main.c: 165: void TMR0_timerHandler(void) {
+[; ;main.c: 70: void TMR0_timerHandler(void) {
 [v _TMR0_timerHandler `(v ~T0 @X0 1 ef ]
 {
 [e :U _TMR0_timerHandler ]
 [f ]
-"168
-[; ;main.c: 168:   milliSeconds++;
+"73
+[; ;main.c: 73:   milliSeconds++;
 [e ++ _milliSeconds -> -> -> 1 `i `l `ul ]
-"169
-[; ;main.c: 169:   t500ms++;
-[e ++ _t500ms -> -> 1 `i `ui ]
-"170
-[; ;main.c: 170:   t250ms++;
-[e ++ _t250ms -> -> 1 `i `ui ]
-"171
-[; ;main.c: 171:   t1000ms++;
-[e ++ _t1000ms -> -> 1 `i `ui ]
-"172
-[; ;main.c: 172:   if (t250ms > 250) {
-[e $ ! > _t250ms -> -> 250 `i `ui 388  ]
+"74
+[; ;main.c: 74:   t500ms++;
+[e ++ _t500ms -> -> 1 `i `us ]
+"75
+[; ;main.c: 75:   t250ms++;
+[e ++ _t250ms -> -> 1 `i `us ]
+"76
+[; ;main.c: 76:   t1000ms++;
+[e ++ _t1000ms -> -> 1 `i `us ]
+"77
+[; ;main.c: 77:   if (t250ms > 250) {
+[e $ ! > -> _t250ms `ui -> -> 250 `i `ui 374  ]
 {
-"173
-[; ;main.c: 173:     t250ms = 0;
-[e = _t250ms -> -> 0 `i `ui ]
-"175
-[; ;main.c: 175:   }
+"78
+[; ;main.c: 78:     t250ms = 0;
+[e = _t250ms -> -> 0 `i `us ]
+"80
+[; ;main.c: 80:   }
 }
-[e :U 388 ]
-"177
-[; ;main.c: 177:   if (t500ms > 500) {
-[e $ ! > _t500ms -> -> 500 `i `ui 389  ]
+[e :U 374 ]
+"82
+[; ;main.c: 82:   if (t500ms > 500) {
+[e $ ! > -> _t500ms `ui -> -> 500 `i `ui 375  ]
 {
-"178
-[; ;main.c: 178:     t500ms = 0;
-[e = _t500ms -> -> 0 `i `ui ]
-"180
-[; ;main.c: 180:   }
+"83
+[; ;main.c: 83:     t500ms = 0;
+[e = _t500ms -> -> 0 `i `us ]
+"85
+[; ;main.c: 85:   }
 }
-[e :U 389 ]
-"181
-[; ;main.c: 181: }
-[e :UE 387 ]
-}
-"183
-[; ;main.c: 183: void chkeckPressKeyNumber(void) {
-[v _chkeckPressKeyNumber `(v ~T0 @X0 1 ef ]
+[e :U 375 ]
+"87
+[; ;main.c: 87:   if (t1000ms > 1000) {
+[e $ ! > -> _t1000ms `ui -> -> 1000 `i `ui 376  ]
 {
-[e :U _chkeckPressKeyNumber ]
+"88
+[; ;main.c: 88:     t1000ms = 0;
+[e = _t1000ms -> -> 0 `i `us ]
+"89
+[; ;main.c: 89:     f1S = 1;
+[e = _f1S -> -> 1 `i `uc ]
+"90
+[; ;main.c: 90:   }
+}
+[e :U 376 ]
+"91
+[; ;main.c: 91: }
+[e :UE 373 ]
+}
+"94
+[; ;main.c: 94: void checkTemperature_SET1(void) {
+[v _checkTemperature_SET1 `(v ~T0 @X0 1 ef ]
+{
+[e :U _checkTemperature_SET1 ]
 [f ]
-"184
-[; ;main.c: 184:   unsigned char keyCnt = 0;
-[v _keyCnt `uc ~T0 @X0 1 a ]
-[e = _keyCnt -> -> 0 `i `uc ]
-"185
-[; ;main.c: 185:   if ((SW1_Status == KEY_STATE_SHORT_PRESS) ||
-[e $ ! || == -> _SW1_Status `i -> . `E8 1 `i == -> _SW1_Status `i -> . `E8 2 `i 391  ]
-"186
-[; ;main.c: 186:       (SW1_Status == KEY_STATE_LONG_PRESS)) {
+"95
+[; ;main.c: 95:   if (temperature > (temperature_SET1+1)) {
+[e $ ! > -> _temperature `i + -> _temperature_SET1 `i -> 1 `i 378  ]
 {
-"187
-[; ;main.c: 187:     keyCnt++;
-[e ++ _keyCnt -> -> 1 `i `uc ]
-"188
-[; ;main.c: 188:   }
+"96
+[; ;main.c: 96:     do { LATCbits.LATC5 = 0; } while(0);
+[e :U 381 ]
+{
+[e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
 }
-[e :U 391 ]
-"189
-[; ;main.c: 189:   if ((SW2_Status == KEY_STATE_SHORT_PRESS) ||
-[e $ ! || == -> _SW2_Status `i -> . `E8 1 `i == -> _SW2_Status `i -> . `E8 2 `i 392  ]
-"190
-[; ;main.c: 190:       (SW2_Status == KEY_STATE_LONG_PRESS)) {
+[e :U 380 ]
+"97
+[; ;main.c: 97:   } else if(temperature < (temperature_SET1-1)) {
+}
+[e $U 382  ]
+[e :U 378 ]
+[e $ ! < -> _temperature `i - -> _temperature_SET1 `i -> 1 `i 383  ]
 {
-"191
-[; ;main.c: 191:     keyCnt++;
-[e ++ _keyCnt -> -> 1 `i `uc ]
-"192
-[; ;main.c: 192:   }
+"98
+[; ;main.c: 98:     do { LATCbits.LATC5 = 1; } while(0);
+[e :U 386 ]
+{
+[e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
+}
+[e :U 385 ]
+"99
+[; ;main.c: 99:   }
+}
+[e :U 383 ]
+[e :U 382 ]
+"100
+[; ;main.c: 100: }
+[e :UE 377 ]
+}
+"102
+[; ;main.c: 102: void checkTemperature_SET2(void) {
+[v _checkTemperature_SET2 `(v ~T0 @X0 1 ef ]
+{
+[e :U _checkTemperature_SET2 ]
+[f ]
+"103
+[; ;main.c: 103:   if (temperature < temperature_SET2) {
+[e $ ! < -> _temperature `i -> _temperature_SET2 `i 388  ]
+{
+"104
+[; ;main.c: 104:     do { LATCbits.LATC4 = 0; } while(0);
+[e :U 391 ]
+{
+[e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
+}
+[e :U 390 ]
+"105
+[; ;main.c: 105:   } else {
+}
+[e $U 392  ]
+[e :U 388 ]
+{
+"106
+[; ;main.c: 106:     do { LATCbits.LATC4 = 1; } while(0);
+[e :U 395 ]
+{
+[e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
+}
+[e :U 394 ]
+"107
+[; ;main.c: 107:   }
 }
 [e :U 392 ]
-"193
-[; ;main.c: 193:   if ((SW3_Status == KEY_STATE_SHORT_PRESS) ||
-[e $ ! || == -> _SW3_Status `i -> . `E8 1 `i == -> _SW3_Status `i -> . `E8 2 `i 393  ]
-"194
-[; ;main.c: 194:       (SW3_Status == KEY_STATE_LONG_PRESS)) {
-{
-"195
-[; ;main.c: 195:     keyCnt++;
-[e ++ _keyCnt -> -> 1 `i `uc ]
-"196
-[; ;main.c: 196:   }
+"108
+[; ;main.c: 108: }
+[e :UE 387 ]
 }
-[e :U 393 ]
-"197
-[; ;main.c: 197:   if (keyCnt > 1) {
-[e $ ! > -> _keyCnt `i -> 1 `i 394  ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"114
+[; ;main.c: 114: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
 {
-"198
-[; ;main.c: 198:     fTooManyKeyPress = 1;
-[e = _fTooManyKeyPress -> -> 1 `i `uc ]
-"199
-[; ;main.c: 199:   } else {
-}
-[e $U 395  ]
-[e :U 394 ]
-{
-"200
-[; ;main.c: 200:     fTooManyKeyPress = 0;
-[e = _fTooManyKeyPress -> -> 0 `i `uc ]
-"201
-[; ;main.c: 201:   }
-}
-[e :U 395 ]
-"202
-[; ;main.c: 202: }
-[e :UE 390 ]
-}
-"204
-[; ;main.c: 204: unsigned char CalTemperture(adc_result_t NTC_Value) {
-[v _CalTemperture `(uc ~T0 @X0 1 ef1`us ]
-{
-[e :U _CalTemperture ]
-[v _NTC_Value `us ~T0 @X0 1 r1 ]
+[e :U _main ]
 [f ]
-"205
-[; ;main.c: 205:   int temp;
-[v _temp `i ~T0 @X0 1 a ]
-"206
-[; ;main.c: 206:   int NTC = NTC_Value & 0x3FF;
-[v _NTC `i ~T0 @X0 1 a ]
-[e = _NTC -> & -> _NTC_Value `ui -> -> 1023 `i `ui `i ]
-"208
-[; ;main.c: 208:   temp= 511-NTC;
-[e = _temp - -> 511 `i _NTC ]
-"209
-[; ;main.c: 209:   temp= 250+temp;
-[e = _temp + -> 250 `i _temp ]
-"210
-[; ;main.c: 210:   temp = temp/10;
-[e = _temp / _temp -> 10 `i ]
-"213
-[; ;main.c: 213:   if (temp > 99)
-[e $ ! > _temp -> 99 `i 397  ]
-"214
-[; ;main.c: 214:     temp = 99;
-[e = _temp -> 99 `i ]
-[e :U 397 ]
-"216
-[; ;main.c: 216:   if (temp < 0)
-[e $ ! < _temp -> 0 `i 398  ]
-"217
-[; ;main.c: 217:     temp = 0;
-[e = _temp -> 0 `i ]
+"116
+[; ;main.c: 116:   SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
+"117
+[; ;main.c: 117:   TMR0_SetInterruptHandler(TMR0_timerHandler);
+[e ( _TMR0_SetInterruptHandler (1 &U _TMR0_timerHandler ]
+"120
+[; ;main.c: 120:   (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"122
+[; ;main.c: 122:   (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"128
+[; ;main.c: 128:   (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"131
+[; ;main.c: 131:   (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"139
+[; ;main.c: 139:   while (1) {
 [e :U 398 ]
-"219
-[; ;main.c: 219:   return (temp & 0xff);
-[e ) -> & _temp -> 255 `i `uc ]
-[e $UE 396  ]
-"220
-[; ;main.c: 220: }
+{
+"141
+[; ;main.c: 141:     getTemperature();
+[e ( _getTemperature ..  ]
+"144
+[; ;main.c: 144:     getKeyStatus();
+[e ( _getKeyStatus ..  ]
+"147
+[; ;main.c: 147:     if (displayMode == DISPLAY_MODE_TEMPERATURE) {
+[e $ ! == -> _displayMode `i -> . `E2 0 `i 400  ]
+{
+"148
+[; ;main.c: 148:       disp_sub(temperature, 11);
+[e ( _disp_sub (2 , -> _temperature `uc -> -> 11 `i `uc ]
+"149
+[; ;main.c: 149:     } else if (displayMode == DISPLAY_MODE_TEMPERATURE_SET1) {
+}
+[e $U 401  ]
+[e :U 400 ]
+[e $ ! == -> _displayMode `i -> . `E2 1 `i 402  ]
+{
+"150
+[; ;main.c: 150:       disp_sub(temperature_SET1, 12);
+[e ( _disp_sub (2 , -> _temperature_SET1 `uc -> -> 12 `i `uc ]
+"151
+[; ;main.c: 151:     } else if (displayMode == DISPLAY_MODE_TEMPERATURE_SET2) {
+}
+[e $U 403  ]
+[e :U 402 ]
+[e $ ! == -> _displayMode `i -> . `E2 2 `i 404  ]
+{
+"152
+[; ;main.c: 152:       disp_sub(temperature_SET2, 13);
+[e ( _disp_sub (2 , -> _temperature_SET2 `uc -> -> 13 `i `uc ]
+"153
+[; ;main.c: 153:     }
+}
+[e :U 404 ]
+[e :U 403 ]
+[e :U 401 ]
+"156
+[; ;main.c: 156:     checkTemperature_SET1();
+[e ( _checkTemperature_SET1 ..  ]
+"157
+[; ;main.c: 157:     checkTemperature_SET2();
+[e ( _checkTemperature_SET2 ..  ]
+"167
+[; ;main.c: 167:   }
+}
+[e :U 397 ]
+[e $U 398  ]
+[e :U 399 ]
+"168
+[; ;main.c: 168: }
 [e :UE 396 ]
 }

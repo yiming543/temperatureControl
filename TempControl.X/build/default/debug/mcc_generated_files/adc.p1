@@ -550,8 +550,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _ADC_Initialize ]
 [f ]
 "72
-[; ;mcc_generated_files/adc.c: 72:     ADCON1 = 0x80;
-[e = _ADCON1 -> -> 128 `i `uc ]
+[; ;mcc_generated_files/adc.c: 72:     ADCON1 = 0xF0;
+[e = _ADCON1 -> -> 240 `i `uc ]
 "75
 [; ;mcc_generated_files/adc.c: 75:     ADRESL = 0x00;
 [e = _ADRESL -> -> 0 `i `uc ]
@@ -579,7 +579,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/adc.c: 86: {
 [f ]
 "88
-[; ;mcc_generated_files/adc.c: 88:     ADCON0bits.CHS = channel;
+[; ;mcc_generated_files/adc.c: 88:     ADCON0bits.CHS = (unsigned char)channel;
 [e = . . _ADCON0bits 0 2 -> _channel `uc ]
 "90
 [; ;mcc_generated_files/adc.c: 90:     ADCON0bits.ADON = 1;
@@ -649,7 +649,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/adc.c: 113: {
 [f ]
 "115
-[; ;mcc_generated_files/adc.c: 115:     ADCON0bits.CHS = channel;
+[; ;mcc_generated_files/adc.c: 115:     ADCON0bits.CHS = (unsigned char)channel;
 [e = . . _ADCON0bits 0 2 -> _channel `uc ]
 "118
 [; ;mcc_generated_files/adc.c: 118:     ADCON0bits.ADON = 1;

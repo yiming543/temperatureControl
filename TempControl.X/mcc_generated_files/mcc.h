@@ -56,8 +56,9 @@
 #include "adc.h"
 #include "tmr0.h"
 #include "eusart.h"
-#include "disp_7seg\disp_7seg.h"
-#include "key\key.h"
+#include "disp_7seg/disp_7seg.h"
+#include "key/key.h"
+#include "temperature/temperature.h"
 
 
 

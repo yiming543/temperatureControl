@@ -25,7 +25,7 @@ void chkeckPressKeyNumber(void);
 #define KEY_RELEASE_TIME 5000          // 5000ms(default) 多久沒按下按鍵? (毫秒)
 
 #define TEMP_MAX 99 // 99度C
-#define TEMP_MIN 0  // 0度C
+#define TEMP_MIN 1  // 1度C
 
 enum KeyState {
   KEY_STATE_RELEASE,

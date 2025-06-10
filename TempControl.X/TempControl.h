@@ -9,7 +9,7 @@ enum eDISPLAY_MODE
 };
 
 
-#define DELTA_TEMPERATURE 2
+#define DELTA_TEMPERATURE 10 // unit:0.1 degree
 
 
 #endif //TEMP_CTNTROL_H

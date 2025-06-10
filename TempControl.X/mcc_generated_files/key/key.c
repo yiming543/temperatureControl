@@ -221,7 +221,9 @@ void getKeyStatus(void) {
     // SW2 Short Press
     if ((SW2_Status == KEY_STATE_SHORT_PRESS) &&
         (fKeyRelease_SW2 == KEY_RELEASE)) {
-      tempCnt++;
+      if (tempCnt < TEMP_MAX) {
+        tempCnt++;
+      }
       fKeyRelease_SW2 = 0;
     }
 
@@ -237,7 +239,9 @@ void getKeyStatus(void) {
 
     if ((SW3_Status == KEY_STATE_SHORT_PRESS) &&
         (fKeyRelease_SW3 == KEY_RELEASE)) {
-      tempCnt--;
+      if (tempCnt > TEMP_MIN) {
+        tempCnt--;
+      }
       fKeyRelease_SW3 = 0;
     }
 

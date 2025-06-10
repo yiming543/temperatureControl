@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"11 ./mcc_generated_files/temperature/temperature.h
-[; ;./mcc_generated_files/temperature/temperature.h: 11: extern uint8_t temperature;
-[v _temperature `uc ~T0 @X0 0 e ]
+"14 ./mcc_generated_files/temperature/temperature.h
+[; ;./mcc_generated_files/temperature/temperature.h: 14: extern uint16_t u16Temperature;
+[v _u16Temperature `us ~T0 @X0 0 e ]
 "2315 C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h
 [; ;C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h: 2315:     struct {
 [s S119 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -42,13 +42,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15 ./mcc_generated_files/key/key.h
 [; ;./mcc_generated_files/key/key.h: 15: extern void getKeyStatus(void);
 [v _getKeyStatus `(v ~T0 @X0 0 ef ]
-"147 main.c
-[; ;main.c: 147:     if (displayMode == DISPLAY_MODE_TEMPERATURE) {
+"168 main.c
+[; ;main.c: 168:     if (displayMode == DISPLAY_MODE_TEMPERATURE) {
 [c E2 0 1 2 .. ]
 [n E2 eDISPLAY_MODE DISPLAY_MODE_TEMPERATURE DISPLAY_MODE_TEMPERATURE_SET1 DISPLAY_MODE_TEMPERATURE_SET2  ]
 "6 ./mcc_generated_files/disp_7seg/disp_7seg.h
 [; ;./mcc_generated_files/disp_7seg/disp_7seg.h: 6: extern void disp_sub(char disp_temp, unsigned char disp_char);
 [v _disp_sub `(v ~T0 @X0 0 ef2`uc`uc ]
+"12 ./mcc_generated_files/temperature/temperature.h
+[; ;./mcc_generated_files/temperature/temperature.h: 12: extern uint8_t temperature;
+[v _temperature `uc ~T0 @X0 0 e ]
 "52 C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h
 [; ;C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h: 52: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -544,285 +547,333 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7359
 [; ;C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h: 7359: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"54 main.c
-[; ;main.c: 54: uint32_t milliSeconds = 0;
+"62 main.c
+[; ;main.c: 62: uint32_t milliSeconds = 0;
 [v _milliSeconds `ul ~T0 @X0 1 e ]
 [i _milliSeconds
 -> -> -> 0 `i `l `ul
 ]
-"55
-[; ;main.c: 55: uint16_t t250ms = 0;
+"63
+[; ;main.c: 63: uint16_t t250ms = 0;
 [v _t250ms `us ~T0 @X0 1 e ]
 [i _t250ms
 -> -> 0 `i `us
 ]
-"56
-[; ;main.c: 56: uint16_t t500ms = 0;
+"64
+[; ;main.c: 64: uint16_t t500ms = 0;
 [v _t500ms `us ~T0 @X0 1 e ]
 [i _t500ms
 -> -> 0 `i `us
 ]
-"57
-[; ;main.c: 57: uint16_t t1000ms = 0;
+"65
+[; ;main.c: 65: uint16_t t1000ms = 0;
 [v _t1000ms `us ~T0 @X0 1 e ]
 [i _t1000ms
 -> -> 0 `i `us
 ]
-"58
-[; ;main.c: 58: uint8_t f1S = 0;
+"66
+[; ;main.c: 66: uint8_t f1S = 0;
 [v _f1S `uc ~T0 @X0 1 e ]
 [i _f1S
 -> -> 0 `i `uc
 ]
-"60
-[; ;main.c: 60: uint8_t tempCnt = 0;
+"68
+[; ;main.c: 68: uint8_t tempCnt = 0;
 [v _tempCnt `uc ~T0 @X0 1 e ]
 [i _tempCnt
 -> -> 0 `i `uc
 ]
-"61
-[; ;main.c: 61: uint8_t tempCnt1 = 0;
+"69
+[; ;main.c: 69: uint8_t tempCnt1 = 0;
 [v _tempCnt1 `uc ~T0 @X0 1 e ]
 [i _tempCnt1
 -> -> 0 `i `uc
 ]
-"65
-[; ;main.c: 65: uint8_t temperature_SET1 = 31;
+"73
+[; ;main.c: 73: uint8_t temperature_SET1 = 30;
 [v _temperature_SET1 `uc ~T0 @X0 1 e ]
 [i _temperature_SET1
--> -> 31 `i `uc
+-> -> 30 `i `uc
 ]
-"66
-[; ;main.c: 66: uint8_t temperature_SET2 = 29;
+"74
+[; ;main.c: 74: uint8_t temperature_SET2 = 30;
 [v _temperature_SET2 `uc ~T0 @X0 1 e ]
 [i _temperature_SET2
--> -> 29 `i `uc
+-> -> 30 `i `uc
 ]
-"68
-[; ;main.c: 68: uint8_t displayMode = 0;
+"76
+[; ;main.c: 76: uint8_t displayMode = 0;
 [v _displayMode `uc ~T0 @X0 1 e ]
 [i _displayMode
 -> -> 0 `i `uc
 ]
-"70
-[; ;main.c: 70: void TMR0_timerHandler(void) {
+"77
+[; ;main.c: 77: uint8_t fRelay1 = 0;
+[v _fRelay1 `uc ~T0 @X0 1 e ]
+[i _fRelay1
+-> -> 0 `i `uc
+]
+"78
+[; ;main.c: 78: uint8_t fRelay2 = 0;
+[v _fRelay2 `uc ~T0 @X0 1 e ]
+[i _fRelay2
+-> -> 0 `i `uc
+]
+"80
+[; ;main.c: 80: void TMR0_timerHandler(void) {
 [v _TMR0_timerHandler `(v ~T0 @X0 1 ef ]
 {
 [e :U _TMR0_timerHandler ]
 [f ]
-"73
-[; ;main.c: 73:   milliSeconds++;
+"83
+[; ;main.c: 83:   milliSeconds++;
 [e ++ _milliSeconds -> -> -> 1 `i `l `ul ]
-"74
-[; ;main.c: 74:   t500ms++;
+"84
+[; ;main.c: 84:   t500ms++;
 [e ++ _t500ms -> -> 1 `i `us ]
-"75
-[; ;main.c: 75:   t250ms++;
+"85
+[; ;main.c: 85:   t250ms++;
 [e ++ _t250ms -> -> 1 `i `us ]
-"76
-[; ;main.c: 76:   t1000ms++;
+"86
+[; ;main.c: 86:   t1000ms++;
 [e ++ _t1000ms -> -> 1 `i `us ]
-"77
-[; ;main.c: 77:   if (t250ms > 250) {
+"87
+[; ;main.c: 87:   if (t250ms > 250) {
 [e $ ! > -> _t250ms `ui -> -> 250 `i `ui 374  ]
 {
-"78
-[; ;main.c: 78:     t250ms = 0;
-[e = _t250ms -> -> 0 `i `us ]
-"80
-[; ;main.c: 80:   }
-}
-[e :U 374 ]
-"82
-[; ;main.c: 82:   if (t500ms > 500) {
-[e $ ! > -> _t500ms `ui -> -> 500 `i `ui 375  ]
-{
-"83
-[; ;main.c: 83:     t500ms = 0;
-[e = _t500ms -> -> 0 `i `us ]
-"85
-[; ;main.c: 85:   }
-}
-[e :U 375 ]
-"87
-[; ;main.c: 87:   if (t1000ms > 1000) {
-[e $ ! > -> _t1000ms `ui -> -> 1000 `i `ui 376  ]
-{
 "88
-[; ;main.c: 88:     t1000ms = 0;
-[e = _t1000ms -> -> 0 `i `us ]
-"89
-[; ;main.c: 89:     f1S = 1;
-[e = _f1S -> -> 1 `i `uc ]
+[; ;main.c: 88:     t250ms = 0;
+[e = _t250ms -> -> 0 `i `us ]
 "90
 [; ;main.c: 90:   }
 }
+[e :U 374 ]
+"92
+[; ;main.c: 92:   if (t500ms > 500) {
+[e $ ! > -> _t500ms `ui -> -> 500 `i `ui 375  ]
+{
+"93
+[; ;main.c: 93:     t500ms = 0;
+[e = _t500ms -> -> 0 `i `us ]
+"95
+[; ;main.c: 95:   }
+}
+[e :U 375 ]
+"97
+[; ;main.c: 97:   if (t1000ms > 1000) {
+[e $ ! > -> _t1000ms `ui -> -> 1000 `i `ui 376  ]
+{
+"98
+[; ;main.c: 98:     t1000ms = 0;
+[e = _t1000ms -> -> 0 `i `us ]
+"99
+[; ;main.c: 99:     f1S = 1;
+[e = _f1S -> -> 1 `i `uc ]
+"100
+[; ;main.c: 100:   }
+}
 [e :U 376 ]
-"91
-[; ;main.c: 91: }
+"101
+[; ;main.c: 101: }
 [e :UE 373 ]
 }
-"94
-[; ;main.c: 94: void checkTemperature_SET1(void) {
+"103
+[; ;main.c: 103: void checkTemperature_SET1(void) {
 [v _checkTemperature_SET1 `(v ~T0 @X0 1 ef ]
 {
 [e :U _checkTemperature_SET1 ]
 [f ]
-"95
-[; ;main.c: 95:   if (temperature >= (temperature_SET1+2)) {
-[e $ ! >= -> _temperature `i + -> _temperature_SET1 `i -> 2 `i 378  ]
+"104
+[; ;main.c: 104:   uint16_t temperatureCheckSet_HI =
+[v _temperatureCheckSet_HI `us ~T0 @X0 1 a ]
+[e = _temperatureCheckSet_HI -> * -> -> _temperature_SET1 `us `ui -> -> 10 `i `ui `us ]
+"106
+[; ;main.c: 106:   uint16_t temperatureCheckSet_LO =
+[v _temperatureCheckSet_LO `us ~T0 @X0 1 a ]
+[e = _temperatureCheckSet_LO -> - * -> -> _temperature_SET1 `us `ui -> -> 10 `i `ui -> -> 10 `i `ui `us ]
+"109
+[; ;main.c: 109:   if (u16Temperature > temperatureCheckSet_HI) {
+[e $ ! > -> _u16Temperature `ui -> _temperatureCheckSet_HI `ui 378  ]
 {
-"96
-[; ;main.c: 96:     do { LATCbits.LATC5 = 1; } while(0);
+"110
+[; ;main.c: 110:     do { LATCbits.LATC5 = 1; } while(0);
 [e :U 381 ]
 {
 [e = . . _LATCbits 0 5 -> -> 1 `i `uc ]
 }
 [e :U 380 ]
-"97
-[; ;main.c: 97:   } else if(temperature <= (temperature_SET1-2)) {
+"111
+[; ;main.c: 111:     fRelay1 = 1;
+[e = _fRelay1 -> -> 1 `i `uc ]
+"112
+[; ;main.c: 112:   } else if (u16Temperature < temperatureCheckSet_LO) {
 }
 [e $U 382  ]
 [e :U 378 ]
-[e $ ! <= -> _temperature `i - -> _temperature_SET1 `i -> 2 `i 383  ]
+[e $ ! < -> _u16Temperature `ui -> _temperatureCheckSet_LO `ui 383  ]
 {
-"98
-[; ;main.c: 98:     do { LATCbits.LATC5 = 0; } while(0);
+"113
+[; ;main.c: 113:     do { LATCbits.LATC5 = 0; } while(0);
 [e :U 386 ]
 {
 [e = . . _LATCbits 0 5 -> -> 0 `i `uc ]
 }
 [e :U 385 ]
-"99
-[; ;main.c: 99:   }
+"114
+[; ;main.c: 114:     fRelay1 = 0;
+[e = _fRelay1 -> -> 0 `i `uc ]
+"115
+[; ;main.c: 115:   }
 }
 [e :U 383 ]
 [e :U 382 ]
-"100
-[; ;main.c: 100: }
+"116
+[; ;main.c: 116: }
 [e :UE 377 ]
 }
-"102
-[; ;main.c: 102: void checkTemperature_SET2(void) {
+"117
+[; ;main.c: 117: void checkTemperature_SET2(void) {
 [v _checkTemperature_SET2 `(v ~T0 @X0 1 ef ]
 {
 [e :U _checkTemperature_SET2 ]
 [f ]
-"103
-[; ;main.c: 103:   if (temperature <= (temperature_SET2-2)) {
-[e $ ! <= -> _temperature `i - -> _temperature_SET2 `i -> 2 `i 388  ]
+"118
+[; ;main.c: 118:   uint16_t temperatureCheckSet_HI = (temperature_SET2 * 10) + 10;
+[v _temperatureCheckSet_HI `us ~T0 @X0 1 a ]
+[e = _temperatureCheckSet_HI -> + * -> _temperature_SET2 `i -> 10 `i -> 10 `i `us ]
+"119
+[; ;main.c: 119:   uint16_t temperatureCheckSet_LO =
+[v _temperatureCheckSet_LO `us ~T0 @X0 1 a ]
+[e = _temperatureCheckSet_LO -> * -> _temperature_SET2 `i -> 10 `i `us ]
+"122
+[; ;main.c: 122:   if (u16Temperature < temperatureCheckSet_LO) {
+[e $ ! < -> _u16Temperature `ui -> _temperatureCheckSet_LO `ui 388  ]
 {
-"104
-[; ;main.c: 104:     do { LATCbits.LATC4 = 1; } while(0);
+"123
+[; ;main.c: 123:     do { LATCbits.LATC4 = 1; } while(0);
 [e :U 391 ]
 {
 [e = . . _LATCbits 0 4 -> -> 1 `i `uc ]
 }
 [e :U 390 ]
-"105
-[; ;main.c: 105:   } else if (temperature >= (temperature_SET2+2)){
+"124
+[; ;main.c: 124:     fRelay2 = 1;
+[e = _fRelay2 -> -> 1 `i `uc ]
+"125
+[; ;main.c: 125:   } else if (u16Temperature > temperatureCheckSet_HI) {
 }
 [e $U 392  ]
 [e :U 388 ]
-[e $ ! >= -> _temperature `i + -> _temperature_SET2 `i -> 2 `i 393  ]
+[e $ ! > -> _u16Temperature `ui -> _temperatureCheckSet_HI `ui 393  ]
 {
-"106
-[; ;main.c: 106:     do { LATCbits.LATC4 = 0; } while(0);
+"126
+[; ;main.c: 126:     do { LATCbits.LATC4 = 0; } while(0);
 [e :U 396 ]
 {
 [e = . . _LATCbits 0 4 -> -> 0 `i `uc ]
 }
 [e :U 395 ]
-"107
-[; ;main.c: 107:   }
+"127
+[; ;main.c: 127:     fRelay2 = 0;
+[e = _fRelay2 -> -> 0 `i `uc ]
+"128
+[; ;main.c: 128:   }
 }
 [e :U 393 ]
 [e :U 392 ]
-"108
-[; ;main.c: 108: }
+"129
+[; ;main.c: 129: }
 [e :UE 387 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"114
-[; ;main.c: 114: void main(void) {
+"134
+[; ;main.c: 134: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"116
-[; ;main.c: 116:   SYSTEM_Initialize();
+"136
+[; ;main.c: 136:   SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"117
-[; ;main.c: 117:   TMR0_SetInterruptHandler(TMR0_timerHandler);
+"137
+[; ;main.c: 137:   TMR0_SetInterruptHandler(TMR0_timerHandler);
 [e ( _TMR0_SetInterruptHandler (1 &U _TMR0_timerHandler ]
-"120
-[; ;main.c: 120:   (INTCONbits.GIE = 1);
+"140
+[; ;main.c: 140:   (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"122
-[; ;main.c: 122:   (INTCONbits.PEIE = 1);
+"142
+[; ;main.c: 142:   (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"128
-[; ;main.c: 128:   (INTCONbits.GIE = 1);
+"148
+[; ;main.c: 148:   (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"131
-[; ;main.c: 131:   (INTCONbits.PEIE = 1);
+"151
+[; ;main.c: 151:   (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"139
-[; ;main.c: 139:   while (1) {
+"159
+[; ;main.c: 159:   while (1) {
 [e :U 399 ]
 {
-"141
-[; ;main.c: 141:     getTemperature();
+"161
+[; ;main.c: 161:     if (f1S == 1) {
+[e $ ! == -> _f1S `i -> 1 `i 401  ]
+{
+"162
+[; ;main.c: 162:       getTemperature();
 [e ( _getTemperature ..  ]
-"144
-[; ;main.c: 144:     getKeyStatus();
-[e ( _getKeyStatus ..  ]
-"147
-[; ;main.c: 147:     if (displayMode == DISPLAY_MODE_TEMPERATURE) {
-[e $ ! == -> _displayMode `i -> . `E2 0 `i 401  ]
-{
-"148
-[; ;main.c: 148:       disp_sub(temperature, 11);
-[e ( _disp_sub (2 , -> _temperature `uc -> -> 11 `i `uc ]
-"149
-[; ;main.c: 149:     } else if (displayMode == DISPLAY_MODE_TEMPERATURE_SET1) {
+"163
+[; ;main.c: 163:     }
 }
-[e $U 402  ]
 [e :U 401 ]
-[e $ ! == -> _displayMode `i -> . `E2 1 `i 403  ]
+"165
+[; ;main.c: 165:     getKeyStatus();
+[e ( _getKeyStatus ..  ]
+"168
+[; ;main.c: 168:     if (displayMode == DISPLAY_MODE_TEMPERATURE) {
+[e $ ! == -> _displayMode `i -> . `E2 0 `i 402  ]
 {
-"150
-[; ;main.c: 150:       disp_sub(temperature_SET1, 12);
-[e ( _disp_sub (2 , -> _temperature_SET1 `uc -> -> 12 `i `uc ]
-"151
-[; ;main.c: 151:     } else if (displayMode == DISPLAY_MODE_TEMPERATURE_SET2) {
+"169
+[; ;main.c: 169:       disp_sub(temperature, 11);
+[e ( _disp_sub (2 , -> _temperature `uc -> -> 11 `i `uc ]
+"170
+[; ;main.c: 170:     } else if (displayMode == DISPLAY_MODE_TEMPERATURE_SET1) {
 }
-[e $U 404  ]
-[e :U 403 ]
-[e $ ! == -> _displayMode `i -> . `E2 2 `i 405  ]
-{
-"152
-[; ;main.c: 152:       disp_sub(temperature_SET2, 13);
-[e ( _disp_sub (2 , -> _temperature_SET2 `uc -> -> 13 `i `uc ]
-"153
-[; ;main.c: 153:     }
-}
-[e :U 405 ]
-[e :U 404 ]
+[e $U 403  ]
 [e :U 402 ]
-"156
-[; ;main.c: 156:     checkTemperature_SET1();
+[e $ ! == -> _displayMode `i -> . `E2 1 `i 404  ]
+{
+"171
+[; ;main.c: 171:       disp_sub(temperature_SET1, 12);
+[e ( _disp_sub (2 , -> _temperature_SET1 `uc -> -> 12 `i `uc ]
+"172
+[; ;main.c: 172:     } else if (displayMode == DISPLAY_MODE_TEMPERATURE_SET2) {
+}
+[e $U 405  ]
+[e :U 404 ]
+[e $ ! == -> _displayMode `i -> . `E2 2 `i 406  ]
+{
+"173
+[; ;main.c: 173:       disp_sub(temperature_SET2, 13);
+[e ( _disp_sub (2 , -> _temperature_SET2 `uc -> -> 13 `i `uc ]
+"174
+[; ;main.c: 174:     }
+}
+[e :U 406 ]
+[e :U 405 ]
+[e :U 403 ]
+"177
+[; ;main.c: 177:     checkTemperature_SET1();
 [e ( _checkTemperature_SET1 ..  ]
-"157
-[; ;main.c: 157:     checkTemperature_SET2();
+"178
+[; ;main.c: 178:     checkTemperature_SET2();
 [e ( _checkTemperature_SET2 ..  ]
-"167
-[; ;main.c: 167:   }
+"195
+[; ;main.c: 195:   }
 }
 [e :U 398 ]
 [e $U 399  ]
 [e :U 400 ]
-"168
-[; ;main.c: 168: }
+"196
+[; ;main.c: 196: }
 [e :UE 397 ]
 }

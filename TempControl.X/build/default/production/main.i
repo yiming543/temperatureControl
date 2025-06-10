@@ -7,7 +7,7 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 46 "main.c"
+# 53 "main.c"
 # 1 "./TempControl.h" 1
 
 
@@ -18,7 +18,7 @@ enum eDISPLAY_MODE
  DISPLAY_MODE_TEMPERATURE_SET1,
  DISPLAY_MODE_TEMPERATURE_SET2,
 };
-# 47 "main.c" 2
+# 54 "main.c" 2
 # 1 "./mcc_generated_files/key/key.h" 1
 
 
@@ -150,7 +150,7 @@ enum KeyState {
   KEY_STATE_SHORT_PRESS,
   KEY_STATE_LONG_PRESS
 };
-# 48 "main.c" 2
+# 55 "main.c" 2
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 1 3
@@ -5310,9 +5310,12 @@ extern void disp_sub(char disp_temp, unsigned char disp_char);
 
 extern void getTemperature(void);
 uint8_t CalTemperture(adc_result_t NTC_Value);
+uint16_t ADC2Temperature(const uint16_t result_TH);
 
 extern adc_result_t adc_result;
 extern uint8_t temperature;
+extern uint8_t temperature1;
+extern uint16_t u16Temperature;
 # 62 "./mcc_generated_files/mcc.h" 2
 # 76 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
@@ -5320,7 +5323,8 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 # 101 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
-# 49 "main.c" 2
+# 56 "main.c" 2
+
 
 
 
@@ -5337,10 +5341,12 @@ uint8_t tempCnt1 = 0;
 
 
 
-uint8_t temperature_SET1 = 31;
-uint8_t temperature_SET2 = 29;
+uint8_t temperature_SET1 = 30;
+uint8_t temperature_SET2 = 30;
 
 uint8_t displayMode = 0;
+uint8_t fRelay1 = 0;
+uint8_t fRelay2 = 0;
 
 void TMR0_timerHandler(void) {
 
@@ -5365,23 +5371,33 @@ void TMR0_timerHandler(void) {
   }
 }
 
-
 void checkTemperature_SET1(void) {
-  if (temperature >= (temperature_SET1+2)) {
+  uint16_t temperatureCheckSet_HI =
+      ((uint16_t)temperature_SET1 * 10);
+  uint16_t temperatureCheckSet_LO =
+      ((uint16_t)temperature_SET1 * 10) - 10;
+
+  if (u16Temperature > temperatureCheckSet_HI) {
     do { LATCbits.LATC5 = 1; } while(0);
-  } else if(temperature <= (temperature_SET1-2)) {
+    fRelay1 = 1;
+  } else if (u16Temperature < temperatureCheckSet_LO) {
     do { LATCbits.LATC5 = 0; } while(0);
+    fRelay1 = 0;
   }
 }
-
 void checkTemperature_SET2(void) {
-  if (temperature <= (temperature_SET2-2)) {
+  uint16_t temperatureCheckSet_HI = (temperature_SET2 * 10) + 10;
+  uint16_t temperatureCheckSet_LO =
+      (temperature_SET2 * 10);
+
+  if (u16Temperature < temperatureCheckSet_LO) {
     do { LATCbits.LATC4 = 1; } while(0);
-  } else if (temperature >= (temperature_SET2+2)){
+    fRelay2 = 1;
+  } else if (u16Temperature > temperatureCheckSet_HI) {
     do { LATCbits.LATC4 = 0; } while(0);
+    fRelay2 = 0;
   }
 }
-
 
 
 
@@ -5413,8 +5429,9 @@ void main(void) {
 
   while (1) {
 
-    getTemperature();
-
+    if (f1S == 1) {
+      getTemperature();
+    }
 
     getKeyStatus();
 
@@ -5430,6 +5447,6 @@ void main(void) {
 
     checkTemperature_SET1();
     checkTemperature_SET2();
-# 167 "main.c"
+# 195 "main.c"
   }
 }

@@ -7,6 +7,118 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "mcc_generated_files/temperature/termperature.c" 2
+
+
+# 1 "mcc_generated_files/temperature/temperature.h" 1
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/musl_xc8.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
+# 26 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
+# 133 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef unsigned short uintptr_t;
+# 148 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef short intptr_t;
+# 164 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+
+
+
+
+typedef __int24 int24_t;
+
+
+
+
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 194 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+
+
+
+
+typedef __uint24 uint24_t;
+
+
+
+
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 235 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 27 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+typedef int24_t int_fast24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+typedef uint24_t uint_fast24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 148 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/stdint.h" 1 3
+typedef int16_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint16_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 149 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
+# 5 "mcc_generated_files/temperature/temperature.h" 2
 # 1 "mcc_generated_files/temperature/../mcc.h" 1
 # 49 "mcc_generated_files/temperature/../mcc.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 1 3
@@ -21,16 +133,7 @@ extern double __fpnormalize(double);
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 1 3
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/musl_xc8.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 2 3
-
-
-
-
-
+# 10 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/features.h" 1 3
 # 11 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 2 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 3
@@ -39,10 +142,6 @@ extern double __fpnormalize(double);
 typedef long int wchar_t;
 # 128 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
 typedef unsigned size_t;
-# 174 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 210 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef __uint24 uint24_t;
 # 22 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 2 3
 
 int atoi (const char *);
@@ -130,91 +229,7 @@ extern void __builtin_software_breakpoint(void);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 1 3
-# 26 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
-# 133 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef unsigned short uintptr_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef short intptr_t;
-# 164 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef signed char int8_t;
 
-
-
-
-typedef short int16_t;
-# 179 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 194 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 215 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 235 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 27 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-typedef int24_t int_fast24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-typedef uint24_t uint_fast24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/stdint.h" 1 3
-typedef int16_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint16_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 149 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/builtins.h" 2 3
 
 
 #pragma intrinsic(__nop)
@@ -5289,19 +5304,7 @@ enum KeyState {
   KEY_STATE_LONG_PRESS
 };
 # 61 "mcc_generated_files/temperature/../mcc.h" 2
-# 1 "mcc_generated_files/temperature/../temperature/temperature.h" 1
-
-
-
-
-# 1 "mcc_generated_files/temperature/../mcc.h" 1
-# 6 "mcc_generated_files/temperature/../temperature/temperature.h" 2
-
-extern void getTemperature(void);
-uint8_t CalTemperture(adc_result_t NTC_Value);
-
-extern adc_result_t adc_result;
-extern uint8_t temperature;
+# 1 "mcc_generated_files/temperature/temperature.h" 1
 # 62 "mcc_generated_files/temperature/../mcc.h" 2
 # 76 "mcc_generated_files/temperature/../mcc.h"
 void SYSTEM_Initialize(void);
@@ -5309,20 +5312,42 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 # 101 "mcc_generated_files/temperature/../mcc.h"
 void WDT_Initialize(void);
-# 2 "mcc_generated_files/temperature/termperature.c" 2
+# 6 "mcc_generated_files/temperature/temperature.h" 2
+
+extern void getTemperature(void);
+uint8_t CalTemperture(adc_result_t NTC_Value);
+uint16_t ADC2Temperature(const uint16_t result_TH);
+
+extern adc_result_t adc_result;
+extern uint8_t temperature;
+extern uint8_t temperature1;
+extern uint16_t u16Temperature;
+# 4 "mcc_generated_files/temperature/termperature.c" 2
 
 
+const uint16_t TEMPERATURE_TAB[] = {
 
+    752, 743, 734, 725, 716, 707, 698, 688, 679, 669, 659, 650, 640, 630, 620,
+    611, 601, 591, 581, 571, 561, 551, 541, 532, 522, 512, 502, 493, 483, 474,
+    464, 455, 446, 437, 428, 419, 410, 401, 393, 384, 376, 368, 360, 352, 344,
+    336, 329, 321, 314, 307, 300, 293, 286, 280, 273, 267, 261, 255, 249, 243,
+    237, 231, 226, 221, 215, 210, 205, 200, 196, 191, 186, 182, 178, 173, 169,
+    165, 161, 157, 154, 150, 146, 143, 140, 136, 133, 130, 127, 124, 121, 118,
+    115, 112, 110, 107, 105, 102, 100, 98, 95, 93, 91,
+};
 
 adc_result_t adc_result;
+
+
 uint8_t temperature;
+uint8_t temperature1;
+uint16_t u16Temperature;
 
-
-
-void getTemperature(void)
-{
-    adc_result = ADC_GetConversion(channel_AN0);
-    temperature = CalTemperture(adc_result);
+void getTemperature(void) {
+  adc_result = ADC_GetConversion(channel_AN0);
+  temperature1 = CalTemperture(adc_result);
+  u16Temperature = ADC2Temperature(adc_result);
+  temperature = (uint8_t)(u16Temperature /10);
 }
 
 uint8_t CalTemperture(adc_result_t NTC_Value) {
@@ -5341,4 +5366,32 @@ uint8_t CalTemperture(adc_result_t NTC_Value) {
     temp = 0;
 
   return (temp & 0xff);
+}
+
+uint16_t ADC2Temperature(const uint16_t result_TH) {
+  size_t array_size = sizeof(TEMPERATURE_TAB) / sizeof(TEMPERATURE_TAB[0]);
+  uint16_t Temp_TH = 0;
+  uint16_t difC = 5;
+
+  if (result_TH >= TEMPERATURE_TAB[array_size - 2]) {
+    for (uint16_t i = 0; i < array_size; i++)
+    {
+      if (result_TH > TEMPERATURE_TAB[i]) {
+        if (i == 0) {
+          Temp_TH = 0;
+        } else {
+
+          uint16_t j = (10 * (result_TH - TEMPERATURE_TAB[i])) /
+                       (TEMPERATURE_TAB[i - 1] - TEMPERATURE_TAB[i]);
+
+          Temp_TH = (i * 10) - j - difC;
+        }
+        break;
+      }
+    }
+  } else {
+    Temp_TH = 999;
+  }
+
+  return Temp_TH;
 }

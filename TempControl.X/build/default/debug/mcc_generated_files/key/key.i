@@ -5313,8 +5313,9 @@ extern void disp_sub(char disp_temp, unsigned char disp_char);
 # 1 "mcc_generated_files/key/../mcc.h" 1
 # 6 "mcc_generated_files/key/../temperature/temperature.h" 2
 
-extern void getTemperature(void);
+extern int16_t getTemperature(void);
 uint8_t CalTemperture(adc_result_t NTC_Value);
+int16_t ADC2Temperature(const uint16_t result_TH);
 
 extern adc_result_t adc_result;
 extern uint8_t temperature;
@@ -5567,7 +5568,7 @@ void getKeyStatus(void) {
 
     if (SW3_Status == KEY_STATE_LONG_PRESS) {
       if (longPressCurrentTime - SW3_LongPressTime > 100) {
-        if (tempCnt > 0) {
+        if (tempCnt > 1) {
           tempCnt--;
         }
         SW3_LongPressTime = longPressCurrentTime;

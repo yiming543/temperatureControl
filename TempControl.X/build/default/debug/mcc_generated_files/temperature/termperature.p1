@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"13 mcc_generated_files/temperature/termperature.c
-[; ;mcc_generated_files/temperature/termperature.c: 13:     adc_result = ADC_GetConversion(channel_AN0);
+"25 mcc_generated_files/temperature/termperature.c
+[; ;mcc_generated_files/temperature/termperature.c: 25:   adc_result = ADC_GetConversion(channel_AN0);
 [c E3118 0 2 29 30 31 .. ]
 [n E3118 . channel_AN0 channel_AN2 channel_Temp channel_DAC channel_FVR  ]
 "289 mcc_generated_files/temperature/../adc.h
@@ -9,6 +9,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8 mcc_generated_files/temperature/../temperature/temperature.h
 [; ;mcc_generated_files/temperature/../temperature/temperature.h: 8: uint8_t CalTemperture(adc_result_t NTC_Value);
 [v _CalTemperture `(uc ~T0 @X0 0 ef1`us ]
+"9
+[; ;mcc_generated_files/temperature/../temperature/temperature.h: 9: int16_t ADC2Temperature(const uint16_t result_TH);
+[v _ADC2Temperature `(s ~T0 @X0 0 ef1`Cus ]
 "52 C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h
 [; ;C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h: 52: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -504,72 +507,281 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7359
 [; ;C:/Users/nbuser/.mchp_packs/Microchip/PIC12-16F1xxx_DFP/1.8.254/xc8\pic\include\proc/pic16f1936.h: 7359: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"6 mcc_generated_files/temperature/termperature.c
-[; ;mcc_generated_files/temperature/termperature.c: 6: adc_result_t adc_result;
+"5 mcc_generated_files/temperature/termperature.c
+[; ;mcc_generated_files/temperature/termperature.c: 5: adc_result_t adc_result;
 [v _adc_result `us ~T0 @X0 1 e ]
-"7
-[; ;mcc_generated_files/temperature/termperature.c: 7: uint8_t temperature;
+"6
+[; ;mcc_generated_files/temperature/termperature.c: 6: uint8_t temperature;
 [v _temperature `uc ~T0 @X0 1 e ]
-"11
-[; ;mcc_generated_files/temperature/termperature.c: 11: void getTemperature(void)
-[v _getTemperature `(v ~T0 @X0 1 ef ]
-"12
-[; ;mcc_generated_files/temperature/termperature.c: 12: {
+"10
+[; ;mcc_generated_files/temperature/termperature.c: 10: const uint16_t TEMPERATURE_TAB[] = {
+[v _TEMPERATURE_TAB `Cus ~T0 @X0 -> 101 `i e ]
+[i _TEMPERATURE_TAB
+:U ..
+-> -> 752 `i `us
+-> -> 743 `i `us
+-> -> 734 `i `us
+-> -> 725 `i `us
+-> -> 716 `i `us
+-> -> 707 `i `us
+-> -> 698 `i `us
+-> -> 688 `i `us
+-> -> 679 `i `us
+-> -> 669 `i `us
+-> -> 659 `i `us
+-> -> 650 `i `us
+-> -> 640 `i `us
+-> -> 630 `i `us
+-> -> 620 `i `us
+-> -> 611 `i `us
+-> -> 601 `i `us
+-> -> 591 `i `us
+-> -> 581 `i `us
+-> -> 571 `i `us
+-> -> 561 `i `us
+-> -> 551 `i `us
+-> -> 541 `i `us
+-> -> 532 `i `us
+-> -> 522 `i `us
+-> -> 512 `i `us
+-> -> 502 `i `us
+-> -> 493 `i `us
+-> -> 483 `i `us
+-> -> 474 `i `us
+-> -> 464 `i `us
+-> -> 455 `i `us
+-> -> 446 `i `us
+-> -> 437 `i `us
+-> -> 428 `i `us
+-> -> 419 `i `us
+-> -> 410 `i `us
+-> -> 401 `i `us
+-> -> 393 `i `us
+-> -> 384 `i `us
+-> -> 376 `i `us
+-> -> 368 `i `us
+-> -> 360 `i `us
+-> -> 352 `i `us
+-> -> 344 `i `us
+-> -> 336 `i `us
+-> -> 329 `i `us
+-> -> 321 `i `us
+-> -> 314 `i `us
+-> -> 307 `i `us
+-> -> 300 `i `us
+-> -> 293 `i `us
+-> -> 286 `i `us
+-> -> 280 `i `us
+-> -> 273 `i `us
+-> -> 267 `i `us
+-> -> 261 `i `us
+-> -> 255 `i `us
+-> -> 249 `i `us
+-> -> 243 `i `us
+-> -> 237 `i `us
+-> -> 231 `i `us
+-> -> 226 `i `us
+-> -> 221 `i `us
+-> -> 215 `i `us
+-> -> 210 `i `us
+-> -> 205 `i `us
+-> -> 200 `i `us
+-> -> 196 `i `us
+-> -> 191 `i `us
+-> -> 186 `i `us
+-> -> 182 `i `us
+-> -> 178 `i `us
+-> -> 173 `i `us
+-> -> 169 `i `us
+-> -> 165 `i `us
+-> -> 161 `i `us
+-> -> 157 `i `us
+-> -> 154 `i `us
+-> -> 150 `i `us
+-> -> 146 `i `us
+-> -> 143 `i `us
+-> -> 140 `i `us
+-> -> 136 `i `us
+-> -> 133 `i `us
+-> -> 130 `i `us
+-> -> 127 `i `us
+-> -> 124 `i `us
+-> -> 121 `i `us
+-> -> 118 `i `us
+-> -> 115 `i `us
+-> -> 112 `i `us
+-> -> 110 `i `us
+-> -> 107 `i `us
+-> -> 105 `i `us
+-> -> 102 `i `us
+-> -> 100 `i `us
+-> -> 98 `i `us
+-> -> 95 `i `us
+-> -> 93 `i `us
+-> -> 91 `i `us
+..
+]
+"23
+[; ;mcc_generated_files/temperature/termperature.c: 23: int16_t getTemperature(void) {
+[v _getTemperature `(s ~T0 @X0 1 ef ]
 {
 [e :U _getTemperature ]
 [f ]
-"13
-[; ;mcc_generated_files/temperature/termperature.c: 13:     adc_result = ADC_GetConversion(channel_AN0);
+"24
+[; ;mcc_generated_files/temperature/termperature.c: 24:   int16_t i16Temperature;
+[v _i16Temperature `s ~T0 @X0 1 a ]
+"25
+[; ;mcc_generated_files/temperature/termperature.c: 25:   adc_result = ADC_GetConversion(channel_AN0);
 [e = _adc_result ( _ADC_GetConversion (1 . `E3118 0 ]
-"14
-[; ;mcc_generated_files/temperature/termperature.c: 14:     temperature = CalTemperture(adc_result);
+"26
+[; ;mcc_generated_files/temperature/termperature.c: 26:   temperature = CalTemperture(adc_result);
 [e = _temperature ( _CalTemperture (1 _adc_result ]
-"15
-[; ;mcc_generated_files/temperature/termperature.c: 15: }
+"28
+[; ;mcc_generated_files/temperature/termperature.c: 28:   i16Temperature = ADC2Temperature(adc_result);
+[e = _i16Temperature ( _ADC2Temperature (1 _adc_result ]
+"29
+[; ;mcc_generated_files/temperature/termperature.c: 29:   return i16Temperature;
+[e ) _i16Temperature ]
+[e $UE 373  ]
+"30
+[; ;mcc_generated_files/temperature/termperature.c: 30: }
 [e :UE 373 ]
 }
-"17
-[; ;mcc_generated_files/temperature/termperature.c: 17: uint8_t CalTemperture(adc_result_t NTC_Value) {
+"32
+[; ;mcc_generated_files/temperature/termperature.c: 32: uint8_t CalTemperture(adc_result_t NTC_Value) {
 [v _CalTemperture `(uc ~T0 @X0 1 ef1`us ]
 {
 [e :U _CalTemperture ]
 [v _NTC_Value `us ~T0 @X0 1 r1 ]
 [f ]
-"18
-[; ;mcc_generated_files/temperature/termperature.c: 18:   int temp;
+"33
+[; ;mcc_generated_files/temperature/termperature.c: 33:   int temp;
 [v _temp `i ~T0 @X0 1 a ]
-"19
-[; ;mcc_generated_files/temperature/termperature.c: 19:   int NTC = NTC_Value & 0x3FF;
+"34
+[; ;mcc_generated_files/temperature/termperature.c: 34:   int NTC = NTC_Value & 0x3FF;
 [v _NTC `i ~T0 @X0 1 a ]
 [e = _NTC -> & -> _NTC_Value `ui -> -> 1023 `i `ui `i ]
-"21
-[; ;mcc_generated_files/temperature/termperature.c: 21:   temp = 511 - NTC;
+"36
+[; ;mcc_generated_files/temperature/termperature.c: 36:   temp = 511 - NTC;
 [e = _temp - -> 511 `i _NTC ]
-"22
-[; ;mcc_generated_files/temperature/termperature.c: 22:   temp = 250 + temp;
+"37
+[; ;mcc_generated_files/temperature/termperature.c: 37:   temp = 250 + temp;
 [e = _temp + -> 250 `i _temp ]
-"23
-[; ;mcc_generated_files/temperature/termperature.c: 23:   temp = temp / 10;
+"38
+[; ;mcc_generated_files/temperature/termperature.c: 38:   temp = temp / 10;
 [e = _temp / _temp -> 10 `i ]
-"26
-[; ;mcc_generated_files/temperature/termperature.c: 26:   if (temp > 99)
+"41
+[; ;mcc_generated_files/temperature/termperature.c: 41:   if (temp > 99)
 [e $ ! > _temp -> 99 `i 375  ]
-"27
-[; ;mcc_generated_files/temperature/termperature.c: 27:     temp = 99;
+"42
+[; ;mcc_generated_files/temperature/termperature.c: 42:     temp = 99;
 [e = _temp -> 99 `i ]
 [e :U 375 ]
-"29
-[; ;mcc_generated_files/temperature/termperature.c: 29:   if (temp < 0)
+"44
+[; ;mcc_generated_files/temperature/termperature.c: 44:   if (temp < 0)
 [e $ ! < _temp -> 0 `i 376  ]
-"30
-[; ;mcc_generated_files/temperature/termperature.c: 30:     temp = 0;
+"45
+[; ;mcc_generated_files/temperature/termperature.c: 45:     temp = 0;
 [e = _temp -> 0 `i ]
 [e :U 376 ]
-"32
-[; ;mcc_generated_files/temperature/termperature.c: 32:   return (temp & 0xff);
+"47
+[; ;mcc_generated_files/temperature/termperature.c: 47:   return (temp & 0xff);
 [e ) -> & _temp -> 255 `i `uc ]
 [e $UE 374  ]
-"33
-[; ;mcc_generated_files/temperature/termperature.c: 33: }
+"48
+[; ;mcc_generated_files/temperature/termperature.c: 48: }
 [e :UE 374 ]
+}
+"50
+[; ;mcc_generated_files/temperature/termperature.c: 50: int16_t ADC2Temperature(const uint16_t result_TH) {
+[v _ADC2Temperature `(s ~T0 @X0 1 ef1`Cus ]
+{
+[e :U _ADC2Temperature ]
+[v _result_TH `Cus ~T0 @X0 1 r1 ]
+[f ]
+"51
+[; ;mcc_generated_files/temperature/termperature.c: 51:   size_t array_size = sizeof(TEMPERATURE_TAB) / sizeof(TEMPERATURE_TAB[0]);
+[v _array_size `ui ~T0 @X0 1 a ]
+[e = _array_size / -> # _TEMPERATURE_TAB `ui -> # *U + &U _TEMPERATURE_TAB * -> -> -> 0 `i `ui `ux -> -> # *U &U _TEMPERATURE_TAB `ui `ux `ui ]
+"52
+[; ;mcc_generated_files/temperature/termperature.c: 52:   int16_t Temp_TH = 0;
+[v _Temp_TH `s ~T0 @X0 1 a ]
+[e = _Temp_TH -> -> 0 `i `s ]
+"54
+[; ;mcc_generated_files/temperature/termperature.c: 54:   if (result_TH <= TEMPERATURE_TAB[array_size - 1]) {
+[e $ ! <= -> _result_TH `ui -> *U + &U _TEMPERATURE_TAB * -> - _array_size -> -> 1 `i `ui `ux -> -> # *U &U _TEMPERATURE_TAB `ui `ux `ui 378  ]
+{
+"55
+[; ;mcc_generated_files/temperature/termperature.c: 55:     for (uint16_t i = 0; i < array_size; i++)
+{
+[v _i `us ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `us ]
+[e $U 382  ]
+[e :U 379 ]
+"56
+[; ;mcc_generated_files/temperature/termperature.c: 56:     {
+{
+"57
+[; ;mcc_generated_files/temperature/termperature.c: 57:       if (result_TH > TEMPERATURE_TAB[i]) {
+[e $ ! > -> _result_TH `ui -> *U + &U _TEMPERATURE_TAB * -> _i `ux -> -> # *U &U _TEMPERATURE_TAB `ui `ux `ui 383  ]
+{
+"59
+[; ;mcc_generated_files/temperature/termperature.c: 59:         int16_t j = (10 * (result_TH - TEMPERATURE_TAB[i])) /
+[v _j `s ~T0 @X0 1 a ]
+[e = _j -> / * -> -> 10 `i `ui - -> _result_TH `ui -> *U + &U _TEMPERATURE_TAB * -> _i `ux -> -> # *U &U _TEMPERATURE_TAB `ui `ux `ui - -> *U + &U _TEMPERATURE_TAB * -> - -> _i `ui -> -> 1 `i `ui `ux -> -> # *U &U _TEMPERATURE_TAB `ui `ux `ui -> *U + &U _TEMPERATURE_TAB * -> _i `ux -> -> # *U &U _TEMPERATURE_TAB `ui `ux `ui `s ]
+"62
+[; ;mcc_generated_files/temperature/termperature.c: 62:         if (i == 0) {
+[e $ ! == -> _i `ui -> -> 0 `i `ui 384  ]
+{
+"63
+[; ;mcc_generated_files/temperature/termperature.c: 63:           Temp_TH = 0;
+[e = _Temp_TH -> -> 0 `i `s ]
+"64
+[; ;mcc_generated_files/temperature/termperature.c: 64:         } else {
+}
+[e $U 385  ]
+[e :U 384 ]
+{
+"65
+[; ;mcc_generated_files/temperature/termperature.c: 65:           Temp_TH = (i * 10) - j;
+[e = _Temp_TH -> - * -> _i `ui -> -> 10 `i `ui -> _j `ui `s ]
+"66
+[; ;mcc_generated_files/temperature/termperature.c: 66:         }
+}
+[e :U 385 ]
+"67
+[; ;mcc_generated_files/temperature/termperature.c: 67:         break;
+[e $U 380  ]
+"68
+[; ;mcc_generated_files/temperature/termperature.c: 68:       }
+}
+[e :U 383 ]
+"69
+[; ;mcc_generated_files/temperature/termperature.c: 69:     }
+}
+[e ++ _i -> -> 1 `i `us ]
+[e :U 382 ]
+[e $ < -> _i `ui _array_size 379  ]
+[e :U 380 ]
+}
+"70
+[; ;mcc_generated_files/temperature/termperature.c: 70:   } else {
+}
+[e $U 386  ]
+[e :U 378 ]
+{
+"71
+[; ;mcc_generated_files/temperature/termperature.c: 71:     Temp_TH = 990;
+[e = _Temp_TH -> -> 990 `i `s ]
+"72
+[; ;mcc_generated_files/temperature/termperature.c: 72:   }
+}
+[e :U 386 ]
+"74
+[; ;mcc_generated_files/temperature/termperature.c: 74:   return Temp_TH;
+[e ) _Temp_TH ]
+[e $UE 377  ]
+"75
+[; ;mcc_generated_files/temperature/termperature.c: 75: }
+[e :UE 377 ]
 }

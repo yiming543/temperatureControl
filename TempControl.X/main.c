@@ -41,8 +41,12 @@
     SOFTWARE.
 */
 
-//20250609 V0.3
-//第1版功能完成,待測試.
+// 20250609 V0.3
+// 第1版功能完成,待測試.
+//20250610 V0.4
+//溫度改用查表法 做到0.1度精度
+//漍度設定範圍 1~99度
+//
 
 // todo disp_7seg if else modify to switch case 20250605
 // todo disp_7seg temp over 100 disp dot 20250605
@@ -50,6 +54,7 @@
 #include "mcc_generated_files/key/key.h"
 #include "mcc_generated_files/mcc.h"
 #include "mcc_generated_files/pin_manager.h"
+#include "mcc_generated_files/temperature/temperature.h"
 #include <stdint.h>
 
 void TMR0_timerHandler(void);
@@ -65,10 +70,12 @@ uint8_t tempCnt1 = 0;
 
 // adc_result_t adc_result;
 // uint8_t temperature;
-uint8_t temperature_SET1 = 31; //高於這個溫度,Relay1動作
-uint8_t temperature_SET2 = 29; //低於這個溫度,Relay2動作
+uint8_t temperature_SET1 = 30; // 高於這個溫度,Relay1動作
+uint8_t temperature_SET2 = 30; // 低於這個溫度,Relay2動作
 
 uint8_t displayMode = 0;
+uint8_t fRelay1 = 0;
+uint8_t fRelay2 = 0;
 
 void TMR0_timerHandler(void) {
   // add your TMR0 interrupt custom code
@@ -93,23 +100,33 @@ void TMR0_timerHandler(void) {
   }
 }
 
-
 void checkTemperature_SET1(void) {
-  if (temperature >= (temperature_SET1+DELTA_TEMPERATURE)) {
-    Relay1_SetHigh();
-  } else if(temperature <= (temperature_SET1-DELTA_TEMPERATURE)) {
-    Relay1_SetLow();
-  }
-} 
+  uint16_t temperatureCheckSet_HI =
+      ((uint16_t)temperature_SET1 * 10); // + DELTA_TEMPERATURE;
+  uint16_t temperatureCheckSet_LO =
+      ((uint16_t)temperature_SET1 * 10) - DELTA_TEMPERATURE;
 
-void checkTemperature_SET2(void) {
-  if (temperature <= (temperature_SET2-DELTA_TEMPERATURE)) {
-    Relay2_SetHigh();
-  } else if (temperature >= (temperature_SET2+DELTA_TEMPERATURE)){
-    Relay2_SetLow();
+  if (u16Temperature > temperatureCheckSet_HI) {
+    Relay1_SetHigh();
+    fRelay1 = 1;
+  } else if (u16Temperature < temperatureCheckSet_LO) {
+    Relay1_SetLow();
+    fRelay1 = 0;
   }
 }
+void checkTemperature_SET2(void) {
+  uint16_t temperatureCheckSet_HI = (temperature_SET2 * 10) + DELTA_TEMPERATURE;
+  uint16_t temperatureCheckSet_LO =
+      (temperature_SET2 * 10); // - DELTA_TEMPERATURE;
 
+  if (u16Temperature < temperatureCheckSet_LO) {
+    Relay2_SetHigh();
+    fRelay2 = 1;
+  } else if (u16Temperature > temperatureCheckSet_HI) {
+    Relay2_SetLow();
+    fRelay2 = 0;
+  }
+}
 
 /*
                          Main application
@@ -140,10 +157,11 @@ void main(void) {
   // INTERRUPT_PeripheralInterruptDisable();
 
   while (1) {
-    //讀取溫度
-    getTemperature();
-
-    //讀取按鍵
+    // 讀取溫度
+    if (f1S == 1) {
+      getTemperature();
+    }
+    // 讀取按鍵
     getKeyStatus();
 
     // 顥示溫度 或 設定溫度
@@ -155,22 +173,27 @@ void main(void) {
       disp_sub(temperature_SET2, DISP_SET2);
     }
 
-    //檢查溫度是否超出範圍
+    // 檢查溫度是否超出範圍
     checkTemperature_SET1();
-    checkTemperature_SET2();  
-
+    checkTemperature_SET2();
 
     // if (f1S == 1) {
     //   f1S = 0;
     //   // tempCnt1++;
 
-    //   printf("ADC=0x0%X\n", adc_result);
-    //   printf("temperature=%d\n\n", temperature);
+    //   // printf("ADC=%d\n", adc_result);
+    //   // printf("temperature1=%d\n", temperature1);
+    //   // printf("temperature=%d\n", temperature);
+    //   printf("u16Temperature=%d\n", u16Temperature);
+    //   // printf("fRelay1=%d\n", fRelay1);
+    //   // printf("fRelay2=%d\n", fRelay2);
+    //   printf("SET1=%d\n", temperature_SET1);
+    //   printf("SET2=%d\n", temperature_SET2);
+    //   printf("\n"); //空一行
+
     // }
   }
 }
-
-
 
 /**
  End of File

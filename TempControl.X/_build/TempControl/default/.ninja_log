@@ -1,0 +1,11 @@
+# ninja log v6
+18	498	7707951059202997	CMakeFiles/TempControl_default_default_XC8_compile.dir/C_/yiming/work/TempControl.X/mcc_generated_files/mcc.c.p1	cbf5193138ed8a87
+11	375	7707951059135730	CMakeFiles/TempControl_default_default_XC8_compile.dir/C_/yiming/work/TempControl.X/mcc_generated_files/device_config.c.p1	39d0d4d854976c53
+328	1504	7707881795634204	TempControl_default_default.elf	f530f77463b23c73
+21	479	7707951059233472	CMakeFiles/TempControl_default_default_XC8_compile.dir/C_/yiming/work/TempControl.X/mcc_generated_files/pin_manager.c.p1	835bb55f9c661284
+15	502	7707951059181495	CMakeFiles/TempControl_default_default_XC8_compile.dir/C_/yiming/work/TempControl.X/mcc_generated_files/interrupt_manager.c.p1	501c474d912cf270
+7	497	7707951059087566	CMakeFiles/TempControl_default_default_XC8_compile.dir/C_/yiming/work/TempControl.X/main.c.p1	5c09c51937633186
+24	487	7707951059263361	CMakeFiles/TempControl_default_default_XC8_compile.dir/C_/yiming/work/TempControl.X/mcc_generated_files/tmr0.c.p1	b0c1aea7efb68060
+9	480	7707951059110915	CMakeFiles/TempControl_default_default_XC8_compile.dir/C_/yiming/work/TempControl.X/mcc_generated_files/adc.c.p1	b6fbe9be98dcbadd
+328	1504	7707881795634204	C:/yiming/work/TempControl.X/out/TempControl/default.elf	f530f77463b23c73
+13	483	7707951059160343	CMakeFiles/TempControl_default_default_XC8_compile.dir/C_/yiming/work/TempControl.X/mcc_generated_files/eusart.c.p1	300172ce3c06c9dd

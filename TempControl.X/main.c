@@ -43,10 +43,13 @@
 
 // 20250609 V0.3
 // 第1版功能完成,待測試.
-//20250610 V0.4
-//溫度改用查表法 做到0.1度精度
-//漍度設定範圍 1~99度
-//
+// 20250610 V0.4
+// 溫度改用查表法 做到0.1度精度
+// 漍度設定範圍 1~99度
+
+//20250701 V0.4 CS:DAFE
+//增加EEPROM_SAVE 模式,按SW1回到溫度顯度,會先將SET1,SET2存到EEPROM.
+//沒按鍵時間到回到溫度模式則不會儲存.
 
 // todo disp_7seg if else modify to switch case 20250605
 // todo disp_7seg temp over 100 disp dot 20250605
@@ -70,12 +73,19 @@ uint8_t tempCnt1 = 0;
 
 // adc_result_t adc_result;
 // uint8_t temperature;
-uint8_t temperature_SET1 = 30; // 高於這個溫度,Relay1動作
-uint8_t temperature_SET2 = 30; // 低於這個溫度,Relay2動作
+#define DEFAULT_SET1 30
+#define DEFAULT_SET2 30
+#define SET1_ADDR 0x00
+#define SET2_ADDR 0x01
+
+uint8_t temperature_SET1 = DEFAULT_SET1; // 高於這個溫度,Relay1動作
+uint8_t temperature_SET2 = DEFAULT_SET2; // 低於這個溫度,Relay2動作
 
 uint8_t displayMode = 0;
 uint8_t fRelay1 = 0;
 uint8_t fRelay2 = 0;
+
+__EEPROM_DATA(DEFAULT_SET1, DEFAULT_SET2, 0xff, 0xff0, 0xff, 0xff, 0xff, 0xff);
 
 void TMR0_timerHandler(void) {
   // add your TMR0 interrupt custom code
@@ -155,6 +165,8 @@ void main(void) {
 
   // Disable the Peripheral Interrupts
   // INTERRUPT_PeripheralInterruptDisable();
+  temperature_SET1 = DATAEE_ReadByte(SET1_ADDR);
+  temperature_SET2 = DATAEE_ReadByte(SET2_ADDR);
 
   while (1) {
     // 讀取溫度
@@ -171,6 +183,10 @@ void main(void) {
       disp_sub(temperature_SET1, DISP_SET1);
     } else if (displayMode == DISPLAY_MODE_TEMPERATURE_SET2) {
       disp_sub(temperature_SET2, DISP_SET2);
+    } else if (displayMode == EEPROM_SAVE) {
+      DATAEE_WriteByte(SET1_ADDR, temperature_SET1);
+      DATAEE_WriteByte(SET2_ADDR, temperature_SET2);
+      displayMode = DISPLAY_MODE_TEMPERATURE;
     }
 
     // 檢查溫度是否超出範圍

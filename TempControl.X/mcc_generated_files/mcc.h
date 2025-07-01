@@ -53,8 +53,9 @@
 #include <stdbool.h>
 #include <conio.h>
 #include "interrupt_manager.h"
-#include "adc.h"
+#include "memory.h"
 #include "tmr0.h"
+#include "adc.h"
 #include "eusart.h"
 #include "disp_7seg/disp_7seg.h"
 #include "key/key.h"

@@ -212,7 +212,7 @@ void getKeyStatus(void) {
     if ((SW1_Status == KEY_STATE_SHORT_PRESS) &&
         (fKeyRelease_SW1 == KEY_RELEASE)) {
       tempMode++;
-      if (tempMode > 2) {
+      if (tempMode > 3) {
         tempMode = 0;
       }
       fKeyRelease_SW1 = 0;

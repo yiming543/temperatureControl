@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/interrupt_manager.c"
+# 1 "mcc_generated_files/memory.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 285 "<built-in>" 3
@@ -6,12 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/interrupt_manager.c" 2
-# 49 "mcc_generated_files/interrupt_manager.c"
-# 1 "mcc_generated_files/interrupt_manager.h" 1
-# 50 "mcc_generated_files/interrupt_manager.c" 2
-# 1 "mcc_generated_files/mcc.h" 1
-# 49 "mcc_generated_files/mcc.h"
+# 1 "mcc_generated_files/memory.c" 2
+# 51 "mcc_generated_files/memory.c"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4988,341 +4984,190 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
-# 50 "mcc_generated_files/mcc.h" 2
-# 1 "mcc_generated_files/device_config.h" 1
-# 51 "mcc_generated_files/mcc.h" 2
-# 1 "mcc_generated_files/pin_manager.h" 1
-# 261 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 273 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 52 "mcc_generated_files/mcc.h" 2
-
+# 52 "mcc_generated_files/memory.c" 2
+# 1 "mcc_generated_files/memory.h" 1
+# 54 "mcc_generated_files/memory.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdbool.h" 1 3
-# 54 "mcc_generated_files/mcc.h" 2
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/conio.h" 1 3
+# 55 "mcc_generated_files/memory.h" 2
+# 99 "mcc_generated_files/memory.h"
+uint16_t FLASH_ReadWord(uint16_t flashAddr);
+# 128 "mcc_generated_files/memory.h"
+void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
+# 164 "mcc_generated_files/memory.h"
+int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
+# 189 "mcc_generated_files/memory.h"
+void FLASH_EraseBlock(uint16_t startAddr);
+# 220 "mcc_generated_files/memory.h"
+void DATAEE_WriteByte(uint8_t bAdd, uint8_t bData);
+# 246 "mcc_generated_files/memory.h"
+uint8_t DATAEE_ReadByte(uint8_t bAdd);
+# 53 "mcc_generated_files/memory.c" 2
 
 
 
 
 
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
-# 12 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 143 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef short ssize_t;
-# 255 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef long long off_t;
-# 409 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 25 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-
-
-
-
-
-int ungetc(int, FILE *);
-int getch(void);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-
-
-
-
-void putch(char);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-__attribute__((__format__(__printf__, 1, 2)))
-int printf(const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int fprintf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 2, 3)))
-int sprintf(char *restrict, const char *restrict, ...);
-__attribute__((__format__(__printf__, 3, 4)))
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-__attribute__((__format__(__printf__, 1, 0)))
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 2, 0)))
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__printf__, 3, 0)))
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-__attribute__((__format__(__scanf__, 1, 2)))
-int scanf(const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int fscanf(FILE *restrict, const char *restrict, ...);
-__attribute__((__format__(__scanf__, 2, 3)))
-int sscanf(const char *restrict, const char *restrict, ...);
-
-__attribute__((__format__(__scanf__, 1, 0)))
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-__attribute__((__format__(__scanf__, 2, 0)))
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 8 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/conio.h" 2 3
-# 55 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/adc.h" 1
-# 72 "mcc_generated_files/adc.h"
-typedef uint16_t adc_result_t;
-
-
-
-
-typedef struct
+uint16_t FLASH_ReadWord(uint16_t flashAddr)
 {
-    adc_result_t adcResult1;
-    adc_result_t adcResult2;
-} adc_sync_double_result_t;
-# 95 "mcc_generated_files/adc.h"
-typedef enum
+    uint8_t GIEBitValue = INTCONbits.GIE;
+
+    INTCONbits.GIE = 0;
+    EEADRL = (flashAddr & 0x00FF);
+    EEADRH = ((flashAddr & 0xFF00) >> 8);
+
+    EECON1bits.CFGS = 0;
+    EECON1bits.EEPGD = 1;
+    EECON1bits.RD = 1;
+    __nop();
+    __nop();
+    INTCONbits.GIE = GIEBitValue;
+
+    return ((uint16_t)((EEDATH << 8) | EEDATL));
+}
+
+void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word)
 {
-    channel_AN0 = 0x0,
-    channel_AN2 = 0x2,
-    channel_Temp = 0x1D,
-    channel_DAC = 0x1E,
-    channel_FVR = 0x1F
-} adc_channel_t;
-# 137 "mcc_generated_files/adc.h"
-void ADC_Initialize(void);
-# 167 "mcc_generated_files/adc.h"
-void ADC_SelectChannel(adc_channel_t channel);
-# 194 "mcc_generated_files/adc.h"
-void ADC_StartConversion(void);
-# 226 "mcc_generated_files/adc.h"
-_Bool ADC_IsConversionDone(void);
-# 259 "mcc_generated_files/adc.h"
-adc_result_t ADC_GetConversionResult(void);
-# 289 "mcc_generated_files/adc.h"
-adc_result_t ADC_GetConversion(adc_channel_t channel);
-# 317 "mcc_generated_files/adc.h"
-void ADC_TemperatureAcquisitionDelay(void);
-# 57 "mcc_generated_files/mcc.h" 2
-# 1 "mcc_generated_files/tmr0.h" 1
-# 98 "mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
-# 129 "mcc_generated_files/tmr0.h"
-uint8_t TMR0_ReadTimer(void);
-# 168 "mcc_generated_files/tmr0.h"
-void TMR0_WriteTimer(uint8_t timerVal);
-# 204 "mcc_generated_files/tmr0.h"
-void TMR0_Reload(void);
-# 219 "mcc_generated_files/tmr0.h"
-void TMR0_ISR(void);
-# 238 "mcc_generated_files/tmr0.h"
- void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 273 "mcc_generated_files/tmr0.h"
-void TMR0_DefaultInterruptHandler(void);
-# 58 "mcc_generated_files/mcc.h" 2
-# 1 "mcc_generated_files/eusart.h" 1
-# 76 "mcc_generated_files/eusart.h"
-typedef union {
-    struct {
-        unsigned perr : 1;
-        unsigned ferr : 1;
-        unsigned oerr : 1;
-        unsigned reserved : 5;
-    };
-    uint8_t status;
-}eusart_status_t;
-# 111 "mcc_generated_files/eusart.h"
-void EUSART_Initialize(void);
-# 159 "mcc_generated_files/eusart.h"
-_Bool EUSART_is_tx_ready(void);
-# 207 "mcc_generated_files/eusart.h"
-_Bool EUSART_is_rx_ready(void);
-# 254 "mcc_generated_files/eusart.h"
-_Bool EUSART_is_tx_done(void);
-# 302 "mcc_generated_files/eusart.h"
-eusart_status_t EUSART_get_last_status(void);
-# 322 "mcc_generated_files/eusart.h"
-uint8_t EUSART_Read(void);
-# 342 "mcc_generated_files/eusart.h"
-void EUSART_Write(uint8_t txData);
-# 362 "mcc_generated_files/eusart.h"
-void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
-# 380 "mcc_generated_files/eusart.h"
-void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
-# 398 "mcc_generated_files/eusart.h"
-void EUSART_SetErrorHandler(void (* interruptHandler)(void));
-# 59 "mcc_generated_files/mcc.h" 2
-# 1 "mcc_generated_files/disp_7seg/disp_7seg.h" 1
+    uint16_t blockStartAddr = (uint16_t)(flashAddr & ((0x2000 -1) ^ (32 -1)));
+    uint8_t offset = (uint8_t)(flashAddr & (32 -1));
+    uint8_t i;
 
 
-
-
-
-extern void disp_sub(char disp_temp, unsigned char disp_char);
-# 60 "mcc_generated_files/mcc.h" 2
-# 1 "mcc_generated_files/key/key.h" 1
-
-
-
-
-# 1 "mcc_generated_files/key/../../TempControl.h" 1
-
-
-
-enum eDISPLAY_MODE
-{
- DISPLAY_MODE_TEMPERATURE=0,
- DISPLAY_MODE_TEMPERATURE_SET1,
- DISPLAY_MODE_TEMPERATURE_SET2,
-};
-# 6 "mcc_generated_files/key/key.h" 2
-
-extern unsigned long milliSeconds;
-extern uint8_t SW1_Status;
-extern uint8_t SW2_Status;
-extern uint8_t SW3_Status;
-
-extern uint8_t tempCnt;
-extern uint8_t tempCnt1;
-
-extern void getKeyStatus(void);
-extern unsigned long getTime_ms(void);
-
-void keyDebounce(void);
-void chkeckPressKeyNumber(void);
-# 30 "mcc_generated_files/key/key.h"
-enum KeyState {
-  KEY_STATE_RELEASE,
-  KEY_STATE_SHORT_PRESS,
-  KEY_STATE_LONG_PRESS
-};
-# 61 "mcc_generated_files/mcc.h" 2
-# 1 "mcc_generated_files/temperature/temperature.h" 1
-
-
-
-
-# 1 "mcc_generated_files/mcc.h" 1
-# 6 "mcc_generated_files/temperature/temperature.h" 2
-
-extern int16_t getTemperature(void);
-uint8_t CalTemperture(adc_result_t NTC_Value);
-int16_t ADC2Temperature(const uint16_t result_TH);
-
-extern adc_result_t adc_result;
-extern uint8_t temperature;
-# 62 "mcc_generated_files/mcc.h" 2
-# 76 "mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-# 89 "mcc_generated_files/mcc.h"
-void OSCILLATOR_Initialize(void);
-# 101 "mcc_generated_files/mcc.h"
-void WDT_Initialize(void);
-# 51 "mcc_generated_files/interrupt_manager.c" 2
-
-void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
-{
-
-    if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
+    for (i=0; i<32; i++)
     {
-        TMR0_ISR();
+        ramBuf[i] = FLASH_ReadWord((blockStartAddr+i));
     }
-    else
+
+
+    ramBuf[offset] = word;
+
+
+    FLASH_WriteBlock(blockStartAddr, ramBuf);
+}
+
+int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray)
+{
+    uint16_t blockStartAddr = (uint16_t )(writeAddr & ((0x2000 -1) ^ (32 -1)));
+    uint8_t GIEBitValue = INTCONbits.GIE;
+    uint8_t i,j,numberOfWriteBlocks=0,dataCounter=0;
+
+    numberOfWriteBlocks = (32/8);
+
+
+    if( writeAddr != blockStartAddr )
+    {
+        return -1;
+    }
+
+    INTCONbits.GIE = 0;
+
+
+    FLASH_EraseBlock(writeAddr);
+
+    for(j=0; j<numberOfWriteBlocks; j++)
     {
 
+  EECON1bits.EEPGD = 1;
+  EECON1bits.CFGS = 0;
+  EECON1bits.WREN = 1;
+  EECON1bits.LWLO = 1;
+
+  for (i=0; i<8; i++)
+  {
+
+   EEADRL = (writeAddr & 0xFF);
+
+   EEADRH = ((writeAddr & 0xFF00) >> 8);
+
+
+   EEDATL = flashWordArray[dataCounter];
+   EEDATH = ((flashWordArray[dataCounter] & 0xFF00) >> 8);
+   dataCounter++;
+
+   if(i == (8 -1))
+   {
+
+    EECON1bits.LWLO = 0;
+   }
+
+   EECON2 = 0x55;
+   EECON2 = 0xAA;
+   EECON1bits.WR = 1;
+   __nop();
+   __nop();
+
+   writeAddr++;
+  }
+ }
+
+    EECON1bits.WREN = 0;
+    INTCONbits.GIE = GIEBitValue;
+
+    return 0;
+}
+
+void FLASH_EraseBlock(uint16_t startAddr)
+{
+    uint8_t GIEBitValue = INTCONbits.GIE;
+
+    INTCONbits.GIE = 0;
+
+    EEADRL = (startAddr & 0xFF);
+
+    EEADRH = ((startAddr & 0xFF00) >> 8);
+
+
+    EECON1bits.CFGS = 0;
+    EECON1bits.EEPGD = 1;
+    EECON1bits.FREE = 1;
+    EECON1bits.WREN = 1;
+
+
+    EECON2 = 0x55;
+    EECON2 = 0xAA;
+    EECON1bits.WR = 1;
+    __nop();
+    __nop();
+
+    EECON1bits.WREN = 0;
+    INTCONbits.GIE = GIEBitValue;
+}
+
+
+
+
+
+void DATAEE_WriteByte(uint8_t bAdd, uint8_t bData)
+{
+    uint8_t GIEBitValue = 0;
+
+    EEADRL = (uint8_t)(bAdd & 0x0ff);
+    EEDATL = bData;
+    EECON1bits.EEPGD = 0;
+    EECON1bits.CFGS = 0;
+    EECON1bits.WREN = 1;
+
+    GIEBitValue = INTCONbits.GIE;
+    INTCONbits.GIE = 0;
+    EECON2 = 0x55;
+    EECON2 = 0xAA;
+    EECON1bits.WR = 1;
+
+    while (EECON1bits.WR)
+    {
     }
+
+    EECON1bits.WREN = 0;
+    INTCONbits.GIE = GIEBitValue;
+}
+
+uint8_t DATAEE_ReadByte(uint8_t bAdd)
+{
+    EEADRL = (uint8_t)(bAdd & 0x0ff);
+    EECON1bits.CFGS = 0;
+    EECON1bits.EEPGD = 0;
+    EECON1bits.RD = 1;
+    __nop();
+    __nop();
+
+    return (EEDATL);
 }

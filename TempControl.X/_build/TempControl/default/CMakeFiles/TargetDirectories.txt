@@ -1,4 +1,4 @@
-C:/yiming/work/temperatureControl/TempControl.X/_build/TempControl/default/CMakeFiles/TempControl_default_default_XC8_compile.dir
-C:/yiming/work/temperatureControl/TempControl.X/_build/TempControl/default/CMakeFiles/default.elf.dir
-C:/yiming/work/temperatureControl/TempControl.X/_build/TempControl/default/CMakeFiles/edit_cache.dir
-C:/yiming/work/temperatureControl/TempControl.X/_build/TempControl/default/CMakeFiles/rebuild_cache.dir
+C:/yiming/github/temperatureControl/TempControl.X/_build/TempControl/default/CMakeFiles/TempControl_default_default_XC8_compile.dir
+C:/yiming/github/temperatureControl/TempControl.X/_build/TempControl/default/CMakeFiles/default.elf.dir
+C:/yiming/github/temperatureControl/TempControl.X/_build/TempControl/default/CMakeFiles/edit_cache.dir
+C:/yiming/github/temperatureControl/TempControl.X/_build/TempControl/default/CMakeFiles/rebuild_cache.dir

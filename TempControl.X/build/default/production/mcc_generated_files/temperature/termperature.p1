@@ -1,11 +1,11 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "25 mcc_generated_files/temperature/termperature.c
 [; ;mcc_generated_files/temperature/termperature.c: 25:   adc_result = ADC_GetConversion(channel_AN0);
-[c E3118 0 2 29 30 31 .. ]
-[n E3118 . channel_AN0 channel_AN2 channel_Temp channel_DAC channel_FVR  ]
+[c E3145 0 2 29 30 31 .. ]
+[n E3145 . channel_AN0 channel_AN2 channel_Temp channel_DAC channel_FVR  ]
 "289 mcc_generated_files/temperature/../adc.h
 [; ;mcc_generated_files/temperature/../adc.h: 289: adc_result_t ADC_GetConversion(adc_channel_t channel);
-[v _ADC_GetConversion `(us ~T0 @X0 0 ef1`E3118 ]
+[v _ADC_GetConversion `(us ~T0 @X0 0 ef1`E3145 ]
 "8 mcc_generated_files/temperature/temperature.h
 [; ;mcc_generated_files/temperature/temperature.h: 8: uint8_t CalTemperture(adc_result_t NTC_Value);
 [v _CalTemperture `(uc ~T0 @X0 0 ef1`us ]
@@ -635,7 +635,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "25
 [; ;mcc_generated_files/temperature/termperature.c: 25:   adc_result = ADC_GetConversion(channel_AN0);
-[e = _adc_result ( _ADC_GetConversion (1 . `E3118 0 ]
+[e = _adc_result ( _ADC_GetConversion (1 . `E3145 0 ]
 "26
 [; ;mcc_generated_files/temperature/termperature.c: 26:   temperature1 = CalTemperture(adc_result);
 [e = _temperature1 ( _CalTemperture (1 _adc_result ]

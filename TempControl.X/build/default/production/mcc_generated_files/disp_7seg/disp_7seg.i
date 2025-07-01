@@ -5160,6 +5160,36 @@ char *tempnam(const char *, const char *);
 # 55 "mcc_generated_files/disp_7seg/../mcc.h" 2
 # 1 "mcc_generated_files/disp_7seg/../interrupt_manager.h" 1
 # 56 "mcc_generated_files/disp_7seg/../mcc.h" 2
+# 1 "mcc_generated_files/disp_7seg/../memory.h" 1
+# 99 "mcc_generated_files/disp_7seg/../memory.h"
+uint16_t FLASH_ReadWord(uint16_t flashAddr);
+# 128 "mcc_generated_files/disp_7seg/../memory.h"
+void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
+# 164 "mcc_generated_files/disp_7seg/../memory.h"
+int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
+# 189 "mcc_generated_files/disp_7seg/../memory.h"
+void FLASH_EraseBlock(uint16_t startAddr);
+# 220 "mcc_generated_files/disp_7seg/../memory.h"
+void DATAEE_WriteByte(uint8_t bAdd, uint8_t bData);
+# 246 "mcc_generated_files/disp_7seg/../memory.h"
+uint8_t DATAEE_ReadByte(uint8_t bAdd);
+# 57 "mcc_generated_files/disp_7seg/../mcc.h" 2
+# 1 "mcc_generated_files/disp_7seg/../tmr0.h" 1
+# 98 "mcc_generated_files/disp_7seg/../tmr0.h"
+void TMR0_Initialize(void);
+# 129 "mcc_generated_files/disp_7seg/../tmr0.h"
+uint8_t TMR0_ReadTimer(void);
+# 168 "mcc_generated_files/disp_7seg/../tmr0.h"
+void TMR0_WriteTimer(uint8_t timerVal);
+# 204 "mcc_generated_files/disp_7seg/../tmr0.h"
+void TMR0_Reload(void);
+# 219 "mcc_generated_files/disp_7seg/../tmr0.h"
+void TMR0_ISR(void);
+# 238 "mcc_generated_files/disp_7seg/../tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 273 "mcc_generated_files/disp_7seg/../tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
+# 58 "mcc_generated_files/disp_7seg/../mcc.h" 2
 # 1 "mcc_generated_files/disp_7seg/../adc.h" 1
 # 72 "mcc_generated_files/disp_7seg/../adc.h"
 typedef uint16_t adc_result_t;
@@ -5195,23 +5225,7 @@ adc_result_t ADC_GetConversionResult(void);
 adc_result_t ADC_GetConversion(adc_channel_t channel);
 # 317 "mcc_generated_files/disp_7seg/../adc.h"
 void ADC_TemperatureAcquisitionDelay(void);
-# 57 "mcc_generated_files/disp_7seg/../mcc.h" 2
-# 1 "mcc_generated_files/disp_7seg/../tmr0.h" 1
-# 98 "mcc_generated_files/disp_7seg/../tmr0.h"
-void TMR0_Initialize(void);
-# 129 "mcc_generated_files/disp_7seg/../tmr0.h"
-uint8_t TMR0_ReadTimer(void);
-# 168 "mcc_generated_files/disp_7seg/../tmr0.h"
-void TMR0_WriteTimer(uint8_t timerVal);
-# 204 "mcc_generated_files/disp_7seg/../tmr0.h"
-void TMR0_Reload(void);
-# 219 "mcc_generated_files/disp_7seg/../tmr0.h"
-void TMR0_ISR(void);
-# 238 "mcc_generated_files/disp_7seg/../tmr0.h"
- void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 273 "mcc_generated_files/disp_7seg/../tmr0.h"
-void TMR0_DefaultInterruptHandler(void);
-# 58 "mcc_generated_files/disp_7seg/../mcc.h" 2
+# 59 "mcc_generated_files/disp_7seg/../mcc.h" 2
 # 1 "mcc_generated_files/disp_7seg/../eusart.h" 1
 # 76 "mcc_generated_files/disp_7seg/../eusart.h"
 typedef union {
@@ -5243,7 +5257,7 @@ void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
 void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
 # 398 "mcc_generated_files/disp_7seg/../eusart.h"
 void EUSART_SetErrorHandler(void (* interruptHandler)(void));
-# 59 "mcc_generated_files/disp_7seg/../mcc.h" 2
+# 60 "mcc_generated_files/disp_7seg/../mcc.h" 2
 # 1 "mcc_generated_files/disp_7seg/../disp_7seg/disp_7seg.h" 1
 
 
@@ -5251,7 +5265,7 @@ void EUSART_SetErrorHandler(void (* interruptHandler)(void));
 
 
 extern void disp_sub(char disp_temp, unsigned char disp_char);
-# 60 "mcc_generated_files/disp_7seg/../mcc.h" 2
+# 61 "mcc_generated_files/disp_7seg/../mcc.h" 2
 # 1 "mcc_generated_files/disp_7seg/../key/key.h" 1
 
 
@@ -5266,6 +5280,7 @@ enum eDISPLAY_MODE
  DISPLAY_MODE_TEMPERATURE=0,
  DISPLAY_MODE_TEMPERATURE_SET1,
  DISPLAY_MODE_TEMPERATURE_SET2,
+ EEPROM_SAVE,
 };
 # 6 "mcc_generated_files/disp_7seg/../key/key.h" 2
 
@@ -5288,7 +5303,7 @@ enum KeyState {
   KEY_STATE_SHORT_PRESS,
   KEY_STATE_LONG_PRESS
 };
-# 61 "mcc_generated_files/disp_7seg/../mcc.h" 2
+# 62 "mcc_generated_files/disp_7seg/../mcc.h" 2
 # 1 "mcc_generated_files/disp_7seg/../temperature/temperature.h" 1
 
 
@@ -5305,12 +5320,12 @@ extern adc_result_t adc_result;
 extern uint8_t temperature;
 extern uint8_t temperature1;
 extern uint16_t u16Temperature;
-# 62 "mcc_generated_files/disp_7seg/../mcc.h" 2
-# 76 "mcc_generated_files/disp_7seg/../mcc.h"
+# 63 "mcc_generated_files/disp_7seg/../mcc.h" 2
+# 77 "mcc_generated_files/disp_7seg/../mcc.h"
 void SYSTEM_Initialize(void);
-# 89 "mcc_generated_files/disp_7seg/../mcc.h"
+# 90 "mcc_generated_files/disp_7seg/../mcc.h"
 void OSCILLATOR_Initialize(void);
-# 101 "mcc_generated_files/disp_7seg/../mcc.h"
+# 102 "mcc_generated_files/disp_7seg/../mcc.h"
 void WDT_Initialize(void);
 # 2 "mcc_generated_files/disp_7seg/disp_7seg.c" 2
 

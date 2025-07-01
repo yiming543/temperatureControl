@@ -3,7 +3,7 @@ set(CMAKE_HOST_SYSTEM_NAME "Windows")
 set(CMAKE_HOST_SYSTEM_VERSION "10.0.26100")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "")
 
-include("C:/yiming/work/temperatureControl/TempControl.X/cmake/TempControl/default/.generated/toolchain.cmake")
+include("C:/yiming/github/temperatureControl/TempControl.X/cmake/TempControl/default/.generated/toolchain.cmake")
 
 set(CMAKE_SYSTEM "Generic")
 set(CMAKE_SYSTEM_NAME "Generic")

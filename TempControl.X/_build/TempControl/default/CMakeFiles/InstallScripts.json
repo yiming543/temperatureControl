@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"C:/yiming/work/temperatureControl/TempControl.X/_build/TempControl/default/cmake_install.cmake"
+		"C:/yiming/github/temperatureControl/TempControl.X/_build/TempControl/default/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

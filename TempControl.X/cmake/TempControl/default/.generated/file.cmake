@@ -10,6 +10,7 @@ set(TempControl_default_default_XC8_FILE_TYPE_compile
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../mcc_generated_files/eusart.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../mcc_generated_files/interrupt_manager.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../mcc_generated_files/mcc.c"
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../../mcc_generated_files/memory.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../mcc_generated_files/pin_manager.c"
     "${CMAKE_CURRENT_SOURCE_DIR}/../../../mcc_generated_files/tmr0.c")
 set_source_files_properties(${TempControl_default_default_XC8_FILE_TYPE_compile} PROPERTIES LANGUAGE C)

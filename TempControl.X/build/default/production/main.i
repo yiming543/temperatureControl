@@ -5361,7 +5361,7 @@ uint8_t displayMode = 0;
 uint8_t fRelay1 = 0;
 uint8_t fRelay2 = 0;
 
-__asm("\tpsect eeprom_data,class=EEDATA,delta=2,space=3,noexec"); __asm("\tdb\t" "30" "," "30" "," "0xff" "," "0xff0" "," "0xff" "," "0xff" "," "0xff" "," "0xff");
+__asm("\tpsect eeprom_data,class=EEDATA,delta=2,space=3,noexec"); __asm("\tdb\t" "30" "," "30" "," "0xff" "," "0xff" "," "0xff" "," "0xff" "," "0xff" "," "0xff");
 
 void TMR0_timerHandler(void) {
 

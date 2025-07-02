@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V3.00 build 20241204225717 
-                                                                                               Tue Jul 01 17:31:27 2025
+                                                                                               Wed Jul 02 08:31:47 2025
 
 Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1 
      1                           	processor	16F1936
@@ -1767,174 +1767,174 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   1753     0FED                     STKPTR          equ	4077	;# 
   1754     0FEE                     TOSL            equ	4078	;# 
   1755     0FEF                     TOSH            equ	4079	;# 
-  1756                           
-  1757                           	psect	eeprom_data
-  1758     0000  001E 001E 00FF 00F0 00FF 00FF 00FF 00FF 	db	30,30,255,4080,255,255,255,255	;# 
-  1759     0000                     INDF0           equ	0	;# 
-  1760     0001                     INDF1           equ	1	;# 
-  1761     0002                     PCL             equ	2	;# 
-  1762     0003                     STATUS          equ	3	;# 
-  1763     0004                     FSR0L           equ	4	;# 
-  1764     0005                     FSR0H           equ	5	;# 
-  1765     0006                     FSR1L           equ	6	;# 
-  1766     0007                     FSR1H           equ	7	;# 
-  1767     0008                     BSR             equ	8	;# 
-  1768     0009                     WREG            equ	9	;# 
-  1769     000A                     PCLATH          equ	10	;# 
-  1770     000B                     INTCON          equ	11	;# 
-  1771     000C                     PORTA           equ	12	;# 
-  1772     000D                     PORTB           equ	13	;# 
-  1773     000E                     PORTC           equ	14	;# 
-  1774     0010                     PORTE           equ	16	;# 
-  1775     0011                     PIR1            equ	17	;# 
-  1776     0012                     PIR2            equ	18	;# 
-  1777     0013                     PIR3            equ	19	;# 
-  1778     0015                     TMR0            equ	21	;# 
-  1779     0016                     TMR1            equ	22	;# 
-  1780     0016                     TMR1L           equ	22	;# 
-  1781     0017                     TMR1H           equ	23	;# 
-  1782     0018                     T1CON           equ	24	;# 
-  1783     0019                     T1GCON          equ	25	;# 
-  1784     001A                     TMR2            equ	26	;# 
-  1785     001B                     PR2             equ	27	;# 
-  1786     001C                     T2CON           equ	28	;# 
-  1787     001E                     CPSCON0         equ	30	;# 
-  1788     001F                     CPSCON1         equ	31	;# 
-  1789     008C                     TRISA           equ	140	;# 
-  1790     008D                     TRISB           equ	141	;# 
-  1791     008E                     TRISC           equ	142	;# 
-  1792     0090                     TRISE           equ	144	;# 
-  1793     0091                     PIE1            equ	145	;# 
-  1794     0092                     PIE2            equ	146	;# 
-  1795     0093                     PIE3            equ	147	;# 
-  1796     0095                     OPTION_REG      equ	149	;# 
-  1797     0096                     PCON            equ	150	;# 
-  1798     0097                     WDTCON          equ	151	;# 
-  1799     0098                     OSCTUNE         equ	152	;# 
-  1800     0099                     OSCCON          equ	153	;# 
-  1801     009A                     OSCSTAT         equ	154	;# 
-  1802     009B                     ADRES           equ	155	;# 
-  1803     009B                     ADRESL          equ	155	;# 
-  1804     009C                     ADRESH          equ	156	;# 
-  1805     009D                     ADCON0          equ	157	;# 
-  1806     009E                     ADCON1          equ	158	;# 
-  1807     010C                     LATA            equ	268	;# 
-  1808     010D                     LATB            equ	269	;# 
-  1809     010E                     LATC            equ	270	;# 
-  1810     0110                     LATE            equ	272	;# 
-  1811     0111                     CM1CON0         equ	273	;# 
-  1812     0112                     CM1CON1         equ	274	;# 
-  1813     0113                     CM2CON0         equ	275	;# 
-  1814     0114                     CM2CON1         equ	276	;# 
-  1815     0115                     CMOUT           equ	277	;# 
-  1816     0116                     BORCON          equ	278	;# 
-  1817     0117                     FVRCON          equ	279	;# 
-  1818     0118                     DACCON0         equ	280	;# 
-  1819     0119                     DACCON1         equ	281	;# 
-  1820     011A                     SRCON0          equ	282	;# 
-  1821     011B                     SRCON1          equ	283	;# 
-  1822     011D                     APFCON          equ	285	;# 
-  1823     018C                     ANSELA          equ	396	;# 
-  1824     018D                     ANSELB          equ	397	;# 
-  1825     0191                     EEADR           equ	401	;# 
-  1826     0191                     EEADRL          equ	401	;# 
-  1827     0192                     EEADRH          equ	402	;# 
-  1828     0193                     EEDAT           equ	403	;# 
-  1829     0193                     EEDATL          equ	403	;# 
-  1830     0193                     EEDATA          equ	403	;# 
-  1831     0194                     EEDATH          equ	404	;# 
-  1832     0195                     EECON1          equ	405	;# 
-  1833     0196                     EECON2          equ	406	;# 
-  1834     0199                     RCREG           equ	409	;# 
-  1835     019A                     TXREG           equ	410	;# 
-  1836     019B                     SP1BRG          equ	411	;# 
-  1837     019B                     SP1BRGL         equ	411	;# 
-  1838     019B                     SPBRG           equ	411	;# 
-  1839     019B                     SPBRGL          equ	411	;# 
-  1840     019C                     SP1BRGH         equ	412	;# 
-  1841     019C                     SPBRGH          equ	412	;# 
-  1842     019D                     RCSTA           equ	413	;# 
-  1843     019E                     TXSTA           equ	414	;# 
-  1844     019F                     BAUDCON         equ	415	;# 
-  1845     020D                     WPUB            equ	525	;# 
-  1846     0210                     WPUE            equ	528	;# 
-  1847     0211                     SSPBUF          equ	529	;# 
-  1848     0212                     SSPADD          equ	530	;# 
-  1849     0213                     SSPMSK          equ	531	;# 
-  1850     0214                     SSPSTAT         equ	532	;# 
-  1851     0215                     SSPCON1         equ	533	;# 
-  1852     0215                     SSPCON          equ	533	;# 
-  1853     0216                     SSPCON2         equ	534	;# 
-  1854     0217                     SSPCON3         equ	535	;# 
-  1855     0291                     CCPR1           equ	657	;# 
-  1856     0291                     CCPR1L          equ	657	;# 
-  1857     0292                     CCPR1H          equ	658	;# 
-  1858     0293                     CCP1CON         equ	659	;# 
-  1859     0294                     PWM1CON         equ	660	;# 
-  1860     0295                     CCP1AS          equ	661	;# 
-  1861     0295                     ECCP1AS         equ	661	;# 
-  1862     0296                     PSTR1CON        equ	662	;# 
-  1863     0298                     CCPR2           equ	664	;# 
-  1864     0298                     CCPR2L          equ	664	;# 
-  1865     0299                     CCPR2H          equ	665	;# 
-  1866     029A                     CCP2CON         equ	666	;# 
-  1867     029B                     PWM2CON         equ	667	;# 
-  1868     029C                     CCP2AS          equ	668	;# 
-  1869     029C                     ECCP2AS         equ	668	;# 
-  1870     029D                     PSTR2CON        equ	669	;# 
-  1871     029E                     CCPTMRS0        equ	670	;# 
-  1872     029F                     CCPTMRS1        equ	671	;# 
-  1873     0311                     CCPR3           equ	785	;# 
-  1874     0311                     CCPR3L          equ	785	;# 
-  1875     0312                     CCPR3H          equ	786	;# 
-  1876     0313                     CCP3CON         equ	787	;# 
-  1877     0314                     PWM3CON         equ	788	;# 
-  1878     0315                     CCP3AS          equ	789	;# 
-  1879     0315                     ECCP3AS         equ	789	;# 
-  1880     0316                     PSTR3CON        equ	790	;# 
-  1881     0318                     CCPR4           equ	792	;# 
-  1882     0318                     CCPR4L          equ	792	;# 
-  1883     0319                     CCPR4H          equ	793	;# 
-  1884     031A                     CCP4CON         equ	794	;# 
-  1885     031C                     CCPR5           equ	796	;# 
-  1886     031C                     CCPR5L          equ	796	;# 
-  1887     031D                     CCPR5H          equ	797	;# 
-  1888     031E                     CCP5CON         equ	798	;# 
-  1889     0394                     IOCBP           equ	916	;# 
-  1890     0395                     IOCBN           equ	917	;# 
-  1891     0396                     IOCBF           equ	918	;# 
-  1892     0415                     TMR4            equ	1045	;# 
-  1893     0416                     PR4             equ	1046	;# 
-  1894     0417                     T4CON           equ	1047	;# 
-  1895     041C                     TMR6            equ	1052	;# 
-  1896     041D                     PR6             equ	1053	;# 
-  1897     041E                     T6CON           equ	1054	;# 
-  1898     0791                     LCDCON          equ	1937	;# 
-  1899     0792                     LCDPS           equ	1938	;# 
-  1900     0793                     LCDREF          equ	1939	;# 
-  1901     0794                     LCDCST          equ	1940	;# 
-  1902     0795                     LCDRL           equ	1941	;# 
-  1903     0798                     LCDSE0          equ	1944	;# 
-  1904     0799                     LCDSE1          equ	1945	;# 
-  1905     07A0                     LCDDATA0        equ	1952	;# 
-  1906     07A1                     LCDDATA1        equ	1953	;# 
-  1907     07A3                     LCDDATA3        equ	1955	;# 
-  1908     07A4                     LCDDATA4        equ	1956	;# 
-  1909     07A6                     LCDDATA6        equ	1958	;# 
-  1910     07A7                     LCDDATA7        equ	1959	;# 
-  1911     07A9                     LCDDATA9        equ	1961	;# 
-  1912     07AA                     LCDDATA10       equ	1962	;# 
-  1913     0FE4                     STATUS_SHAD     equ	4068	;# 
-  1914     0FE5                     WREG_SHAD       equ	4069	;# 
-  1915     0FE6                     BSR_SHAD        equ	4070	;# 
-  1916     0FE7                     PCLATH_SHAD     equ	4071	;# 
-  1917     0FE8                     FSR0L_SHAD      equ	4072	;# 
-  1918     0FE9                     FSR0H_SHAD      equ	4073	;# 
-  1919     0FEA                     FSR1L_SHAD      equ	4074	;# 
-  1920     0FEB                     FSR1H_SHAD      equ	4075	;# 
-  1921     0FED                     STKPTR          equ	4077	;# 
-  1922     0FEE                     TOSL            equ	4078	;# 
-  1923     0FEF                     TOSH            equ	4079	;# 
+  1756     0000                     INDF0           equ	0	;# 
+  1757     0001                     INDF1           equ	1	;# 
+  1758     0002                     PCL             equ	2	;# 
+  1759     0003                     STATUS          equ	3	;# 
+  1760     0004                     FSR0L           equ	4	;# 
+  1761     0005                     FSR0H           equ	5	;# 
+  1762     0006                     FSR1L           equ	6	;# 
+  1763     0007                     FSR1H           equ	7	;# 
+  1764     0008                     BSR             equ	8	;# 
+  1765     0009                     WREG            equ	9	;# 
+  1766     000A                     PCLATH          equ	10	;# 
+  1767     000B                     INTCON          equ	11	;# 
+  1768     000C                     PORTA           equ	12	;# 
+  1769     000D                     PORTB           equ	13	;# 
+  1770     000E                     PORTC           equ	14	;# 
+  1771     0010                     PORTE           equ	16	;# 
+  1772     0011                     PIR1            equ	17	;# 
+  1773     0012                     PIR2            equ	18	;# 
+  1774     0013                     PIR3            equ	19	;# 
+  1775     0015                     TMR0            equ	21	;# 
+  1776     0016                     TMR1            equ	22	;# 
+  1777     0016                     TMR1L           equ	22	;# 
+  1778     0017                     TMR1H           equ	23	;# 
+  1779     0018                     T1CON           equ	24	;# 
+  1780     0019                     T1GCON          equ	25	;# 
+  1781     001A                     TMR2            equ	26	;# 
+  1782     001B                     PR2             equ	27	;# 
+  1783     001C                     T2CON           equ	28	;# 
+  1784     001E                     CPSCON0         equ	30	;# 
+  1785     001F                     CPSCON1         equ	31	;# 
+  1786     008C                     TRISA           equ	140	;# 
+  1787     008D                     TRISB           equ	141	;# 
+  1788     008E                     TRISC           equ	142	;# 
+  1789     0090                     TRISE           equ	144	;# 
+  1790     0091                     PIE1            equ	145	;# 
+  1791     0092                     PIE2            equ	146	;# 
+  1792     0093                     PIE3            equ	147	;# 
+  1793     0095                     OPTION_REG      equ	149	;# 
+  1794     0096                     PCON            equ	150	;# 
+  1795     0097                     WDTCON          equ	151	;# 
+  1796     0098                     OSCTUNE         equ	152	;# 
+  1797     0099                     OSCCON          equ	153	;# 
+  1798     009A                     OSCSTAT         equ	154	;# 
+  1799     009B                     ADRES           equ	155	;# 
+  1800     009B                     ADRESL          equ	155	;# 
+  1801     009C                     ADRESH          equ	156	;# 
+  1802     009D                     ADCON0          equ	157	;# 
+  1803     009E                     ADCON1          equ	158	;# 
+  1804     010C                     LATA            equ	268	;# 
+  1805     010D                     LATB            equ	269	;# 
+  1806     010E                     LATC            equ	270	;# 
+  1807     0110                     LATE            equ	272	;# 
+  1808     0111                     CM1CON0         equ	273	;# 
+  1809     0112                     CM1CON1         equ	274	;# 
+  1810     0113                     CM2CON0         equ	275	;# 
+  1811     0114                     CM2CON1         equ	276	;# 
+  1812     0115                     CMOUT           equ	277	;# 
+  1813     0116                     BORCON          equ	278	;# 
+  1814     0117                     FVRCON          equ	279	;# 
+  1815     0118                     DACCON0         equ	280	;# 
+  1816     0119                     DACCON1         equ	281	;# 
+  1817     011A                     SRCON0          equ	282	;# 
+  1818     011B                     SRCON1          equ	283	;# 
+  1819     011D                     APFCON          equ	285	;# 
+  1820     018C                     ANSELA          equ	396	;# 
+  1821     018D                     ANSELB          equ	397	;# 
+  1822     0191                     EEADR           equ	401	;# 
+  1823     0191                     EEADRL          equ	401	;# 
+  1824     0192                     EEADRH          equ	402	;# 
+  1825     0193                     EEDAT           equ	403	;# 
+  1826     0193                     EEDATL          equ	403	;# 
+  1827     0193                     EEDATA          equ	403	;# 
+  1828     0194                     EEDATH          equ	404	;# 
+  1829     0195                     EECON1          equ	405	;# 
+  1830     0196                     EECON2          equ	406	;# 
+  1831     0199                     RCREG           equ	409	;# 
+  1832     019A                     TXREG           equ	410	;# 
+  1833     019B                     SP1BRG          equ	411	;# 
+  1834     019B                     SP1BRGL         equ	411	;# 
+  1835     019B                     SPBRG           equ	411	;# 
+  1836     019B                     SPBRGL          equ	411	;# 
+  1837     019C                     SP1BRGH         equ	412	;# 
+  1838     019C                     SPBRGH          equ	412	;# 
+  1839     019D                     RCSTA           equ	413	;# 
+  1840     019E                     TXSTA           equ	414	;# 
+  1841     019F                     BAUDCON         equ	415	;# 
+  1842     020D                     WPUB            equ	525	;# 
+  1843     0210                     WPUE            equ	528	;# 
+  1844     0211                     SSPBUF          equ	529	;# 
+  1845     0212                     SSPADD          equ	530	;# 
+  1846     0213                     SSPMSK          equ	531	;# 
+  1847     0214                     SSPSTAT         equ	532	;# 
+  1848     0215                     SSPCON1         equ	533	;# 
+  1849     0215                     SSPCON          equ	533	;# 
+  1850     0216                     SSPCON2         equ	534	;# 
+  1851     0217                     SSPCON3         equ	535	;# 
+  1852     0291                     CCPR1           equ	657	;# 
+  1853     0291                     CCPR1L          equ	657	;# 
+  1854     0292                     CCPR1H          equ	658	;# 
+  1855     0293                     CCP1CON         equ	659	;# 
+  1856     0294                     PWM1CON         equ	660	;# 
+  1857     0295                     CCP1AS          equ	661	;# 
+  1858     0295                     ECCP1AS         equ	661	;# 
+  1859     0296                     PSTR1CON        equ	662	;# 
+  1860     0298                     CCPR2           equ	664	;# 
+  1861     0298                     CCPR2L          equ	664	;# 
+  1862     0299                     CCPR2H          equ	665	;# 
+  1863     029A                     CCP2CON         equ	666	;# 
+  1864     029B                     PWM2CON         equ	667	;# 
+  1865     029C                     CCP2AS          equ	668	;# 
+  1866     029C                     ECCP2AS         equ	668	;# 
+  1867     029D                     PSTR2CON        equ	669	;# 
+  1868     029E                     CCPTMRS0        equ	670	;# 
+  1869     029F                     CCPTMRS1        equ	671	;# 
+  1870     0311                     CCPR3           equ	785	;# 
+  1871     0311                     CCPR3L          equ	785	;# 
+  1872     0312                     CCPR3H          equ	786	;# 
+  1873     0313                     CCP3CON         equ	787	;# 
+  1874     0314                     PWM3CON         equ	788	;# 
+  1875     0315                     CCP3AS          equ	789	;# 
+  1876     0315                     ECCP3AS         equ	789	;# 
+  1877     0316                     PSTR3CON        equ	790	;# 
+  1878     0318                     CCPR4           equ	792	;# 
+  1879     0318                     CCPR4L          equ	792	;# 
+  1880     0319                     CCPR4H          equ	793	;# 
+  1881     031A                     CCP4CON         equ	794	;# 
+  1882     031C                     CCPR5           equ	796	;# 
+  1883     031C                     CCPR5L          equ	796	;# 
+  1884     031D                     CCPR5H          equ	797	;# 
+  1885     031E                     CCP5CON         equ	798	;# 
+  1886     0394                     IOCBP           equ	916	;# 
+  1887     0395                     IOCBN           equ	917	;# 
+  1888     0396                     IOCBF           equ	918	;# 
+  1889     0415                     TMR4            equ	1045	;# 
+  1890     0416                     PR4             equ	1046	;# 
+  1891     0417                     T4CON           equ	1047	;# 
+  1892     041C                     TMR6            equ	1052	;# 
+  1893     041D                     PR6             equ	1053	;# 
+  1894     041E                     T6CON           equ	1054	;# 
+  1895     0791                     LCDCON          equ	1937	;# 
+  1896     0792                     LCDPS           equ	1938	;# 
+  1897     0793                     LCDREF          equ	1939	;# 
+  1898     0794                     LCDCST          equ	1940	;# 
+  1899     0795                     LCDRL           equ	1941	;# 
+  1900     0798                     LCDSE0          equ	1944	;# 
+  1901     0799                     LCDSE1          equ	1945	;# 
+  1902     07A0                     LCDDATA0        equ	1952	;# 
+  1903     07A1                     LCDDATA1        equ	1953	;# 
+  1904     07A3                     LCDDATA3        equ	1955	;# 
+  1905     07A4                     LCDDATA4        equ	1956	;# 
+  1906     07A6                     LCDDATA6        equ	1958	;# 
+  1907     07A7                     LCDDATA7        equ	1959	;# 
+  1908     07A9                     LCDDATA9        equ	1961	;# 
+  1909     07AA                     LCDDATA10       equ	1962	;# 
+  1910     0FE4                     STATUS_SHAD     equ	4068	;# 
+  1911     0FE5                     WREG_SHAD       equ	4069	;# 
+  1912     0FE6                     BSR_SHAD        equ	4070	;# 
+  1913     0FE7                     PCLATH_SHAD     equ	4071	;# 
+  1914     0FE8                     FSR0L_SHAD      equ	4072	;# 
+  1915     0FE9                     FSR0H_SHAD      equ	4073	;# 
+  1916     0FEA                     FSR1L_SHAD      equ	4074	;# 
+  1917     0FEB                     FSR1H_SHAD      equ	4075	;# 
+  1918     0FED                     STKPTR          equ	4077	;# 
+  1919     0FEE                     TOSL            equ	4078	;# 
+  1920     0FEF                     TOSH            equ	4079	;# 
+  1921                           
+  1922                           	psect	eeprom_data
+  1923     0000  001E 001E 00FF 00FF 00FF 00FF 00FF 00FF 	db	30,30,255,255,255,255,255,255	;# 
   1924     0000                     INDF0           equ	0	;# 
   1925     0001                     INDF1           equ	1	;# 
   1926     0002                     PCL             equ	2	;# 
@@ -2609,37 +2609,37 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   2595     0070                     ?_EUSART_SetErrorHandler:	
   2596                           ; 1 bytes @ 0x0
   2597                           
-  2598     0070                     ?_DATAEE_ReadByte:	
+  2598     0070                     ?_LED_DISABLE:	
   2599                           ; 1 bytes @ 0x0
   2600                           
-  2601     0070                     ?_DATAEE_WriteByte:	
+  2601     0070                     ?_SSLED:	
   2602                           ; 1 bytes @ 0x0
   2603                           
-  2604     0070                     ?_LED_DISABLE:	
+  2604     0070                     ?_keyDebounce:	
   2605                           ; 1 bytes @ 0x0
   2606                           
-  2607     0070                     ?_SSLED:	
+  2607     0070                     ?_chkeckPressKeyNumber:	
   2608                           ; 1 bytes @ 0x0
   2609                           
-  2610     0070                     ?_keyDebounce:	
+  2610     0070                     ?_getKeyStatus:	
   2611                           ; 1 bytes @ 0x0
   2612                           
-  2613     0070                     ?_chkeckPressKeyNumber:	
+  2613     0070                     ?_getTemperature:	
   2614                           ; 1 bytes @ 0x0
   2615                           
-  2616     0070                     ?_getKeyStatus:	
+  2616     0070                     ?_INTERRUPT_InterruptManager:	
   2617                           ; 1 bytes @ 0x0
   2618                           
-  2619     0070                     ?_getTemperature:	
+  2619     0070                     ?_TMR0_Initialize:	
   2620                           ; 1 bytes @ 0x0
   2621                           
-  2622     0070                     ?_INTERRUPT_InterruptManager:	
+  2622     0070                     ?_SYSTEM_Initialize:	
   2623                           ; 1 bytes @ 0x0
   2624                           
-  2625     0070                     ?_TMR0_Initialize:	
+  2625     0070                     ?_DATAEE_WriteByte:	
   2626                           ; 1 bytes @ 0x0
   2627                           
-  2628     0070                     ?_SYSTEM_Initialize:	
+  2628     0070                     ?_DATAEE_ReadByte:	
   2629                           ; 1 bytes @ 0x0
   2630                           
   2631     0070                     ?_TMR0_timerHandler:	
@@ -2720,13 +2720,13 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   2706     0070                     ??_ADC_Initialize:	
   2707                           ; 1 bytes @ 0x0
   2708                           
-  2709     0070                     ??_DATAEE_ReadByte:	
+  2709     0070                     ??_LED_DISABLE:	
   2710                           ; 1 bytes @ 0x0
   2711                           
-  2712     0070                     ??_LED_DISABLE:	
+  2712     0070                     ??_INTERRUPT_InterruptManager:	
   2713                           ; 1 bytes @ 0x0
   2714                           
-  2715     0070                     ??_INTERRUPT_InterruptManager:	
+  2715     0070                     ??_DATAEE_ReadByte:	
   2716                           ; 1 bytes @ 0x0
   2717                           
   2718     0070                     ??_TMR0_timerHandler:	
@@ -2739,10 +2739,10 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   2725     0071                     DATAEE_WriteByte@bAdd:	
   2726                           ; 1 bytes @ 0x1
   2727                           
-  2728     0071                     ??_DATAEE_WriteByte:	
+  2728     0071                     ??_SSLED:	
   2729                           ; 1 bytes @ 0x1
   2730                           
-  2731     0071                     ??_SSLED:	
+  2731     0071                     ??_DATAEE_WriteByte:	
   2732                           ; 1 bytes @ 0x1
   2733                           
   2734                           
@@ -3195,7 +3195,7 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   3181     0E8D  2E8F               	goto	u3121
   3182     0E8E  2E90               	goto	u3120
   3183     0E8F                     u3121:
-  3184     0E8F  2EA0               	goto	l816
+  3184     0E8F  2EA0               	goto	l866
   3185     0E90                     u3120:
   3186     0E90                     l3704:
   3187                           
@@ -3217,7 +3217,7 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   3203     0E9D  0020               	movlb	0	; select bank0
   3204     0E9E  01CF               	clrf	_displayMode
   3205     0E9F  2EA0               	goto	l3708
-  3206     0EA0                     l816:
+  3206     0EA0                     l866:
   3207     0EA0                     l3708:
   3208                           
   3209                           ;main.c: 193:     checkTemperature_SET1();
@@ -7857,7 +7857,7 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   7767     0CF3                     _checkTemperature_SET2:	
   7768                           ;psect for function _checkTemperature_SET2
   7769                           
-  7770     0CF3                     l3570:	
+  7770     0CF3                     l3608:	
   7771                           ;incstack = 0
   7772                           ; Regs used in _checkTemperature_SET2: [wreg+status,2+status,0+pclath+cstack]
   7773                           
@@ -7901,29 +7901,29 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   7811     0D18  00FB               	movwf	checkTemperature_SET2@temperatureCheckSet_LO+1
   7812     0D19  0870               	movf	?___wmul,w
   7813     0D1A  00FA               	movwf	checkTemperature_SET2@temperatureCheckSet_LO
-  7814     0D1B                     l3572:
+  7814     0D1B                     l3610:
   7815                           
   7816                           ;main.c: 132:   if (u16Temperature < temperatureCheckSet_LO) {
   7817     0D1B  087B               	movf	checkTemperature_SET2@temperatureCheckSet_LO+1,w
   7818     0D1C  0020               	movlb	0	; select bank0
   7819     0D1D  023D               	subwf	_u16Temperature+1,w
   7820     0D1E  1D03               	skipz
-  7821     0D1F  2D22               	goto	u2985
+  7821     0D1F  2D22               	goto	u2995
   7822     0D20  087A               	movf	checkTemperature_SET2@temperatureCheckSet_LO,w
   7823     0D21  023C               	subwf	_u16Temperature,w
-  7824     0D22                     u2985:
+  7824     0D22                     u2995:
   7825     0D22  1803               	skipnc
-  7826     0D23  2D25               	goto	u2981
-  7827     0D24  2D26               	goto	u2980
-  7828     0D25                     u2981:
-  7829     0D25  2D2C               	goto	l3574
-  7830     0D26                     u2980:
-  7831     0D26                     l800:	
+  7826     0D23  2D25               	goto	u2991
+  7827     0D24  2D26               	goto	u2990
+  7828     0D25                     u2991:
+  7829     0D25  2D2C               	goto	l3612
+  7830     0D26                     u2990:
+  7831     0D26                     l850:	
   7832                           ;main.c: 133:     do { LATCbits.LATC4 = 1; } while(0);
   7833                           
   7834     0D26  0022               	movlb	2	; select bank2
   7835     0D27  160E               	bsf	14,4	;volatile
-  7836     0D28                     l801:
+  7836     0D28                     l851:
   7837                           
   7838                           ;main.c: 134:     fRelay2 = 1;
   7839     0D28  3001               	movlw	1
@@ -7931,32 +7931,32 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   7841     0D2A  00C0               	movwf	_fRelay2
   7842                           
   7843                           ;main.c: 135:   } else if (u16Temperature > temperatureCheckSet_HI) {
-  7844     0D2B  2D3A               	goto	l806
-  7845     0D2C                     l3574:
+  7844     0D2B  2D3A               	goto	l856
+  7845     0D2C                     l3612:
   7846     0D2C  083D               	movf	_u16Temperature+1,w
   7847     0D2D  0279               	subwf	checkTemperature_SET2@temperatureCheckSet_HI+1,w
   7848     0D2E  1D03               	skipz
-  7849     0D2F  2D32               	goto	u2995
+  7849     0D2F  2D32               	goto	u3005
   7850     0D30  083C               	movf	_u16Temperature,w
   7851     0D31  0278               	subwf	checkTemperature_SET2@temperatureCheckSet_HI,w
-  7852     0D32                     u2995:
+  7852     0D32                     u3005:
   7853     0D32  1803               	skipnc
-  7854     0D33  2D35               	goto	u2991
-  7855     0D34  2D36               	goto	u2990
-  7856     0D35                     u2991:
-  7857     0D35  2D3A               	goto	l806
-  7858     0D36                     u2990:
-  7859     0D36                     l804:	
+  7854     0D33  2D35               	goto	u3001
+  7855     0D34  2D36               	goto	u3000
+  7856     0D35                     u3001:
+  7857     0D35  2D3A               	goto	l856
+  7858     0D36                     u3000:
+  7859     0D36                     l854:	
   7860                           ;main.c: 136:     do { LATCbits.LATC4 = 0; } while(0);
   7861                           
   7862     0D36  0022               	movlb	2	; select bank2
   7863     0D37  120E               	bcf	14,4	;volatile
-  7864     0D38                     l3576:
+  7864     0D38                     l3614:
   7865                           
   7866                           ;main.c: 137:     fRelay2 = 0;
   7867     0D38  0020               	movlb	0	; select bank0
   7868     0D39  01C0               	clrf	_fRelay2
-  7869     0D3A                     l806:
+  7869     0D3A                     l856:
   7870     0D3A  0008               	return
   7871     0D3B                     __end_of_checkTemperature_SET2:
   7872                           
@@ -7996,7 +7996,7 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   7906     0CAB                     _checkTemperature_SET1:	
   7907                           ;psect for function _checkTemperature_SET1
   7908                           
-  7909     0CAB                     l3562:	
+  7909     0CAB                     l3600:	
   7910                           ;incstack = 0
   7911                           ; Regs used in _checkTemperature_SET1: [wreg+status,2+status,0+pclath+cstack]
   7912                           
@@ -8040,29 +8040,29 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   7950     0CD0  30FF               	movlw	255
   7951     0CD1  3D71               	addwfc	?___wmul+1,w
   7952     0CD2  00FB               	movwf	checkTemperature_SET1@temperatureCheckSet_LO+1
-  7953     0CD3                     l3564:
+  7953     0CD3                     l3602:
   7954                           
   7955                           ;main.c: 119:   if (u16Temperature > temperatureCheckSet_HI) {
   7956     0CD3  0020               	movlb	0	; select bank0
   7957     0CD4  083D               	movf	_u16Temperature+1,w
   7958     0CD5  0279               	subwf	checkTemperature_SET1@temperatureCheckSet_HI+1,w
   7959     0CD6  1D03               	skipz
-  7960     0CD7  2CDA               	goto	u2965
+  7960     0CD7  2CDA               	goto	u2975
   7961     0CD8  083C               	movf	_u16Temperature,w
   7962     0CD9  0278               	subwf	checkTemperature_SET1@temperatureCheckSet_HI,w
-  7963     0CDA                     u2965:
+  7963     0CDA                     u2975:
   7964     0CDA  1803               	skipnc
-  7965     0CDB  2CDD               	goto	u2961
-  7966     0CDC  2CDE               	goto	u2960
-  7967     0CDD                     u2961:
-  7968     0CDD  2CE4               	goto	l3566
-  7969     0CDE                     u2960:
-  7970     0CDE                     l790:	
+  7965     0CDB  2CDD               	goto	u2971
+  7966     0CDC  2CDE               	goto	u2970
+  7967     0CDD                     u2971:
+  7968     0CDD  2CE4               	goto	l3604
+  7969     0CDE                     u2970:
+  7970     0CDE                     l840:	
   7971                           ;main.c: 120:     do { LATCbits.LATC5 = 1; } while(0);
   7972                           
   7973     0CDE  0022               	movlb	2	; select bank2
   7974     0CDF  168E               	bsf	14,5	;volatile
-  7975     0CE0                     l791:
+  7975     0CE0                     l841:
   7976                           
   7977                           ;main.c: 121:     fRelay1 = 1;
   7978     0CE0  3001               	movlw	1
@@ -8070,32 +8070,32 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   7980     0CE2  00C1               	movwf	_fRelay1
   7981                           
   7982                           ;main.c: 122:   } else if (u16Temperature < temperatureCheckSet_LO) {
-  7983     0CE3  2CF2               	goto	l796
-  7984     0CE4                     l3566:
+  7983     0CE3  2CF2               	goto	l846
+  7984     0CE4                     l3604:
   7985     0CE4  087B               	movf	checkTemperature_SET1@temperatureCheckSet_LO+1,w
   7986     0CE5  023D               	subwf	_u16Temperature+1,w
   7987     0CE6  1D03               	skipz
-  7988     0CE7  2CEA               	goto	u2975
+  7988     0CE7  2CEA               	goto	u2985
   7989     0CE8  087A               	movf	checkTemperature_SET1@temperatureCheckSet_LO,w
   7990     0CE9  023C               	subwf	_u16Temperature,w
-  7991     0CEA                     u2975:
+  7991     0CEA                     u2985:
   7992     0CEA  1803               	skipnc
-  7993     0CEB  2CED               	goto	u2971
-  7994     0CEC  2CEE               	goto	u2970
-  7995     0CED                     u2971:
-  7996     0CED  2CF2               	goto	l796
-  7997     0CEE                     u2970:
-  7998     0CEE                     l794:	
+  7993     0CEB  2CED               	goto	u2981
+  7994     0CEC  2CEE               	goto	u2980
+  7995     0CED                     u2981:
+  7996     0CED  2CF2               	goto	l846
+  7997     0CEE                     u2980:
+  7998     0CEE                     l844:	
   7999                           ;main.c: 123:     do { LATCbits.LATC5 = 0; } while(0);
   8000                           
   8001     0CEE  0022               	movlb	2	; select bank2
   8002     0CEF  128E               	bcf	14,5	;volatile
-  8003     0CF0                     l3568:
+  8003     0CF0                     l3606:
   8004                           
   8005                           ;main.c: 124:     fRelay1 = 0;
   8006     0CF0  0020               	movlb	0	; select bank0
   8007     0CF1  01C1               	clrf	_fRelay1
-  8008     0CF2                     l796:
+  8008     0CF2                     l846:
   8009     0CF2  0008               	return
   8010     0CF3                     __end_of_checkTemperature_SET1:
   8011                           
@@ -8946,71 +8946,71 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   8852                           ; Regs used in _DATAEE_WriteByte: [wreg+status,2+status,0]
   8853                           ;DATAEE_WriteByte@bAdd stored from wreg
   8854     0B1A  00F1               	movwf	DATAEE_WriteByte@bAdd
-  8855     0B1B                     l3592:
-  8856     0B1B                     l3594:
+  8855     0B1B                     l3562:
+  8856     0B1B                     l3564:
   8857                           
   8858                           ;mcc_generated_files/memory.c: 191:     EEADRL = (uint8_t)(bAdd & 0x0ff);
   8859     0B1B  0871               	movf	DATAEE_WriteByte@bAdd,w
   8860     0B1C  0023               	movlb	3	; select bank3
   8861     0B1D  0091               	movwf	17	;volatile
-  8862     0B1E                     l3596:
+  8862     0B1E                     l3566:
   8863                           
   8864                           ;mcc_generated_files/memory.c: 192:     EEDATL = bData;
   8865     0B1E  0870               	movf	DATAEE_WriteByte@bData,w
   8866     0B1F  0093               	movwf	19	;volatile
-  8867     0B20                     l3598:
+  8867     0B20                     l3568:
   8868                           
   8869                           ;mcc_generated_files/memory.c: 193:     EECON1bits.EEPGD = 0;
   8870     0B20  1395               	bcf	21,7	;volsfr
-  8871     0B21                     l3600:
+  8871     0B21                     l3570:
   8872                           
   8873                           ;mcc_generated_files/memory.c: 194:     EECON1bits.CFGS = 0;
   8874     0B21  1315               	bcf	21,6	;volsfr
-  8875     0B22                     l3602:
+  8875     0B22                     l3572:
   8876                           
   8877                           ;mcc_generated_files/memory.c: 195:     EECON1bits.WREN = 1;
   8878     0B22  1515               	bsf	21,2	;volsfr
-  8879     0B23                     l3604:
+  8879     0B23                     l3574:
   8880                           
   8881                           ;mcc_generated_files/memory.c: 197:     GIEBitValue = INTCONbits.GIE;
   8882     0B23  0D0B               	rlf	11,w	;volatile
   8883     0B24  0D0B               	rlf	11,w	;volatile
   8884     0B25  3901               	andlw	1
   8885     0B26  00F2               	movwf	DATAEE_WriteByte@GIEBitValue
-  8886     0B27                     l3606:
+  8886     0B27                     l3576:
   8887                           
   8888                           ;mcc_generated_files/memory.c: 198:     INTCONbits.GIE = 0;
   8889     0B27  138B               	bcf	11,7	;volatile
-  8890     0B28                     l3608:
+  8890     0B28                     l3578:
   8891                           
   8892                           ;mcc_generated_files/memory.c: 199:     EECON2 = 0x55;
   8893     0B28  3055               	movlw	85
   8894     0B29  0096               	movwf	22	;volsfr
-  8895     0B2A                     l3610:
+  8895     0B2A                     l3580:
   8896                           
   8897                           ;mcc_generated_files/memory.c: 200:     EECON2 = 0xAA;
   8898     0B2A  30AA               	movlw	170
   8899     0B2B  0096               	movwf	22	;volsfr
-  8900     0B2C                     l3612:
+  8900     0B2C                     l3582:
   8901                           
   8902                           ;mcc_generated_files/memory.c: 201:     EECON1bits.WR = 1;
   8903     0B2C  1495               	bsf	21,1	;volsfr
-  8904     0B2D                     l866:	
+  8904     0B2D                     l778:	
   8905                           ;mcc_generated_files/memory.c: 204:     {;mcc_generated_files/memory.c: 205:     }
   8906                           
   8907                           
   8908                           ;mcc_generated_files/memory.c: 203:     while (EECON1bits.WR)
   8909     0B2D  1895               	btfsc	21,1	;volsfr
-  8910     0B2E  2B30               	goto	u3001
-  8911     0B2F  2B31               	goto	u3000
-  8912     0B30                     u3001:
-  8913     0B30  2B2D               	goto	l866
-  8914     0B31                     u3000:
-  8915     0B31                     l868:
+  8910     0B2E  2B30               	goto	u2961
+  8911     0B2F  2B31               	goto	u2960
+  8912     0B30                     u2961:
+  8913     0B30  2B2D               	goto	l778
+  8914     0B31                     u2960:
+  8915     0B31                     l780:
   8916                           
   8917                           ;mcc_generated_files/memory.c: 207:     EECON1bits.WREN = 0;
   8918     0B31  1115               	bcf	21,2	;volsfr
-  8919     0B32                     l3614:
+  8919     0B32                     l3584:
   8920                           
   8921                           ;mcc_generated_files/memory.c: 208:     INTCONbits.GIE = GIEBitValue;
   8922     0B32  0C72               	rrf	DATAEE_WriteByte@GIEBitValue,w
@@ -9018,7 +9018,7 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   8924     0B34  138B               	bcf	11,7	;volatile
   8925     0B35  1803               	skipnc
   8926     0B36  178B               	bsf	11,7	;volatile
-  8927     0B37                     l869:
+  8927     0B37                     l781:
   8928     0B37  0008               	return
   8929     0B38                     __end_of_DATAEE_WriteByte:
   8930                           
@@ -9062,7 +9062,7 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   8968                           ; Regs used in _DATAEE_ReadByte: [wreg]
   8969                           ;DATAEE_ReadByte@bAdd stored from wreg
   8970     0A95  00F0               	movwf	DATAEE_ReadByte@bAdd
-  8971     0A96                     l3578:
+  8971     0A96                     l3586:
   8972                           
   8973                           ;mcc_generated_files/memory.c: 211: uint8_t DATAEE_ReadByte(uint8_t bAdd);mcc_generated_
       +                          files/memory.c: 212: {;mcc_generated_files/memory.c: 213:     EEADRL = (uint8_t)(bAdd & 
@@ -9070,23 +9070,23 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   8974     0A96  0870               	movf	DATAEE_ReadByte@bAdd,w
   8975     0A97  0023               	movlb	3	; select bank3
   8976     0A98  0091               	movwf	17	;volatile
-  8977     0A99                     l3580:
+  8977     0A99                     l3588:
   8978                           
   8979                           ;mcc_generated_files/memory.c: 214:     EECON1bits.CFGS = 0;
   8980     0A99  1315               	bcf	21,6	;volsfr
-  8981     0A9A                     l3582:
+  8981     0A9A                     l3590:
   8982                           
   8983                           ;mcc_generated_files/memory.c: 215:     EECON1bits.EEPGD = 0;
   8984     0A9A  1395               	bcf	21,7	;volsfr
-  8985     0A9B                     l3584:
+  8985     0A9B                     l3592:
   8986                           
   8987                           ;mcc_generated_files/memory.c: 216:     EECON1bits.RD = 1;
   8988     0A9B  1415               	bsf	21,0	;volsfr
-  8989     0A9C                     l3586:
+  8989     0A9C                     l3594:
   8990                           
   8991                           ;mcc_generated_files/memory.c: 217:     __nop();
   8992     0A9C  0000               	nop
-  8993     0A9D                     l3588:
+  8993     0A9D                     l3596:
   8994                           
   8995                           ;mcc_generated_files/memory.c: 218:     __nop();
   8996     0A9D  0000               	nop
@@ -9094,7 +9094,7 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   8998                           ;mcc_generated_files/memory.c: 220:     return (EEDATL);
   8999     0A9E  0023               	movlb	3	; select bank3
   9000     0A9F  0813               	movf	19,w	;volatile
-  9001     0AA0                     l872:
+  9001     0AA0                     l784:
   9002     0AA0  0008               	return
   9003     0AA1                     __end_of_DATAEE_ReadByte:
   9004                           
@@ -9358,7 +9358,7 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   9259     0C27  2C29               	goto	u252_21
   9260     0C28  2C2A               	goto	u252_20
   9261     0C29                     u252_21:
-  9262     0C29  2C2E               	goto	i1l786
+  9262     0C29  2C2E               	goto	i1l836
   9263     0C2A                     u252_20:
   9264     0C2A                     i1l3350:
   9265                           
@@ -9370,7 +9370,7 @@ Microchip MPLAB XC8 C Compiler v3.00 (Free license) build 20241204225717 Og1
   9271                           ;main.c: 109:     f1S = 1;
   9272     0C2C  3001               	movlw	1
   9273     0C2D  00C4               	movwf	_f1S
-  9274     0C2E                     i1l786:
+  9274     0C2E                     i1l836:
   9275     0C2E  0008               	return
   9276     0C2F                     __end_of_TMR0_timerHandler:
   9277     0002                     ___latbits      equ	2
@@ -9784,7 +9784,7 @@ DATA                 0      0     109      0.0%
 
 
 Microchip Technology PIC Macro Assembler V3.00 build 20241204225717 
-Symbol Table                                                                                   Tue Jul 01 17:31:27 2025
+Symbol Table                                                                                   Wed Jul 02 08:31:47 2025
 
                             _SW3_LongPressTime 00A4                                             l20 0DE2  
                                            l30 0A7E                                             l23 0B76  
@@ -9807,22 +9807,22 @@ Symbol Table                                                                    
                                           l380 0355                                            l429 0F3C  
                                           l437 0667                                            l390 03DA  
                                           l382 0354                                            l536 0A5F  
-                                          l800 0D26                                            l392 03D9  
-                                          l456 0739                                            l801 0D28  
+                                          l392 03D9                                            l456 0739  
                                           l562 0ACF                                            l731 0A59  
                                           l299 0625                                            l459 0A94  
-                                          l483 0CAA                                            l804 0D36  
-                                          l565 0A72                                            l637 0AFE  
-                                          l493 0FFB                                            l734 0A4D  
-                                          l806 0D3A                                            l494 0FFF  
+                                          l483 0CAA                                            l565 0A72  
+                                          l637 0AFE                                            l493 0FFB  
+                                          l734 0A4D                                            l494 0FFF  
                                           l478 0BC5                                            l487 0FEC  
                                           l728 0A53                                            l568 0A47  
-                                          l816 0EA0                                            l585 0A7A  
-                                          l683 0B98                                            l790 0CDE  
-                                          l791 0CE0                                            l872 0AA0  
-                                          l866 0B2D                                            l794 0CEE  
-                                          l868 0B31                                            l796 0CF2  
-                                          l869 0B37                                            _SSD 0039  
+                                          l840 0CDE                                            l585 0A7A  
+                                          l841 0CE0                                            l850 0D26  
+                                          l683 0B98                                            l851 0D28  
+                                          l780 0B31                                            l844 0CEE  
+                                          l781 0B37                                            l846 0CF2  
+                                          l854 0D36                                            l784 0AA0  
+                                          l856 0D3A                                            l778 0B2D  
+                                          l866 0EA0                                            _SSD 0039  
                                           _f1S 0044                 ?_EUSART_SetFramingErrorHandler 0070  
                                  ___awmod@sign 0075                                            wreg 0009  
                                          ?_SSD 0072                                           l1022 0B42  
@@ -9899,8 +9899,8 @@ Symbol Table                                                                    
                                          l3502 06D6                                           l3510 0711  
                                          l3270 0F80                                           l3262 0F5A  
                                          l3254 0F3D                                           l3246 0CA2  
-                                         l3238 0C7A                                           l3600 0B21  
-                                         l3328 0B8F                                           l3280 0AD0  
+                                         l3238 0C7A                                           l3328 0B8F  
+                                         l3280 0AD0                                           l3600 0CAB  
                                          l3360 0D45                                           l3408 0BED  
                                          l2800 0579                                           l2720 04FA  
                                          l2712 04EF                                           l2704 04E2  
@@ -9912,9 +9912,9 @@ Symbol Table                                                                    
                                          l3512 0717                                           l3504 06F9  
                                          l3440 062E                                           l3272 0FCF  
                                          l3264 0F5D                                           l3256 0F42  
-                                         l3248 0CA7                                           l3610 0B2A  
-                                         l3602 0B22                                           l3290 0ADC  
-                                         l3282 0AD5                                           l3370 0D59  
+                                         l3248 0CA7                                           l3290 0ADC  
+                                         l3282 0AD5                                           l3602 0CD3  
+                                         l3610 0D1B                                           l3370 0D59  
                                          l3362 0D47                                           l3354 0D3B  
                                          l2810 0587                                           l2802 057A  
                                          l2722 04FD                                           l2730 0504  
@@ -9927,8 +9927,8 @@ Symbol Table                                                                    
                                          l3450 063B                                           l3442 0631  
                                          l3266 0F77                                           l3274 0FE8  
                                          l3258 0F44                                           l3530 0B99  
-                                         l3612 0B2C                                           l3604 0B23  
                                          l3292 0AE4                                           l3284 0AD8  
+                                         l3604 0CE4                                           l3612 0D2C  
                                          l3380 0D72                                           l3372 0D5E  
                                          l3364 0D4B                                           l3356 0D3C  
                                          l2900 05FF                                           l2820 0594  
@@ -9943,9 +9943,9 @@ Symbol Table                                                                    
                                          l3452 063C                                           l3444 0637  
                                          l3436 0626                                           l3268 0F7D  
                                          l3276 0FF7                                           l3532 0BAB  
-                                         l3700 0E83                                           l3614 0B32  
-                                         l3606 0B27                                           l3294 0AE9  
-                                         l3286 0ADA                                           l3382 0D77  
+                                         l3700 0E83                                           l3294 0AE9  
+                                         l3286 0ADA                                           l3606 0CF0  
+                                         l3614 0D38                                           l3382 0D77  
                                          l3374 0D60                                           l3366 0D50  
                                          l3358 0D40                                           l2910 060E  
                                          l2902 0601                                           l2822 0597  
@@ -9960,9 +9960,9 @@ Symbol Table                                                                    
                                          l3470 0668                                           l3454 063F  
                                          l3446 0639                                           l3438 0629  
                                          l3534 0BB7                                           l3710 0EA3  
-                                         l3702 0E8A                                           l3608 0B28  
-                                         l3296 0AEC                                           l3288 0ADB  
-                                         l3544 0ABD                                           l3376 0D64  
+                                         l3702 0E8A                                           l3296 0AEC  
+                                         l3288 0ADB                                           l3544 0ABD  
+                                         l3608 0CF3                                           l3376 0D64  
                                          l3368 0D56                                           l3384 0D7D  
                                          l3392 0BC6                                           l2920 061C  
                                          l2912 060F                                           l2904 0603  
@@ -9977,8 +9977,8 @@ Symbol Table                                                                    
                                          l3472 066D                                           l3480 067B  
                                          l3464 065E                                           l3456 064B  
                                          l3448 063A                                           l3704 0E90  
+                                         l3570 0B21                                           l3562 0B1B  
                                          l3298 0AEE                                           l3546 0AC6  
-                                         l3562 0CAB                                           l3570 0CF3  
                                          l3386 0D82                                           l3378 0D6E  
                                          l3394 0BCC                                           l2922 061E  
                                          l2914 0611                                           l2906 0609  
@@ -9993,8 +9993,8 @@ Symbol Table                                                                    
                                          l3482 0681                                           l3490 06BC  
                                          l3474 0672                                           l3466 0660  
                                          l3458 064E                                           l3706 0E9D  
-                                         l3580 0A99                                           l3548 0AC9  
-                                         l3564 0CD3                                           l3572 0D1B  
+                                         l3580 0B2A                                           l3572 0B22  
+                                         l3564 0B1B                                           l3548 0AC9  
                                          l3388 0D87                                           l3396 0BCF  
                                          l2924 061F                                           l2908 060C  
                                          l2916 0613                                           l2860 05CC  
@@ -10008,50 +10008,50 @@ Symbol Table                                                                    
                                          l2932 003F                                           l3492 06C2  
                                          l3484 06A4                                           l3476 0678  
                                          l3468 0666                                           l3708 0EA0  
-                                         l3582 0A9A                                           l3566 0CE4  
-                                         l3574 0D2C                                           l3398 0BD4  
-                                         l2926 0621                                           l2918 0619  
-                                         l2870 05D9                                           l2862 05CE  
-                                         l2854 05C1                                           l2846 05B9  
-                                         l2838 05AE                                           l2790 056A  
-                                         l2774 0557                                           l2782 055E  
-                                         l2766 054A                                           l2758 053E  
-                                         l2686 04CD                                           l2694 04D4  
-                                         l2678 04C0                                           l2950 012D  
-                                         l2942 00CB                                           l2934 006A  
-                                         l3494 06C7                                           l3486 06AB  
-                                         l3478 067A                                           l3670 0E3E  
-                                         l3584 0A9B                                           l3592 0B1B  
-                                         l3568 0CF0                                           l3576 0D38  
-                                         l2872 05DC                                           l2880 05E3  
-                                         l2864 05CF                                           l2848 05BC  
-                                         l2856 05C3                                           l2792 056C  
-                                         l2784 0564                                           l2776 0559  
-                                         l2768 054C                                           l2696 04DA  
-                                         l2688 04CF                                           l2928 0622  
-                                         l2960 0195                                           l2952 0133  
-                                         l2944 00D1                                           l2936 006F  
-                                         l3496 06CD                                           l3488 06AD  
-                                         l3680 0E4C                                           l3672 0E48  
-                                         l3586 0A9C                                           l3578 0A96  
-                                         l3594 0B1B                                           l2890 05F1  
-                                         l2882 05E9                                           l2874 05DE  
-                                         l2866 05D1                                           l2858 05C9  
-                                         l2786 0567                                           l2794 056E  
-                                         l2778 055A                                           l2698 04DD  
-                                         l2970 0222                                           l2962 01C0  
-                                         l2954 015E                                           l2946 00FC  
-                                         l2938 009A                                           l3498 06CF  
-                                         l3690 0E64                                           l3682 0E52  
-                                         l3674 0E49                                           l3588 0A9D  
-                                         l3596 0B1E                                           l2884 05EC  
-                                         l2892 05F3                                           l2876 05DF  
-                                         l2868 05D3                                           l2796 0574  
-                                         l2788 0569                                           l2980 028A  
-                                         l2972 0228                                           l2964 01C6  
-                                         l2956 0164                                           l2948 0102  
-                                         l3692 0E6A                                           l3684 0E58  
-                                         l3676 0E4A                                           l3598 0B20  
+                                         l3590 0A9A                                           l3582 0B2C  
+                                         l3574 0B23                                           l3566 0B1E  
+                                         l3398 0BD4                                           l2926 0621  
+                                         l2918 0619                                           l2870 05D9  
+                                         l2862 05CE                                           l2854 05C1  
+                                         l2846 05B9                                           l2838 05AE  
+                                         l2790 056A                                           l2774 0557  
+                                         l2782 055E                                           l2766 054A  
+                                         l2758 053E                                           l2686 04CD  
+                                         l2694 04D4                                           l2678 04C0  
+                                         l2950 012D                                           l2942 00CB  
+                                         l2934 006A                                           l3494 06C7  
+                                         l3486 06AB                                           l3478 067A  
+                                         l3670 0E3E                                           l3592 0A9B  
+                                         l3584 0B32                                           l3576 0B27  
+                                         l3568 0B20                                           l2872 05DC  
+                                         l2880 05E3                                           l2864 05CF  
+                                         l2848 05BC                                           l2856 05C3  
+                                         l2792 056C                                           l2784 0564  
+                                         l2776 0559                                           l2768 054C  
+                                         l2696 04DA                                           l2688 04CF  
+                                         l2928 0622                                           l2960 0195  
+                                         l2952 0133                                           l2944 00D1  
+                                         l2936 006F                                           l3496 06CD  
+                                         l3488 06AD                                           l3680 0E4C  
+                                         l3672 0E48                                           l3594 0A9C  
+                                         l3586 0A96                                           l3578 0B28  
+                                         l2890 05F1                                           l2882 05E9  
+                                         l2874 05DE                                           l2866 05D1  
+                                         l2858 05C9                                           l2786 0567  
+                                         l2794 056E                                           l2778 055A  
+                                         l2698 04DD                                           l2970 0222  
+                                         l2962 01C0                                           l2954 015E  
+                                         l2946 00FC                                           l2938 009A  
+                                         l3498 06CF                                           l3690 0E64  
+                                         l3682 0E52                                           l3674 0E49  
+                                         l3596 0A9D                                           l3588 0A99  
+                                         l2884 05EC                                           l2892 05F3  
+                                         l2876 05DF                                           l2868 05D3  
+                                         l2796 0574                                           l2788 0569  
+                                         l2980 028A                                           l2972 0228  
+                                         l2964 01C6                                           l2956 0164  
+                                         l2948 0102                                           l3692 0E6A  
+                                         l3684 0E58                                           l3676 0E4A  
                                          l2990 0A5A                                           l2894 05F9  
                                          l2886 05EE                                           l2878 05E1  
                                          l2798 0577                                           l2982 02B5  
@@ -10069,152 +10069,152 @@ Symbol Table                                                                    
                                          u2001 0DF2                                           u2010 0E02  
                                          u2011 0E01                                           u2110 0C45  
                                          u2030 0E10                                           u2111 0C44  
-                                         u2031 0E0F                                           u3000 0B31  
-                                         u2200 035A                                           u3001 0B30  
+                                         u2031 0E0F                                           u3000 0D36  
+                                         u2200 035A                                           u3001 0D35  
                                          u2105 0C3B                                           u2201 0359  
                                          u2025 0E06                                           u2130 0C54  
                                          u2210 0380                                           u2050 0E1F  
                                          u2131 0C53                                           u2211 037F  
                                          u2051 0E1E                                           u2300 043A  
                                          u2220 038A                                           u3100 0E76  
-                                         u2125 0C46                                           u2301 0439  
-                                         u2221 0389                                           u2045 0E11  
-                                         u3101 0E75                                           _LATA 010C  
-                                         u2150 0C64                                           u2310 045A  
-                                         u2230 0390                                           u2070 0E2F  
-                                         u3110 0E83                                           _LATB 010D  
-                                         u2151 0C63                                           u2135 0C50  
-                                         u2311 0459                                           u2231 038F  
-                                         u2071 0E2E                                           u2055 0E1B  
-                                         u3111 0E82                                           _LATC 010E  
-                                         u1600 04EA                                           u2400 0F07  
-                                         u2320 0464                                           u2240 03B5  
-                                         u2160 0305                                           u2080 0E34  
-                                         u3120 0E90                                           u2145 0C5A  
-                                         u1601 04E9                                           u2401 0F06  
-                                         u2321 0463                                           u2241 03B4  
-                                         u2161 0304                                           u2081 0E33  
-                                         u2065 0E25                                           u3121 0E8F  
-                                         _LATE 0110                                           u2090 0C37  
-                                         u1610 04FA                                           u2410 0F10  
-                                         u2330 048A                                           u2250 03D5  
-                                         u2170 030B                                           u2091 0C36  
-                                         u1611 04F9                                           u2411 0F0F  
-                                         u2331 0489                                           u2251 03D4  
-                                         u2171 030A                                           u1700 0584  
-                                         u1620 050A                                           u1540 0495  
-                                         u2420 0F2D                                           u2340 0EBB  
-                                         u2260 03DF                                           u2180 0330  
-                                         u1701 0583                                           u1621 0509  
-                                         u1541 0494                                           u2421 0F2C  
-                                         u2341 0EBA                                           u2261 03DE  
-                                         u2181 032F                                           u1710 0594  
-                                         u1630 051F                                           u1550 049A  
-                                         u2350 0EC1                                           u2270 0405  
-                                         u2190 0350                                           u2430 0B15  
-                                         u1711 0593                                           u1631 051E  
-                                         u1551 0499                                           u2351 0EC0  
-                                         u2271 0404                                           u2191 034F  
-                                         u2431 0B14                                           u2600 0D7D  
-                                         u1800 0619                                           u1720 05A4  
-                                         u1640 0524                                           u1560 04AA  
-                                         u2360 0ED4                                           u2280 040F  
-                                         u2440 0C9D                                           u3080 0E5E  
-                                         u2601 0D7C                                           u1801 0618  
-                                         u1721 05A3                                           u1641 0523  
-                                         u1561 04A9                                           u2361 0ED3  
-                                         u2281 040E                                           u3137 0B0C  
-                                         u2441 0C9C                                           u3081 0E5D  
-                                         u2610 0D82                                           u2530 0D40  
-                                         u1730 05A9                                           u1650 0534  
-                                         u1570 04BA                                           u1810 003F  
-                                         u2370 0EDA                                           u2290 0415  
-                                         u2450 0CA7                                           u3090 0E6A  
-                                         u2611 0D81                                           u2531 0D3F  
-                                         u3147 0623                                           u1731 05A8  
-                                         u1651 0533                                           u1571 04B9  
-                                         u1811 003E                                           u2371 0ED9  
-                                         u2291 0414                                           u2451 0CA6  
-                                         u3091 0E69                                           u2540 0D4B  
-                                         u2620 0BCC                                           u1740 05B9  
-                                         u1660 0544                                           u1580 04CA  
-                                         u1900 01F7                                           u1820 006F  
-                                         u2380 0EED                                           u2700 062E  
-                                         u2460 0F5A                                           u2541 0D4A  
-                                         u2621 0BCB                                           u1741 05B8  
-                                         u1661 0543                                           u1581 04C9  
-                                         u1901 01F6                                           u1821 006E  
-                                         u2381 0EEC                                           u2701 062D  
-                                         u2461 0F59                                           u2445 0C99  
-                                         u2550 0D56                                           u1750 05C9  
-                                         u1670 0554                                           u1590 04DA  
-                                         u1910 0228                                           u1830 00A0  
-                                         u2390 0EF3                                           u2710 0637  
-                                         u2470 0F77                                           u2551 0D55  
-                                         u1751 05C8                                           u1671 0553  
-                                         u1591 04D9                                           u1911 0227  
-                                         u1831 009F                                           u2391 0EF2  
-                                         u2711 0636                                           u2471 0F76  
-                                         u2640 0BDA                                           u1760 05D9  
-                                         u1680 0564                                           u1920 0259  
-                                         u1840 00D1                                           u2800 06A4  
-                                         u2720 0654                                           u2480 0F7D  
-                                         u2641 0BD9                                           u1761 05D8  
-                                         u1681 0563                                           u1921 0258  
-                                         u1841 00D0                                           u2801 06A3  
-                                         u2721 0653                                           u2481 0F7C  
-                                         u2465 0F56                                           u2570 0D64  
-                                         u2650 0BE4                                           u1770 05E9  
-                                         u1690 0574                                           u1930 028A  
-                                         u1850 0102                                           u2810 06AB  
-                                         u2730 0659                                           u2490 0FF6  
-                                         u2571 0D63                                           u2651 0BE3  
-                                         u2635 0BD0                                           u1771 05E8  
-                                         u1691 0573                                           u1931 0289  
-                                         u1851 0101                                           u2811 06AA  
-                                         u2731 0658                                           u2491 0FF5  
-                                         u2475 0F73                                           u2580 0D6E  
-                                         u1780 05F9                                           u1940 02BB  
-                                         u1860 0133                                           u2900 0726  
-                                         u2820 06C2                                           u2740 065E  
-                                         u2581 0D6D                                           u2565 0D5A  
-                                         u1781 05F8                                           u1941 02BA  
-                                         u1861 0132                                           u2901 0725  
-                                         u2821 06C1                                           u2741 065D  
-                                         u1950 0B3E                                           u2670 0BF3  
-                                         u1790 0609                                           u1870 0164  
-                                         u2910 072E                                           u2830 06C7  
-                                         u2750 0666                                           u1951 0B3D  
-                                         u2671 0BF2                                           u2655 0BE0  
-                                         u1791 0608                                           u1871 0163  
-                                         u2911 072D                                           u2831 06C6  
-                                         u2751 0665                                           u2495 0FF2  
-                                         u1880 0195                                           u2680 0DA9  
-                                         u2920 0737                                           u2840 06CD  
-                                         u2760 066D                                           u2585 0D6A  
-                                         u2665 0BE9                                           u1881 0194  
-                                         u2681 0DA8                                           u2921 0736  
-                                         u2841 06CC                                           u2761 066C  
-                                         u1890 01C6                                           u2690 0DE2  
-                                         u2850 06D6                                           u2770 0672  
-                                         u2595 0D73                                           u1891 01C5  
-                                         u2691 0DE1                                           u2851 06D5  
-                                         u2771 0671                                           u1980 0B52  
-                                         u2860 06F9                                           u2780 0678  
-                                         u1981 0B51                                           u1965 0B43  
-                                         u2861 06F8                                           u2781 0677  
-                                         u2870 0700                                           u2790 0681  
-                                         u1990 0DE8                                           u1975 0B48  
-                                         u2871 06FF                                           u2791 0680  
-                                         u1991 0DE7                                           u2960 0CDE  
-                                         u2880 0717                                           u2961 0CDD  
-                                         u2881 0716                                           u2970 0CEE  
-                                         u2890 071D                                           u2971 0CED  
-                                         u2891 071C                                           u2980 0D26  
-                                         u2965 0CDA                                           u2981 0D25  
-                                         u2990 0D36                                           u2975 0CEA  
-                                         u2991 0D35                                           u2985 0D22  
-                                         u2995 0D32                                           _TMR0 0015  
+                                         u3005 0D32                                           u2125 0C46  
+                                         u2301 0439                                           u2221 0389  
+                                         u2045 0E11                                           u3101 0E75  
+                                         _LATA 010C                                           u2150 0C64  
+                                         u2310 045A                                           u2230 0390  
+                                         u2070 0E2F                                           u3110 0E83  
+                                         _LATB 010D                                           u2151 0C63  
+                                         u2135 0C50                                           u2311 0459  
+                                         u2231 038F                                           u2071 0E2E  
+                                         u2055 0E1B                                           u3111 0E82  
+                                         _LATC 010E                                           u1600 04EA  
+                                         u2400 0F07                                           u2320 0464  
+                                         u2240 03B5                                           u2160 0305  
+                                         u2080 0E34                                           u3120 0E90  
+                                         u2145 0C5A                                           u1601 04E9  
+                                         u2401 0F06                                           u2321 0463  
+                                         u2241 03B4                                           u2161 0304  
+                                         u2081 0E33                                           u2065 0E25  
+                                         u3121 0E8F                                           _LATE 0110  
+                                         u2090 0C37                                           u1610 04FA  
+                                         u2410 0F10                                           u2330 048A  
+                                         u2250 03D5                                           u2170 030B  
+                                         u2091 0C36                                           u1611 04F9  
+                                         u2411 0F0F                                           u2331 0489  
+                                         u2251 03D4                                           u2171 030A  
+                                         u1700 0584                                           u1620 050A  
+                                         u1540 0495                                           u2420 0F2D  
+                                         u2340 0EBB                                           u2260 03DF  
+                                         u2180 0330                                           u1701 0583  
+                                         u1621 0509                                           u1541 0494  
+                                         u2421 0F2C                                           u2341 0EBA  
+                                         u2261 03DE                                           u2181 032F  
+                                         u1710 0594                                           u1630 051F  
+                                         u1550 049A                                           u2350 0EC1  
+                                         u2270 0405                                           u2190 0350  
+                                         u2430 0B15                                           u1711 0593  
+                                         u1631 051E                                           u1551 0499  
+                                         u2351 0EC0                                           u2271 0404  
+                                         u2191 034F                                           u2431 0B14  
+                                         u2600 0D7D                                           u1800 0619  
+                                         u1720 05A4                                           u1640 0524  
+                                         u1560 04AA                                           u2360 0ED4  
+                                         u2280 040F                                           u2440 0C9D  
+                                         u3080 0E5E                                           u2601 0D7C  
+                                         u1801 0618                                           u1721 05A3  
+                                         u1641 0523                                           u1561 04A9  
+                                         u2361 0ED3                                           u2281 040E  
+                                         u3137 0B0C                                           u2441 0C9C  
+                                         u3081 0E5D                                           u2610 0D82  
+                                         u2530 0D40                                           u1730 05A9  
+                                         u1650 0534                                           u1570 04BA  
+                                         u1810 003F                                           u2370 0EDA  
+                                         u2290 0415                                           u2450 0CA7  
+                                         u3090 0E6A                                           u2611 0D81  
+                                         u2531 0D3F                                           u3147 0623  
+                                         u1731 05A8                                           u1651 0533  
+                                         u1571 04B9                                           u1811 003E  
+                                         u2371 0ED9                                           u2291 0414  
+                                         u2451 0CA6                                           u3091 0E69  
+                                         u2540 0D4B                                           u2620 0BCC  
+                                         u1740 05B9                                           u1660 0544  
+                                         u1580 04CA                                           u1900 01F7  
+                                         u1820 006F                                           u2380 0EED  
+                                         u2700 062E                                           u2460 0F5A  
+                                         u2541 0D4A                                           u2621 0BCB  
+                                         u1741 05B8                                           u1661 0543  
+                                         u1581 04C9                                           u1901 01F6  
+                                         u1821 006E                                           u2381 0EEC  
+                                         u2701 062D                                           u2461 0F59  
+                                         u2445 0C99                                           u2550 0D56  
+                                         u1750 05C9                                           u1670 0554  
+                                         u1590 04DA                                           u1910 0228  
+                                         u1830 00A0                                           u2390 0EF3  
+                                         u2710 0637                                           u2470 0F77  
+                                         u2551 0D55                                           u1751 05C8  
+                                         u1671 0553                                           u1591 04D9  
+                                         u1911 0227                                           u1831 009F  
+                                         u2391 0EF2                                           u2711 0636  
+                                         u2471 0F76                                           u2640 0BDA  
+                                         u1760 05D9                                           u1680 0564  
+                                         u1920 0259                                           u1840 00D1  
+                                         u2800 06A4                                           u2720 0654  
+                                         u2480 0F7D                                           u2641 0BD9  
+                                         u1761 05D8                                           u1681 0563  
+                                         u1921 0258                                           u1841 00D0  
+                                         u2801 06A3                                           u2721 0653  
+                                         u2481 0F7C                                           u2465 0F56  
+                                         u2570 0D64                                           u2650 0BE4  
+                                         u1770 05E9                                           u1690 0574  
+                                         u1930 028A                                           u1850 0102  
+                                         u2810 06AB                                           u2730 0659  
+                                         u2490 0FF6                                           u2571 0D63  
+                                         u2651 0BE3                                           u2635 0BD0  
+                                         u1771 05E8                                           u1691 0573  
+                                         u1931 0289                                           u1851 0101  
+                                         u2811 06AA                                           u2731 0658  
+                                         u2491 0FF5                                           u2475 0F73  
+                                         u2580 0D6E                                           u1780 05F9  
+                                         u1940 02BB                                           u1860 0133  
+                                         u2900 0726                                           u2820 06C2  
+                                         u2740 065E                                           u2581 0D6D  
+                                         u2565 0D5A                                           u1781 05F8  
+                                         u1941 02BA                                           u1861 0132  
+                                         u2901 0725                                           u2821 06C1  
+                                         u2741 065D                                           u1950 0B3E  
+                                         u2670 0BF3                                           u1790 0609  
+                                         u1870 0164                                           u2910 072E  
+                                         u2830 06C7                                           u2750 0666  
+                                         u1951 0B3D                                           u2671 0BF2  
+                                         u2655 0BE0                                           u1791 0608  
+                                         u1871 0163                                           u2911 072D  
+                                         u2831 06C6                                           u2751 0665  
+                                         u2495 0FF2                                           u1880 0195  
+                                         u2680 0DA9                                           u2920 0737  
+                                         u2840 06CD                                           u2760 066D  
+                                         u2585 0D6A                                           u2665 0BE9  
+                                         u1881 0194                                           u2681 0DA8  
+                                         u2921 0736                                           u2841 06CC  
+                                         u2761 066C                                           u1890 01C6  
+                                         u2690 0DE2                                           u2850 06D6  
+                                         u2770 0672                                           u2595 0D73  
+                                         u1891 01C5                                           u2691 0DE1  
+                                         u2851 06D5                                           u2771 0671  
+                                         u1980 0B52                                           u2860 06F9  
+                                         u2780 0678                                           u1981 0B51  
+                                         u1965 0B43                                           u2861 06F8  
+                                         u2781 0677                                           u2870 0700  
+                                         u2790 0681                                           u1990 0DE8  
+                                         u1975 0B48                                           u2871 06FF  
+                                         u2791 0680                                           u1991 0DE7  
+                                         u2960 0B31                                           u2880 0717  
+                                         u2961 0B30                                           u2881 0716  
+                                         u2970 0CDE                                           u2890 071D  
+                                         u2971 0CDD                                           u2891 071C  
+                                         u2980 0CEE                                           u2981 0CED  
+                                         u2990 0D26                                           u2975 0CDA  
+                                         u2991 0D25                                           u2985 0CEA  
+                                         u2995 0D22                                           _TMR0 0015  
                                          _WPUB 020D                                           _WPUE 0210  
                                          _main 0E3E                                           fsr0h 0005  
                                          fsr1h 0007                                           indf0 0000  
@@ -10227,7 +10227,7 @@ Symbol Table                                                                    
                               __end_of___awmod 0D8C                                ___awdiv@divisor 0070  
                  keyDebounce@SW3_PreviousState 0062                                __end_of___lwdiv 0C69  
                                         i1l505 0011                                __end_of___lwmod 0BF8  
-                                        i1l533 0ABC                                          i1l786 0C2E  
+                                        i1l533 0ABC                                          i1l836 0C2E  
                               ___awdiv@counter 0074                                          _RCREG 0199  
                                         _RCSTA 019D                                          _SSLED 048F  
                                         _TRISA 008C                                          _TRISB 008D  

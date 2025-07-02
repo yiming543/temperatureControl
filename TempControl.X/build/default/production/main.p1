@@ -626,9 +626,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "88
-[; ;main.c: 88: __asm("\tpsect eeprom_data,class=EEDATA,delta=2,space=3,noexec"); __asm("\tdb\t" "30" "," "30" "," "0xff" "," "0xff0" "," "0xff" "," "0xff" "," "0xff" "," "0xff");
+[; ;main.c: 88: __asm("\tpsect eeprom_data,class=EEDATA,delta=2,space=3,noexec"); __asm("\tdb\t" "30" "," "30" "," "0xff" "," "0xff" "," "0xff" "," "0xff" "," "0xff" "," "0xff");
 [; <" 	psect eeprom_data,class=EEDATA,delta=2,space=3,noexec ;# ">
-[; <" 	db	30,30,0xff,0xff0,0xff,0xff,0xff,0xff ;# ">
+[; <" 	db	30,30,0xff,0xff,0xff,0xff,0xff,0xff ;# ">
 "90
 [; ;main.c: 90: void TMR0_timerHandler(void) {
 [v _TMR0_timerHandler `(v ~T0 @X0 1 ef ]

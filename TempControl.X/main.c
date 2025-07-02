@@ -85,7 +85,7 @@ uint8_t displayMode = 0;
 uint8_t fRelay1 = 0;
 uint8_t fRelay2 = 0;
 
-__EEPROM_DATA(DEFAULT_SET1, DEFAULT_SET2, 0xff, 0xff0, 0xff, 0xff, 0xff, 0xff);
+__EEPROM_DATA(DEFAULT_SET1, DEFAULT_SET2, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff);
 
 void TMR0_timerHandler(void) {
   // add your TMR0 interrupt custom code
